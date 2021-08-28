@@ -1,0 +1,156 @@
+\documentclass[11pt]{book}
+%\usepackage{proceed2e}
+\usepackage{naacl}
+\usepackage[hyphens]{url}
+
+
+%%%% Fill out all these macros
+\newcommand{\thesisTitle}{Fake News Detection}
+\newcommand{\authorName}{Mahsa Ghaderan}
+\newcommand{\advisor}{Main Guardian}
+\newcommand{\advisorTitle}{Professor Sauleh Eetemadi} % assistant, associate prof?
+\newcommand{\advisorDepartment}{Computer Science and Engineering}
+
+
+\newcommand{\readingCommitteeOne}{First Reader}
+\newcommand{\readingCommitteeTwo}{Second Reader}
+\newcommand{\graduationYear}{2021}
+
+
+%\usepackage{} -- add any other packages you want
+\usepackage{amsfonts}
+\usepackage{multirow,tabularx}
+\usepackage{listings}
+\usepackage{makecell}
+\usepackage[linesnumbered]{algorithm2e}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{fullpage}
+\usepackage{mathrsfs}
+\usepackage{subcaption}
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+\hypersetup{%
+  %colorlinks = true,
+  linkcolor  = black
+}
+\usepackage{mdwlist}
+\usepackage{xspace}
+\usepackage{setspace}
+\usepackage{times} % Set the typeface to Times Roman
+\usepackage[scaled]{helvet} % ss
+\usepackage{courier} % tt
+\normalfont
+\usepackage[T1]{fontenc}
+
+
+%\usepackage[showframe=true]{geometry}
+\usepackage{changepage}
+\usepackage[labelfont=bf]{caption} % boldface caption title for floats
+\usepackage[square]{natbib}
+\usepackage{enumitem}
+\usepackage{natbib}
+\usepackage{array,multirow}
+\usepackage{fixltx2e}
+\usepackage{booktabs}
+\usepackage{bbm}
+\usepackage{soul}
+\usepackage{relsize}
+\usepackage{eso-pic}
+\usepackage{xspace}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{balance}
+\usepackage{wrapfig}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{fixltx2e}
+%\usepackage{tkz-graph}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{pifont}
+\usepackage{scrextend}
+\usepackage{sidecap}
+\usepackage{graphicx}
+
+
+
+\begin{document}
+
+\input{00-titlepages.tex}
+\doublespacing
+
+\input{01-abstract.tex}
+
+\chapter*{Acknowledgements}
+\input{02-ack.tex}
+\input{03-dedication}
+
+\tableofcontents{}
+\listoffigures
+\listoftables
+\clearpage
+
+\chapter {Background}
+\input{04-background}
+
+% \chapter {Literature Review}
+% \input{04-literaturereview}
+
+\chapter {Introduction}
+\input{04-intro}
+
+\chapter {Fact Verification and Extraction}
+\label{chapter:two}
+\input{05-factchecking}
+
+\chapter{Stance Detection}
+\label{chapter:three}
+\input{06-stance}
+
+\chapter {Fake News}
+\label{chapter:four}
+\input{07-fakenews}
+
+\chapter{Conclusion}
+\input{08-conclusion}
+
+\bibliography{main.bib}
+\bibliographystyle{acl_natbib}
+
+% Optionally: add appendices
+\newpage
+\newcommand{\beginsupplement}{%
+    \setcounter{chapter}{0}
+    \renewcommand{\thechapter}{\Alph{chapter}}%
+ }
+
+\beginsupplement
+\chapter{Appendix One}
+\section{Appendix section 1}
+\begin{table}[]
+    \centering
+    \begin{tabular}{c|c}
+         &  \\
+         & 
+    \end{tabular}
+    \caption{Table in the Appendix}
+    \label{tab:my_label}
+\end{table}
+
+\end{document}
+
+% you're all done, congrats!

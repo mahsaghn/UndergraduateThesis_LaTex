@@ -1,0 +1,23 @@
+\contentsline {chapter}{\numberline {1}Background}{13}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Introduction}{15}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Fact Verification and Extraction}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Literature Review}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Introduction}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Experiments}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Results}{17}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Conclusion}{17}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Stance Detection}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Literature Review}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Introduction}{19}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Experiments}{19}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Results}{19}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Conclusion}{19}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Fake News}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Literature Review}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Introduction}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Experiments}{21}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Results}{21}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Conclusion}{21}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{23}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Appendix One}{27}{chapter.1}%
+\contentsline {section}{\numberline {A.1}Appendix section 1}{27}{section.1.1}%

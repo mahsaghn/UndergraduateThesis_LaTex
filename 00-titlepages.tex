@@ -1,0 +1,68 @@
+%% Replace all of the orange portions with your personal info
+
+\begin{titlepage}
+\begin{center}
+\vspace*{\fill}
+\singlespace
+\thispagestyle{empty}
+{\LARGE { \thesisTitle \\} %self-explanatory
+\doublespacing
+\vspace*{\baselineskip}
+{\large \authorName }\\ %self-explanatory
+\vspace*{1.5\baselineskip}
+\large A Thesis
+\\ submitted in partial fulfillment of the\\
+requirements for the degree of\\
+% \vspace*{\baselineskip}
+Graduate\\
+\vspace{1.5\baselineskip}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=3cm]{iust.jpeg}
+% \end{figure}
+
+Iran University of Science and Technology
+\\ \graduationYear}\\ % add year in YYYY format (e.g. 2020)
+\vspace{1.5\baselineskip}
+
+%add reading committee (just the reading committee, not the supervisory committee):
+\large \textit{Reading Committee:} \\
+
+\ifdefined\secondAdvisor 
+    \advisor, Co-Chair \\
+    \secondAdvisor, Co-Chair \\
+\else
+    \advisor, Chair
+\fi
+
+\readingCommitteeOne \\
+
+\ifdefined\readingCommitteeTwo
+    \readingCommitteeTwo \\
+\fi
+    
+
+\vspace{2\baselineskip}
+  Program Authorized to Offer Degree: \\
+Computer Science and Engineering
+  
+% \newcommand{\advisor}{Main Guardian}
+% % if you have two advisors, uncomment these two
+% \newcommand{\firstAdvisor}{Parent One}
+% \newcommand{\secondAdvisor}{Parent Two}
+% \newcommand{\readingCommitteeOne}{First Reader}
+% \newcommand{\readingCommitteeTwo}{Second Reader}
+
+  
+  
+%%% Insert year and name:
+  \vspace*{\fill}
+  \clearpage
+  \thispagestyle{empty}
+  \singlespace{
+  \copyright~Copyright \graduationYear \\ %add year in YYYY format (e.g. 2020)
+  \vspace*{\baselineskip}
+  \authorName} %self-explanatory
+\end{center}
+\end{titlepage}
+
