@@ -5,3 +5,45 @@ describe all the studies that you have mentioned in the background section.
 present a more focused survey of the specific studies that are associated with the precise objective of your study.
 
 learn more about the previous research published on the topic, and this eventually translates into literature review when you write your research paper.
+
+
+{\color{orange}(book,chptr9,AlgorithmsCreate and PreventFakeNews)}
+A research team 7 based at Canada’s Waterloo University broke down the fully
+automated fact-checking process into four steps:
+1. Retrieve documents relevant to the claim in question.
+2. Determine the “stance” of each document, meaning
+whether it supports, rejects, or is ambivalent/unrelated
+to the claim.
+3. Assign a credibility score to each document based on its
+source.
+4. Assign a truthfulness score to the claim by combining the
+document stances weighted by the document credibility
+scores (and highlight relevant facts/context from the
+documents).
+
+The first step can be a tricky one, because it is more open-ended than the matching step conducted by Full Fact, Logically, and Squash: rather than searching through a specific database of fact-checks for a match to the claim, one needs to scour the Web for any documents that might have information related to the claim. Google’s use of BERT to analyze the text in user search queries is bringing us closer to this task, but many challenges still remain.
+
+The third step is essentially what Google and Facebook already do—through Google’s use of PageRank and human evaluators and through Facebook’s NEQ scores, as you saw in Chapters 6 and 8. 
+
+The fourth step is straightforward once the first three are complete, so the Waterloo team decided to focus on
+
+the second step—stance detection—to see how well that could be automated. They used a data set of fifty thousand articles to train a deep learning classification algorithm that looks at the body of each article and the headline of the article and estimates whether the body agrees with the headline, disagrees with it, discusses it without taking a stance, or is unrelated to the headline. Their algorithm scored a very respectable ninety percent accuracy, which was considerably higher than previous attempts by other researchers. 
+
+The main insight in their work was to start with Facebook’s massive pre-trained deep learning algorithm RoBERTa and then do additional focused training to fine-tune the algorithm for the specific task at hand. This general process of fine-tuning a massive pre-trained deep learning algorithm is called “transfer learning,” and it has been an extremely successful method in AI, so it is not at all surprising that this is the right way to go when it comes to stance detection—it just wasn’t possible before BERT and RoBERTa came out.
+
+
+
+
+{\color{orange}(book,chptr9,AlgorithmsCreate and PreventFakeNews)}
+The Allen Institute for Artificial Intelligence (which you briefly encountered in Chapter 2 for its Grover system for detecting GPT-2 type generated text) developed a free tool called SciFact 8 to help with fact-checking medical claims related to COVID-19. The user types an assertion, or chooses from a list of suggestions, such as “Higher viral loads of SARS-CoV-2 are associated with more severe symptoms,” and a list of medical research publications is returned, each with an estimated score of how strongly it supports or rejects the assertion—similar to the Waterloo team’s stance detection—and a few potentially relevant excerpts from each publication are provided.
+
+When I tried this higher viral load assertion, seven articles were returned, four supporting and three refuting—and while not all of them seemed relevant or accurately labeled, the results were enough to show that there is not a strong scientific consensus on this issue.
+
+Their algorithm uses BERT to process text, and it was fine-tuned as follows. 
+
+First, a modestly sized collection of medical publications was assembled and the citation sentences (i.e., sentences that include a citation to another research publication) were extracted. Next, human experts manually rewrote these sentences as medical assertions; they were allowed to use the text surrounding each citation sentence, but not the paper being cited. The human experts also created negated versions of these assertions, so that the algorithm would have examples of assertions refuted by the literature, not just ones supported by it. They then went through by hand and decided
+whether each assertion is indeed supported by the article it cites, or refuted by it, or whether there is insufficient information to make this decision—and in the cases where it was labeled as supported or refuted, the experts highlighted the passages in the article’s abstract that provided the strongest basis for this label. 
+
+Roughly speaking, this process is how they trained their BERT-based algorithm to do all three tasks involved: retrieve articles relevant
+to a given assertion, estimate the stance of each article in relation to the assertion, and extract relevant passages from each article’s abstract. 
+The researchers’ framework in principle applies to all kinds of medical and scientific assertions—not just COVID-related ones—but since training their algorithm involves careful manual work with the data, they decided to launch this tool initially in a limited setting and scope. The reader is cautioned, and the researchers readily admit, that this tool is largely intended to show what is possible and what challenges remain, rather than to be blindly trusted. They tested a few dozen COVID-19 assertions and found the algorithm returned relevant papers and correctly identified their stance about two-thirds of the time. While this tool should not replace finding and reading papers manually, it might still help with a quick first-pass assessment of medical claims.

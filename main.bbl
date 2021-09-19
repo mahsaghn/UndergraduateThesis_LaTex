@@ -1,4 +1,165 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{26}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Augenstein et~al.(2016)Augenstein, Rockt{\"a}schel, Vlachos, and
+  Bontcheva}]{Augenstein2016StanceDW}
+Isabelle Augenstein, Tim Rockt{\"a}schel, Andreas Vlachos, and Kalina
+  Bontcheva. 2016.
+\newblock Stance detection with bidirectional conditional encoding.
+\newblock In \emph{EMNLP}.
+
+\bibitem[{Chang and Lin(2011)}]{svc}
+Chih-Chung Chang and Chih-Jen Lin. 2011.
+\newblock Libsvm: A library for support vector machines.
+\newblock \emph{ACM Trans. Intell. Syst. Technol.}, 2.
+
+\bibitem[{Chawla et~al.(2002)Chawla, Bowyer, Hall, and Kegelmeyer}]{smothe}
+N.~V. Chawla, K.~W. Bowyer, L.~O. Hall, and W.~P. Kegelmeyer. 2002.
+\newblock Smote: Synthetic minority over-sampling technique.
+\newblock \emph{Journal Of Artificial Intelligence Research}, 16:321--357.
+
+\bibitem[{Dashtipour et~al.(2016)Dashtipour, Hussain, Zhou, Gelbukh, Hawalah,
+  and Cambria}]{persent}
+Kia Dashtipour, Amir Hussain, Qiang Zhou, Alexander Gelbukh, Ahmad Hawalah, and
+  Erik Cambria. 2016.
+\newblock Persent: A freely available persian sentiment lexicon.
+\newblock volume 10023.
+
+\bibitem[{Deepak~P(2021)}]{book_datafake}
+Cheng Long Santhosh Kumar~G Deepak~P, Tanmoy~Chakraborty. 2021.
+\newblock Data science for fake news.
+\newblock 42.
+
+\bibitem[{Dehkharghani(2019)}]{polar_hotel}
+Rahim Dehkharghani. 2019.
+\newblock Sentifars: A persian polarity lexicon for sentiment analysis.
+\newblock \emph{ACM Trans. Asian Low-Resour. Lang. Inf. Process.}, 19.
+
+\bibitem[{Devlin et~al.(2019)Devlin, Chang, Lee, and Toutanova}]{bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019.
+\newblock {BERT}: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock In \emph{Proceedings of the 2019 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, volume 1 (Long and Short Papers), pages 4171--4186.
+  Association for Computational Linguistics.
+
+\bibitem[{Dulhanty et~al.(2019)Dulhanty, Deglint, Ben~Daya, and
+  Wong}]{takestancefake}
+Chris Dulhanty, Jason Deglint, Ibrahim Ben~Daya, and Alexander Wong. 2019.
+\newblock Taking a stance on fake news: Towards automatic disinformation
+  assessment via deep bidirectional transformer language models for stance
+  detection.
+
+\bibitem[{F.~Pedregosa and Duchesnay.(2011)}]{sikit-learn}
+A.~Gramfort V. Michel B. Thirion O. Grisel M. Blondel P. Pret-tenhofer R. Weiss
+  V. Dubourg J. Vanderplas A. Passos D. Cournapeau M.~Brucher F.~Pedregosa,
+  G.~Varoquaux and M.~P.~E. Duchesnay. 2011.
+\newblock Scikit-learn: Machine learning in python.
+
+\bibitem[{Giansiracusa(2021)}]{book_fake}
+Noah Giansiracusa. 2021.
+\newblock How algorithms create and prevent fake news.
+
+\bibitem[{Han et~al.(2005)Han, Wang, and Mao}]{borderlinesmothe}
+Hui Han, Wen-Yuan Wang, and Bing-Huan Mao. 2005.
+\newblock Borderline-smote: A new over-sampling method in imbalanced data sets
+  learning.
+\newblock \emph{Advances in Intelligent Computing. ICIC 2005}, 3644.
+
+\bibitem[{Harris(1954)}]{bow}
+Zellig~S. Harris. 1954.
+\newblock Distributional structure.
+\newblock \emph{WORD}, 10(2-3):146--162.
+
+\bibitem[{He et~al.(2008)He, Bai, Garcia, and Li}]{adasyn}
+Haibo He, Yang Bai, Edwardo~A. Garcia, and Shutao Li. 2008.
+\newblock Adasyn: Adaptive synthetic sampling approach for imbalanced learning.
+\newblock In \emph{2008 IEEE International Joint Conference on Neural Networks
+  (IEEE World Congress on Computational Intelligence)}, pages 1322--1328.
+
+\bibitem[{John and Langley(1995)}]{GNbayes}
+George~H. John and Pat Langley. 1995.
+\newblock Estimating continuous distributions in bayesian classifiers.
+\newblock In \emph{Proceedings of the Eleventh Conference on Uncertainty in
+  Artificial Intelligence}, page 338–345. Morgan Kaufmann Publishers Inc.
+
+\bibitem[{Majid~Zarharan(2019)}]{stance_persian}
+Fatemeh Sadat Rezvaninejad Mahdi Lotfi Bidhendi Shaghayegh Sadat Jalali Sauleh
+  Eetemadi Mohammad Taher Pilehvar Behrouz Minaei-Bidgoli Majid~Zarharan,
+  Samane~Ahangar. 2019.
+\newblock Persian stance classification dataset.
+
+\bibitem[{Mehrdad~Farahani(2020)}]{polar_servic}
+Marzieh Farahani Mohammad~Manthouri Mehrdad~Farahani, Mohammad~Gharachorloo.
+  2020.
+\newblock Parsbert: Transformer-based model for persian language understanding.
+\newblock \emph{ArXiv}, abs/2005.12515.
+
+\bibitem[{Mohtarami et~al.(2018)Mohtarami, Baly, Glass, Nakov, M{\`a}rquez, and
+  Moschitti}]{memory_network}
+Mitra Mohtarami, Ramy Baly, James Glass, Preslav Nakov, Llu{\'\i}s M{\`a}rquez,
+  and Alessandro Moschitti. 2018.
+\newblock Automatic stance detection using end-to-end memory networks.
+\newblock In \emph{Proceedings of the 2018 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 1 (Long Papers)}, pages 767--776. Association for
+  Computational Linguistics.
+
+\bibitem[{Mrowca et~al.(2017)Mrowca, Wang, and Kosson}]{stanceCI}
+Damian Mrowca, Elias Wang, and Atli Kosson. 2017.
+\newblock Stance detection for fake news identification.
+
+\bibitem[{Riedel et~al.(2017)Riedel, Augenstein, Spithourakis, and
+  Riedel}]{UCLMR}
+B.~Riedel, Isabelle Augenstein, Georgios~P. Spithourakis, and S.~Riedel. 2017.
+\newblock A simple but tough-to-beat baseline for the fake news challenge
+  stance detection task.
+\newblock \emph{ArXiv}, abs/1707.03264.
+
+\bibitem[{Sammut and Webb(2010)}]{tfidf}
+Claude Sammut and Geoffrey~I. Webb, editors. 2010.
+\newblock \emph{TF--IDF}, pages 986--987. Springer US.
+
+\bibitem[{Schiller et~al.(2020)Schiller, Daxenberger, and
+  Gurevych}]{stance_robust}
+Benjamin Schiller, Johannes Daxenberger, and Iryna Gurevych. 2020.
+\newblock Stance detection benchmark: How robust is your stance detection?
+\newblock \emph{ArXiv}, abs/2001.01565.
+
+\bibitem[{Sun et~al.(2018)Sun, Wang, Zhu, and
+  Zhou}]{Hierarchical-Attention-Network}
+Qingying Sun, Z.~Wang, Qiaoming Zhu, and Guodong Zhou. 2018.
+\newblock Stance detection with hierarchical attention network.
+\newblock In \emph{COLING}.
+
+\bibitem[{Thorne et~al.(2018)Thorne, Vlachos, Christodoulopoulos, and
+  Mittal}]{fever}
+James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal.
+  2018.
+\newblock {FEVER}: a large-scale dataset for fact extraction and
+  {VER}ification.
+\newblock In \emph{Proceedings of the 2018 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 1 (Long Papers)}, pages 809--819. Association for
+  Computational Linguistics.
+
+\bibitem[{Tomas~Mikolov(2013)}]{word2vec}
+Greg Corrado Jeffrey~Dean Tomas~Mikolov, Kai~Chen. 2013.
+\newblock Efficient estimation of word representations in vector space.
+\newblock In \emph{1st International Conference on Learning Representations,
+  {ICLR} 2013, Scottsdale, Arizona, USA, May 2-4, 2013, Workshop Track
+  Proceedings}, pages 4171--4186. Association for Computational Linguistics.
+
+\bibitem[{Wu and Chang(2003)}]{svmsmothe}
+Gang Wu and E.~Chang. 2003.
+\newblock Class-boundary alignment for imbalanced dataset learning.
+
+\bibitem[{Zarharan et~al.(2021)Zarharan, Ghaderan, Pourdabiri, Sayedi,
+  Minaei-Bidgoli, Eetemadi, and Pilehvar}]{parsfever}
+Majid Zarharan, Mahsa Ghaderan, Amin Pourdabiri, Zahra Sayedi, Behrouz
+  Minaei-Bidgoli, Sauleh Eetemadi, and Mohammad~Taher Pilehvar. 2021.
+\newblock Parsfever: a dataset for farsi fact extraction and verification.
+\newblock Association for Computational Linguistics.
 
 \end{thebibliography}

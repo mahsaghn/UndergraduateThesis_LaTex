@@ -79,15 +79,14 @@
 %\usepackage{tkz-graph}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{tikz}
 \usepackage{mathtools}
 \usepackage{pifont}
 \usepackage{scrextend}
 \usepackage{sidecap}
 \usepackage{graphicx}
+\usepackage{enumitem}
 
-
-
+\usepackage{eqexpl}
 \begin{document}
 
 \input{00-titlepages.tex}
@@ -104,18 +103,18 @@
 \listoftables
 \clearpage
 
-\chapter {Background}
-\input{04-background}
+%\chapter {Background}
+%\input{04-background}
 
 % \chapter {Literature Review}
 % \input{04-literaturereview}
 
-\chapter {Introduction}
-\input{04-intro}
+%\chapter {Introduction}
+%\input{04-intro}
 
-\chapter {Fact Verification and Extraction}
-\label{chapter:two}
-\input{05-factchecking}
+%\chapter {Fact Verification and Extraction}
+%\label{chapter:two}
+%\input{05-factchecking}
 
 \chapter{Stance Detection}
 \label{chapter:three}
@@ -128,7 +127,7 @@
 \chapter{Conclusion}
 \input{08-conclusion}
 
-\bibliography{main.bib}
+\bibliography{main.bib}	
 \bibliographystyle{acl_natbib}
 
 % Optionally: add appendices

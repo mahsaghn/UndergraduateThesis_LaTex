@@ -2,52 +2,236 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: acl_natbib.bst
-I found no \citation commands---while reading file main.aux
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: main.bib
+I was expecting a `,' or a `}'---line 70 of file main.bib
+ :  
+ :  publisher={Springer}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 89 of file main.bib
+ :  
+ :  journal= {ArXiv}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "takestancefake" isn't style-file defined
+--line 247 of file main.bib
+Illegal end of database file---line 260 of file main.bib
+ :  published = {arXiv}
+ :                     
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "randomforest"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 0 entries,
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Deepak P, Tanmoy Chakraborty, Cheng Long, Santhosh Kumar G" for entry book_datafake
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Deepak P, Tanmoy Chakraborty, Cheng Long, Santhosh Kumar G" for entry book_datafake
+while executing---line 1896 of file acl_natbib.bst
+Name 1 in "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." has a comma at the end for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Name 1 in "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." has a comma at the end for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, Mohammad Manthouri" for entry polar_servic
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, Mohammad Manthouri" for entry polar_servic
+while executing---line 1896 of file acl_natbib.bst
+Warning--empty booktitle in persent
+Too many commas in name 1 of "Deepak P, Tanmoy Chakraborty, Cheng Long, Santhosh Kumar G" for entry book_datafake
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Deepak P, Tanmoy Chakraborty, Cheng Long, Santhosh Kumar G" for entry book_datafake
+while executing---line 1967 of file acl_natbib.bst
+Warning--empty journal in book_datafake
+Name 1 in "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." has a comma at the end for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Name 1 in "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." has a comma at the end for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
+while executing---line 1967 of file acl_natbib.bst
+Warning--empty journal in sikit-learn
+Warning--empty journal in book_fake
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
+while executing---line 1967 of file acl_natbib.bst
+Warning--empty journal in stance_persian
+Too many commas in name 1 of "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, Mohammad Manthouri" for entry polar_servic
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, Mohammad Manthouri" for entry polar_servic
+while executing---line 1967 of file acl_natbib.bst
+Warning--empty booktitle in stanceCI
+Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
+while executing---line 1967 of file acl_natbib.bst
+Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
+while executing---line 1967 of file acl_natbib.bst
+Warning--empty booktitle in svmsmothe
+Warning--empty booktitle in parsfever
+You've used 26 entries,
             3571 wiz_defined-function locations,
-            692 strings with 5468 characters,
-and the built_in function-call counts, 45 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 30
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+            831 strings with 10377 characters,
+and the built_in function-call counts, 17788 in all, are:
+= -- 1538
+> -- 822
+< -- 21
++ -- 259
+- -- 231
+* -- 1067
+:= -- 2653
+add.period$ -- 103
+call.type$ -- 26
+change.case$ -- 222
+chr.to.int$ -- 26
+cite$ -- 34
+duplicate$ -- 1247
+empty$ -- 1308
+format.name$ -- 305
+if$ -- 3936
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 4
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 250
+newline$ -- 127
+num.names$ -- 105
+pop$ -- 610
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 181
 quote$ -- 0
-skip$ -- 1
+skip$ -- 924
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 560
+swap$ -- 561
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
+type$ -- 231
+warning$ -- 8
+while$ -- 98
 width$ -- 0
-write$ -- 3
-(There was 1 error message)
+write$ -- 323
+(There were 83 error messages)
