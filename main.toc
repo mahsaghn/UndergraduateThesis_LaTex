@@ -11,21 +11,21 @@
 \contentsline {subsection}{\numberline {1.4.3}Features}{23}{subsection.1.4.3}%
 \contentsline {subsubsection}{Similarity}{23}{section*.14}%
 \contentsline {subsubsection}{Root Distance}{23}{section*.15}%
-\contentsline {subsubsection}{ImportantWords}{23}{section*.16}%
+\contentsline {subsubsection}{ImportantWords}{24}{section*.16}%
 \contentsline {subsubsection}{Is Question}{24}{section*.17}%
 \contentsline {subsubsection}{Has Two Parts}{24}{section*.18}%
 \contentsline {subsubsection}{Polarity}{24}{section*.19}%
 \contentsline {subsection}{\numberline {1.4.4}Machine Learning}{25}{subsection.1.4.4}%
 \contentsline {subsubsection}{Gaussian Naive Bayes}{25}{section*.20}%
 \contentsline {subsubsection}{SVC\footnote {wikipedia.org/Support-vector\_machine}}{26}{section*.21}%
-\contentsline {subsubsection}{LinearSVC}{26}{section*.22}%
+\contentsline {subsubsection}{LinearSVC}{27}{section*.22}%
 \contentsline {subsubsection}{Random Forest}{27}{section*.23}%
 \contentsline {subsubsection}{Logistic Regression}{27}{section*.24}%
 \contentsline {subsection}{\numberline {1.4.5}Balancing}{28}{subsection.1.4.5}%
 \contentsline {subsubsection}{\textbf {Extending dataset:}}{29}{section*.25}%
-\contentsline {subsubsection}{\textbf {Oversampling and Undersampling:}}{29}{section*.27}%
+\contentsline {subsubsection}{\textbf {Oversampling and Undersampling:}}{30}{section*.27}%
 \contentsline {subsubsection}{\textbf {Tune mode parameters:}}{31}{section*.28}%
-\contentsline {subsection}{\numberline {1.4.6}Deep Learning}{31}{subsection.1.4.6}%
+\contentsline {subsection}{\numberline {1.4.6}Deep Learning}{32}{subsection.1.4.6}%
 \contentsline {section}{\numberline {1.5}Results}{32}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Conclusion}{32}{section.1.6}%
 \contentsline {chapter}{\numberline {2}Fake News}{33}{chapter.2}%

@@ -2,26 +2,22 @@
 
 \section{Introduction}
 
-The purpose of stance detection is to automatically find a relation type between specified sentences against a given text. So it is possible to evaluate what a news source is saying about a particular issue \cite{UCLMR}. The selected sentence could be a claim, a news item, an idea, a social network post, or any other source. Also, the text could retrieve from news agencies, weblogs, posts that are shared on social media, and any other available text. Choosing the source and context of sentences and texts depends on the goal of the defined task. Four considered labels are agreed, disagreed, discussed, and not enough information. 
-\newline
+The purpose of stance detection is to automatically find a relation type between specified sentences against a given text. So it is possible to evaluate what is the orientation of a news source towards a particular issue \cite{UCLMR}. The selected sentence could be a claim, a news item, an idea, a social network post, or any other source. Also, the text could be retrieved from news agencies, weblogs, posts that are shared on social media, and any other available text. Choosing the source and context of sentences and texts depends on the goal of the defined task. Four considered labels are \textit{Agree}, \textit{Disagreed}, \textit{Discussed}, and \textit{Not Enough Information}. 
 
-Gathering a sufficient amount of data is a vital step to achieve reliable output. Both number of records in the data set and the quality of each sample have a significant effect on output accuracy. \cite{takestancefake}) gathered fifty thousand articles-headline pairs for their data set. (\cite{takestancefake}) achieved a respectable ninety percent accuracy, which was considerably higher than previous attempts by other researchers (\cite{book_fake}). In some contexts, there isn't enough available data. Here is where transfer learning methods play a vital role and compensate lack of data. We pre-trained a model on a large text corpus in a general context and then fine-tune the model on task-specified data. \cite{takestancefake} used RoBERTa model which is pre-trained on Facebook data. Then fine-tune it on the specific task at hand.
+Gathering a sufficient amount of data is a vital step to achieve reliable predictor model. Both number of records in the dataset and the quality of each sample have a significant effect on prediction accuracy. \cite{takestancefake}) gathered fifty thousand articles-headline pairs for their dataset, and achieved a respectable ninety percent accuracy, which was considerably higher than previous attempts by other researchers (\cite{book_fake}). Though, in some contexts, there isn't enough available data. Here is where transfer learning methods play a vital role and compensate lack of data. We pre-trained a model on a large text corpus in a general context and then fine-tune the model on task-specified data. \cite{takestancefake} used RoBERTa model which is pre-trained on Facebook data. Then fine-tune it on the specific task at hand.
 Also, \cite{stance_robust} improved its accuracy by fine-tuning BERT model.
-\newline
 
-Researchers have suggested various methods for stance classification. One cluster of methods mainly focuses on deep learning approaches. The precision of models is improved by using word embeddings such as BERT, using recurrent neural networks such as LSTM, BiLSTM (\cite{stanceCI}), attention-based network (\cite{stanceCI}). Some novel model architectures are currently proposed, such as Memory Network (\cite{memory_network}).
-\newline
+Researchers have suggested various methods for stance classification. One cluster of methods mainly focuses on deep learning approaches. The precision of models is improved by using word embeddings such as BERT, using recurrent neural networks such as LSTM, BiLSTM (\cite{stanceCI}), and utlizing attention-based network (\cite{stanceCI}). Besides, novel model architectures such as Memory Network (\cite{memory_network}), are currently proposed.
 
-One possible way of evaluating the accuracy of a given claim is detecting the stance of that claim against available trusted sources. Stance detection task traditionally were used in political and ideological debates fields \citep{stance_robust}.The idea of using Stance Detection techniques to analyze news items' correctness has become caught researcher's attention since 2016. Consistency of a sentence through sources can be retrieved by stance detection methods. Stance detection can be considered as a subtask of fake news detection (\cite{book_datafake}). It is easier to judge a claim by its stance against other sources. So estimating the stance of a particular claim against available documents can be the first step into detecting fake news. 
+One possible way of evaluating the veracity of a given claim is detecting the stance of that claim against available trusted sources. Stance detection task traditionally were used in political and ideological debates fields \citep{stance_robust}. The idea of using Stance Detection techniques to analyze news items correctness has become caught researchers attention since 2016. Consistency of a sentence through sources can be retrieved by stance detection methods. Consequently, stance detection can be considered as a subtask of fake news detection (\cite{book_datafake}), and It is easier to judge a claim by its stance against other sources. So estimating the stance of a particular claim against available documents can be the first step in detecting fake news. 
 
 \section{Literature Review}
 \label{literature}
-	Many researches have done to improve stance detection accuracy. Different ideas and architectures has applied. In the following part, previous research and papers has been over viewed. 
-	\newline 
+	Many researchers have done to improve stance detection accuracy. Different ideas and architectures have been applied. In the following part, previous research and papers have been overviewed.  
 	
-	On 2016 \cite{Augenstein2016StanceDW} started working on the challenging task without assuming neither target is clearly mentioned in the text nor training date is given for every target. Their dataset construct of tweets, mostly contains politicians and popular issues. \cite{Augenstein2016StanceDW} used conditional LSTM encoding on Tweeter data, And results are even improved by using bidirectional encoding. Using LSTM-based models lead to better result rather than Majority class, SVM and BoWV baseline in this experiment. This paper mainly focus on detect stance with respect to unseen targets. This paper included that using unconditional LSTM work best for unseen targets.
+	In 2016 \cite{Augenstein2016StanceDW} started working on the challenging task without assuming neither target is clearly mentioned in the text nor training date is given for every target. Their dataset construct of tweets mostly containing politicians and popular issues. The paper mainly focuses on detecting a stance with respect to unseen targets. \cite{Augenstein2016StanceDW} used conditional LSTM encoding on Tweeter data. \cite{Augenstein2016StanceDW} inferred that using unconditional LSTM has the best performance for unseen targets. Their results are improved by using bidirectional encoding. Using LSTM-based models lead to better results than Majority class, SVM (\cite{svc}), and BoW (\cite{bow}) as baselines in this experiment.
 	
-	 \cite{UCLMR} has developed an stance detection end-to-end system including lexical and similarity-based featured which is passed through a multi-layer perception model. UCLMR's\footnote{UCL Machine Reading} model claimed third place in FNC-1\footnote{First stage of a competition Fake News Challenge(FNC-1) is exploring how artificial intelligence technologies could be leveraged to combat fake news\footnote{fakenewschallenge.org}. Numerous researchers has interest in this field and many papers has published besides this challenge.}. UCLMR's model architecture is illustrated on Figure \ref{fig:UCLMR-system}. Headline and body texts are tokenised by sikit-learn\footnote{\cite{sikit-learn}}. Furthermore, \cite{UCLMR} used both term frequency (TF) vector of headline and claim and cosine similarity between head and body $l$2-normalised TF-IDF vectors. Besides, stop words are excluded. \cite{UCLMR} achieved FNC-1 score of 75.20\% on the test data set.
+	 \cite{UCLMR} has developed an end-to-end stance detection system including lexical and similarity-based features which is passed through a multi-layer perception model. UCLMR's\footnote{UCL Machine Reading} model claimed third place in FNC-1\footnote{First stage of a competition Fake News Challenge(FNC-1) is exploring how artificial intelligence technologies could be leveraged to combat fake news\footnote{fakenewschallenge.org}. Numerous researchers has interest in this field and many papers has published besides this challenge.}. The model architecture is illustrated in Figure \ref{fig:UCLMR-system}. Headline and body texts are tokenized by scikit-learn\footnote{\cite{sikit-learn}}. Furthermore, \cite{UCLMR} used both term frequency (TF) vector of headline and claim and cosine similarity between head and body, and $l$2-normalized TF-IDF vectors. Besides, stop words are excluded. \cite{UCLMR} achieved FNC-1 score of 75.20\% on the test data set.
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.4]{statistics/stance/simple-baseline-FNC.png}
@@ -30,16 +26,16 @@ One possible way of evaluating the accuracy of a given claim is detecting the st
 	\end{figure}
 
 
-	\cite{Hierarchical-Attention-Network} has mainly focused on linguistic information such as polarity and argument of the document to represent a document. As it is shown in \ref{fig:hierarchical_att} document, sentiment, dependency, and argument representations are used in model architecture. \cite{Hierarchical-Attention-Network} concluded that every linguistic information with attention mechanism improves stance detection, And using linguistics features all together outperform using them individually. More explanation is available in the following lines. 
+	\cite{Hierarchical-Attention-Network} have mainly focused on linguistic information such as polarity and argument of each document to represent a document. As shown in figure \ref{fig:hierarchical_att} document, sentiment, dependency, and argument representations are used in model architecture. \cite{Hierarchical-Attention-Network} concluded that every linguistic information with attention mechanism improves stance detection, And using linguistics features altogether outperform using them individually. More details are provided below.
 	
 	\begin{itemize}
-		\item \textbf{Document Representation}: Use LSTM model to represent each document.
-		\item \textbf{Sentiment Representation}: As sentiment representation LSTM model is used to learn the the representation of sentiment information.The sentimental word sequence of each document is extracted from sentiment lexicon. 
-		\item \textbf{Dependency Representation}: This feature is used to capture inter-word relationships. Extract relation from dependency parser. Finally learn representation of dependency sequence, using a LSTM layer.
-		\item \textbf{Argument Representation}: Argument is considered as author's stance. \cite{Hierarchical-Attention-Network} used a binary classification to detect the document's argument sentence, then learn the sequence representation of word sequence in argument sentences utilizing LSTM layer.
+		\item \textbf{Document Representation}: \cite{Hierarchical-Attention-Network} used a LSTM model to represent each document.
+		\item \textbf{Sentiment Representation}: As sentiment representation, an LSTM model is used to learn the representation of sentiment information. The sentimental word sequence of each document is extracted from sentiment lexicon. 
+		\item \textbf{Dependency Representation}: This feature is used to capture inter-word relationships. Firstly, relations from the dependency parser are extracted. Then, representation of dependency sequence is learnt by using an LSTM layer.
+		\item \textbf{Argument Representation}: The argument is considered as the author's stance. \cite{Hierarchical-Attention-Network} used a binary classification to detect the document's argument sentence. Then, it learned the sequence representation of word sequence in argument sentences by making use of LSTM layer.
 	\end{itemize}
 	
-	In addition, it utilized a hierarchical attention network in order to weigh the importance of linguistic information, and learn the mutual attention between the document and linguistic information. \cite{Hierarchical-Attention-Network} mentioned that Hyper Attention layer in Figure \ref{fig:hierarchical_att}, had a considerable influence on model performance. 
+	In addition, it utilized a hierarchical attention network in order to weigh the importance of linguistic information, and learn the mutual attention between the document and linguistic information. \cite{Hierarchical-Attention-Network} mentioned that the Hyper Attention layer in Figure \ref{fig:hierarchical_att}, had a considerable influence on model performance. 
 	
 	\begin{figure}
 		\centering
@@ -48,7 +44,7 @@ One possible way of evaluating the accuracy of a given claim is detecting the st
 		\label{fig:hierarchical_att}
 	\end{figure}
 	
-	\cite{memory_network} present a novel end-to-end memory network on 2018 to predict stance and extract snippet of the prediction. Model mainly focus on relevant paragraphs. It compute . This model incorporate recurrent and convolutional neural networks and similarity matrix. \cite{memory_network} mentioned that detecting \emph{disagree} is the hardest label to predict. To overcome unbalancing issue, \cite{memory_network} select the same number from each class in each iteration. 
+	\cite{memory_network} present a novel end-to-end memory network in 2018 to predict stance and extract snippet of the prediction. The proposed model mainly focuses on relevant paragraphs. This model incorporates recurrent, convolutional neural networks and similarity matrixes. \cite{memory_network} mentioned that detecting \textit{Disagree} is the hardest label to predict. To overcome the imbalance issue, \cite{memory_network} select the same number from each class in each iteration. 
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.25]{statistics/stance/memoty_network.png}
@@ -56,25 +52,24 @@ One possible way of evaluating the accuracy of a given claim is detecting the st
 		\label{fig:mem_network}
 	\end{figure}
 
-	\cite{stance_robust} mainly focused on robustness of a stance detection classifier. Models trained on a single data set in a special domain, won't robust enough on other domains. So they suggested using multi-domain dataset or use mutli-dataset learning methods to improve model generalization. Model architecture is construct of fine-tuned BERT\cite{bert} and single dense classifier at the top. \cite{stance_robust} used 5 fixed seed value during training nd reported averaged results. \cite{stance_robust} concluded that MDL(multi-dataset learning) has significant impact on increasing model robustness.
+	\cite{stance_robust} mainly focused on the robustness of a stance detection classifier. Trained models  on a single data set in a special domain, won't be robust enough on other domains. So they suggested using a multi-domain dataset or use multi-dataset learning methods to improve model generalization. The model architecture is constructed of fine-tuned BERT\cite{bert} and a single dense classifier at the top. \cite{stance_robust} used 5 fixed seed values during training and reported averaged results of trained models. \cite{stance_robust} concluded that MDL(multi-dataset learning) has a significant impact on increasing model robustness.
 	
 \section{Dataset}
 \label{sec:dataset}
-First Persian stance detection dataset (\cite{stance_persian})  is used in this project. \cite{stance_persian} dataset can be used in stance detection, summarization and fake news detection tasks. This dataset contains 2124 news article, covering information about 534 claim. Number of each sample is specified in table \ref{tbl:sdatapie}. Claims are retrieved from Shayeaat \footnote{shayeaat.ir} and Fakenews\footnote{fakenews.ir} websites. Each samples contains 3 different labels for stance detection task, containing article's headline toward the claim, article's body toward the claim and article's headline toward it's body. Samples are tagged manually. Four following classes is considered for stance classifying:
+The first Persian stance detection dataset (\cite{stance_persian})  is used in this project. \cite{stance_persian} dataset can be used in stance detection, summarization, and fake news detection tasks. This dataset contains 2124 news articles that cover information about 534 claims. Number of samples in each class is specified in table \ref{tbl:sdatapie}. Claims are retrieved from Shayeaat \footnote{shayeaat.ir} and Fakenews\footnote{fakenews.ir} websites. Each sample contains 3 different labels for the stance detection task, containing the article's headline toward the claim, the article's body toward the claim, and the article's headline toward its body. Samples are tagged manually. Four following classes are considered for stance classifying:
 \begin{itemize}
-	\item {\color{green!70!black}\textbf{Agree:}} The article clearly states that claim is True without any ambiguity or amphibology. 
-	\item {\color{red!70!black}\textbf{Disagree:}} The article clearly refutes the claim without any ambiguity or amphibology. 
-	\item {\color{yellow!70!black}\textbf{Discuss:}} The article contains information about the claim but don't have any evaluation on it's truth. 
+	\item {\color{green!70!black}\textbf{Agree:}} The article clearly states that the claim is True without any ambiguity or amphibology. 
+	\item {\color{red!70!black}\textbf{Disagree:}} The article clearly refutes that the claim without any ambiguity or amphibology. 
+	\item {\color{yellow!70!black}\textbf{Discuss:}} The article contains information about the claim but doesn't have any evaluation of its truth. 
 	\item {\color{gray!}\textbf{Unrelated:}} There isn't any information about the claim in the article.
 \end{itemize}
-Dataset samples distribution in each classes is illustrated in Figure \ref{fig:datacom}. According to Figure \ref{fig:datacom}, ration of \textit{Agree} and \textit{Disagree} labels are much lower than the others and there is potential risk for models to be bias on \textit{Unrelated} and \textit{Discuss}. Also, percentage of \textit{Unrelated} label is higher in headline to claim than article to claim. Headline can be considered as a summary of news body so unlike news text, news headline may not have enough information to evaluate a claim.  Besides ratio of \textit{Discuss} to \textit{Agree} and \textit{Disagree} is higher in Article to claim than headline to claim. It seem that news agencies choose more controversial headlines to appeal reader's attention.
+Dataset samples distribution in each class is illustrated in Figure \ref{fig:datacom}. According to Figure \ref{fig:datacom}, the ratio of \textit{Agree}. Besides, \textit{Disagree} labels are much lower than the others and there is a potential risk for models to be biased on \textit{Unrelated} and \textit{Discuss}. Also, the percentage of \textit{Unrelated} label is higher in headline to claim than article to claim. A headline can be considered as a summary of news body. So, unlike news text, news headline may not have enough information to evaluate a claim.  Moreover, ratio of \textit{Discuss} to \textit{Agree} and \textit{Disagree} is higher in Article to claim in comparison to headline to claim. Accordingly, it seems that news agencies choose more controversial headlines to appeal reader's attention.
 
-Furthermore this dataset covers each claim veracity according to related news articles. In this dataset, main focus has been on fake news, This can be inferred from figure \ref{fig:fake}. Three following labels are considered for classifying news veracity:
-
+Furthermore, this dataset covers each claim veracity according to related news articles. In this dataset, the main focus has been on published fake news, this can be inferred from figure \ref{fig:fake}. Three following labels are also considered for classifying news veracity for each claim-headline and claim-body pairs.
 
 \begin{itemize} 
 	\item {\color{green!70!black}\textbf{True16:}} Reliable news agencies have asserted that this claim is a fact.
-	\item {\color{red!70!black}\textbf{False120:}} Unreliable news agencies have spread data about this claim and reliable news agencies have considered this claim as a hearsay.
+	\item {\color{red!70!black}\textbf{False120:}} Unreliable news agencies have spread data about this claim and reliable news agencies have considered this claim as hearsay.
 \item {\color{gray}\textbf{Unknown5:}} There isn't enough integrity between reliable news agencies sources.
 \end{itemize}
 
@@ -118,49 +113,49 @@ Furthermore this dataset covers each claim veracity according to related news ar
 \end{figure}
   
 \section{Experiments}
-The headline of news is a summary of its body content and most of the time, it carries valuable data. So, we focused on detecting the news headlines stance towards claim(H2C), as well as the news articles stance towards a claim(B2C). According to the lower amount of text in the news headline, most of the experiments are firstly applied on H2C then, better approaches are applied on A2C.  
+The headline of news is a summary of its body content and most of the time, it carries valuable data. So, we focused on detecting the news headlines stance towards claim(H2C), as well as the news articles stance towards a claim(B2C). According to the lower amount of text in the news headline, most of the experiments are firstly applied to H2C. Then, better approaches are applied to A2C.  
 \subsection{Preprocessing}
-First and mandatory preprocessing step, is to tokenize words in corpus in order to remove and detect special words. Four different following tokenizer performance on Persian language has evaluated. 
+The first and mandatory preprocessing step is to tokenize words in the corpus in order to remove and detect special words. Four different following tokenizer performance on Persian language has been evaluated. 
 \begin{itemize}
 	\item \textbf{Hazm\footnote{sobhe.ir}:}
-	Hazm is a python library Persian language processing tool kit. It has variety of function such as word and sentence tokenizer, word lemmatizer, POS tagger, Shallow and Dependency parser.
+	Hazm is a python library Persian language processing tool kit. It has variety of functions such as word and sentence tokenizer, word lemmatizer, POS tagger, Shallow, and Dependency parser.
 	
 	\item \textbf{NLTK\footnote{nltk.org}:}
-	NLTK (Natural Language ToolKit) is a python platform to work easier with human language data. This tool kit supports more than 50 corpus and supports numerous languages including Persian. 
+	NLTK (Natural Language ToolKit)) is a python platform to work easier with human language data. This tool kit supports more than 50 datasets and supports numerous languages including Persian. 
 	
 	\item \textbf{Stanford\footnote{stanfordnlp.github.io/stanza}:}
-	Stanford NLP tools is also another useful NLP tools package which currently switched to \textit{Stanza}. It is efficient for linguistic analysis and supports more than 70 human languages and releases new versions constantly.
+	Stanford NLP tools is also another advantageous NLP tools package that is currently switched to \textit{Stanza}. It is efficient for linguistic analysis and supports more than 70 human languages and releases new versions constantly.
 	
 	\item \textbf{BERT\footnote{huggingface.co/transformers/main\_classes/tokenizer.html}:}
-	BERT (\cite{bert}) is a transformer based machine-learning model which is currently used in various natural language processing tasks. Persian pre-trained BERT model\footnote{huggingface.co/HooshvareLab/bert-base-parsbert-uncased} can be used for tokenizing corpus too. 
+	BERT (\cite{bert}) is a transformer-based machine-learning model which is currently used in various natural language processing tasks. Persian pre-trained BERT model\footnote{huggingface.co/HooshvareLab/bert-base-parsbert-uncased} can be used for tokenizing corpus too. 
 \end{itemize}
 
-It is vital in tokenizing step to break corpus in to correct words. It may happens that tokenizers generate meaningless words, this is why tokenizers limit number of accepted words. Also, sometime tokenizers haven't seen words before, and omit them while tokenizing a corpus. According previous reasons it is important too choose tokenizer carefully.
+It is vital in the tokenizing step to break the corpus into correct words. It may happen that tokenizers generate meaningless words, this is why tokenizers limit the number of accepted words. Also, sometimes tokenizers haven't seen words before, and omit them while tokenizing the corpus. According to stated reasons, it is important to choose a tokenizer carefully.
 
 
-After tokenization, list of punctuation and Persian stop-words are considered as \textit{denied} and will remove from corpus in this step. Firstly, same stop-words was used which have been used by \cite{stance_persian}, After reviewing preprocessed corpus, it was hard to infer from text pieces, So we chose stop-words carefully in a way not to loose refuting or supporting expressions. Kharazi\footnote{\label{fn:kharazi}github.com/kharazi/persian-stopwords} has classified stop-words into verbal, nonverbal and short. Verbs carries valuable information in news. Nonverbal stop-word class is a better choice to remove low value words in this task. Besides some keywords in news fields are removed from Kharazi's\footref{fn:kharazi} gathered stop-words. 
+After tokenization, a list of punctuation and Persian stop-words are considered as \textit{denied} and will remove from the corpus in this step. Firstly, the same stop-words was used which have been used by \cite{stance_persian}. After reviewing preprocessed corpus, it was hard to infer the stance from text pieces. So we chose stop-words carefully in a way not to lose refuting or supporting expressions. Kharazi\footnote{\label{fn:kharazi}github.com/kharazi/persian-stopwords} has classified Persian stop-words into verbal, nonverbal, and short. Verbs carry valuable information in news. Nonverbal stop-word class is a better choice to remove low-value words in this task. Besides some keywords in news fields are removed from Kharazi's\footref{fn:kharazi} gathered stop-words. 
 
-Also English number characters will remove from corpus before tokenizing. After preprocessing tokens, all tokens will be concatenated with space character and considered as prepossessed and clean corpus.
+Also English number characters will remove from the corpus before tokenizing. After preprocessing tokens, all tokens will be concatenated with a space character and considered as prepossessed and clean corpus.
 
 
 \subsection{Word Representation}
-To represent a corpus, tokens should be converts to vector. Good vectors have to carry semantic word or n-grams, sequential words contents, and be as brief as possible. As a baseline three different Bag-of-word (\cite{bow}), TF-iDF (\cite{tfidf}), and Word-to-Vector (\cite{word2vec}) algorithms are evaluated. 
+To represent a corpus, tokens should be converts to vectors. Good vectors have to carry semantic of each word or n-grams, sequential words contents, and be as brief as possible. As a baseline three different Bag-of-word (\cite{bow}), TF-iDF (\cite{tfidf}), and Word-to-Vector (\cite{word2vec}) algorithms are evaluated against each other. More details are explained below.
 
 \subsubsection{BoW\protect\footnote{en.wikipedia.org/Bag-of-words\_model}}
-Bag-of-Words (\cite{bow}) model, is a way to represent text. BoW keeps words frequency and
-dismisses word's orders. Dimension of text representation is equal to number of specified words plus one for words that don't exist in specified words. Each cell in output text representation stands for a specific words and value of that cell is equal to number of repetition in that particular text. As an alternative, it is possible to choose n-gram instead of single word as BoW dictionary. This may improve BoW model in order to keep longer expression semantic but on the other hand dimension of representation exceed vastly. Disadvantages of this model are it doesn't specify any relation between words with similar semantic meaning. 
+Bag-of-Words (\cite{bow}) model, is a way to represent texts. BoW keeps words frequency and
+dismisses word's orders. Dimension of text representation is equal to the number of specified words plus one for words that don't exist in BoW dictionary. Each cell in output text representation stands for a specific word and the value of that cell is equal to the repetition times of that word in the particular text. As an alternative, it is possible to choose n-gram instead of a single word as BoW dictionary. This may improve BoW model performance in order to keep longer expression semantic but on the other hand dimension of representation exceed vastly. One disadvantage of BoW is it doesn't specify any relation between words with similar semantic meanings. 
 
 \subsubsection{TF-IDF}
 
-Term Frequency–Inverse Document Frequency (\cite{tfidf}) is an algorithm to present importance of each word in a corpus in statistics way. According to repetition of a specific word in each document and ... a float number will be assign to each word in that corpus.  
+Term Frequency–Inverse Document Frequency (\cite{tfidf}) is an algorithm to present the importance of each word in a corpus in a statistical way. According to the repetition of a specific word in each document and inverse effect of the number documents that the word appears in, a float number will be assigned to each word in that corpus.  
 \begin{itemize}
-	\item \textbf{Trem frequency (TF):} This item represents how many times a words used in each documents. \textit{TF} should be calculate for each document separately. \textit{TF} term calculate from equation \ref(tf)
+	\item \textbf{Trem frequency (TF):} This item represents how many times a word is used in each document. \textit{TF} should be calculated for each document separately. \textit{TF} term calculate from equation \ref{eq:tf}
 	\begin{equation}
-	\label{tf}
+	\label{eq:tf}
 		tf \left(t,D\right) = \frac{f_{t,d}}{\Sigma_{t^{`} \in d } f_{t^{`}, d}}
 	\end{equation}
 	
-	\item \textbf{Inverse Document Frequency (iDF):} This term present how much information a word have. The less repetition of a word through documents, the more information it has. This term is calculated from equation \ref{idf}. 
+	\item \textbf{Inverse Document Frequency (iDF):} This term presents how much information a word has. The less repetition of a word through documents, the more information it has. This term is calculated from equation \ref{idf}. 
 	\begin{equation}
 	\label{idf}
 		idf \left( t,D\right) = \log \frac{N}{\left|\{d\in D, t \in d\}\right| }
@@ -168,7 +163,7 @@ Term Frequency–Inverse Document Frequency (\cite{tfidf}) is an algorithm to pr
 \end{itemize}
 
 \noindent
-After calculating \textit{TF} and \textit{iDF}, TF-iDF value for each word calculate from equation \ref{tfidf}.
+After calculating \textit{TF} and \textit{iDF}, TF-iDF value for each word calculates from equation \ref{tfidf}.
 \begin{equation}
 	\label{tfidf}
 	tf-idf\left(t,d,D\right) =  tf \left( t,D\right) . idf \left( t,D\right)
@@ -176,11 +171,12 @@ After calculating \textit{TF} and \textit{iDF}, TF-iDF value for each word calcu
 
 
 \subsubsection{W2V\protect\footnote{en.wikipedia.org/wiki/Word2vec}}
-Word2vec (\cite{word2vec}) is a neural network based model which learns each word semantic and even it can recommend words with similar meaning to a specific word. Word2Vec represents each word with a vector instead of a number. After training phase, each word vector serve numbers that is generally similar to words with similar meaning and words with less similarity have lower vector similarities. This vector is called word-embedding. It is necessary to have large corpus in order to have a powerful model which can predict each word vector precisely. Multiple alternative algorithm for Word2Vec exist. In this project FastText\footnote{fasttext.cc} Word2Vec model is used with vector length equal to 300 which is trained on Persian Wikipedia website. Fasttext is an extension of Word2Vec model which treat each words as concatenated n-grams.  
+Word2vec (\cite{word2vec}) is a neural network-based model which learns each word semantic and even it can recommend words with similar meaning to a specific word. Word2Vec represents each word with a vector instead of a number. After the training phase, each word vector serves numbers that are generally similar to words with similar meaning, and words with less correspondence have lower vector similarities. This vector is called word-embedding. It is necessary to have a large corpus in order to train a powerful model which can predict each word vector precisely. Multiple alternative algorithms for Word2Vec exist. In this project, FastText\footnote{fasttext.cc} Word2Vec model is used with vector lengths equal to 300 which is trained on Persian Wikipedia website. Fasttext is an extension of Word2Vec model which treats each word as concatenated n-grams.  
 
 
 \subsection{Features}
 \label{sec:features}
+In machine learning algorithms, feature engineering can be considered as the most important step because the desired model trains patterns only corresponding to predictors. Extracting sufficient predictors as compact as possible to having the best predicting accuracy and time efficient	, requires numerous experiments. In the following part of this section, extracted features are explained in detail.
 \subsubsection{Similarity}
 Similarity score is offered by \cite{stance_persian}. This feature calculates how much a claim is similar to a headline or a news article, depends on the task. Three following sequence matching score is considered for this feature by utlizing \textit{difflib}\footnote{docs.python.org/3/library/difflib.html} python library.
 
