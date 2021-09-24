@@ -1,124 +1,9 @@
-
-
-\section{Introduction}
-
-The purpose of stance detection is to automatically find a relation type between specified sentences against a given text. So it is possible to evaluate what is the orientation of a news source towards a particular issue \cite{UCLMR}. The selected sentence could be a claim, a news item, an idea, a social network post, or any other source. Also, the text could be retrieved from news agencies, weblogs, posts that are shared on social media, and any other available text. Choosing the source and context of sentences and texts depends on the goal of the defined task. Four considered labels are \textit{Agree}, \textit{Disagreed}, \textit{Discussed}, and \textit{Not Enough Information}. 
-
-Gathering a sufficient amount of data is a vital step to achieve reliable predictor model. Both number of records in the dataset and the quality of each sample have a significant effect on prediction accuracy. \cite{takestancefake}) gathered fifty thousand articles-headline pairs for their dataset, and achieved a respectable ninety percent accuracy, which was considerably higher than previous attempts by other researchers (\cite{book_fake}). Though, in some contexts, there isn't enough available data. Here is where transfer learning methods play a vital role and compensate lack of data. We pre-trained a model on a large text corpus in a general context and then fine-tune the model on task-specified data. \cite{takestancefake} used RoBERTa model which is pre-trained on Facebook data. Then fine-tune it on the specific task at hand.
-Also, \cite{stance_robust} improved its accuracy by fine-tuning BERT model.
-
-Researchers have suggested various methods for stance classification. One cluster of methods mainly focuses on deep learning approaches. The precision of models is improved by using word embeddings such as BERT, using recurrent neural networks such as LSTM, BiLSTM (\cite{stanceCI}), and utlizing attention-based network (\cite{stanceCI}). Besides, novel model architectures such as Memory Network (\cite{memory_network}), are currently proposed.
-
-One possible way of evaluating the veracity of a given claim is detecting the stance of that claim against available trusted sources. Stance detection task traditionally were used in political and ideological debates fields \citep{stance_robust}. The idea of using Stance Detection techniques to analyze news items correctness has become caught researchers attention since 2016. Consistency of a sentence through sources can be retrieved by stance detection methods. Consequently, stance detection can be considered as a subtask of fake news detection (\cite{book_datafake}), and It is easier to judge a claim by its stance against other sources. So estimating the stance of a particular claim against available documents can be the first step in detecting fake news. 
-
-\section{Literature Review}
-\label{literature}
-	Many researchers have done to improve stance detection accuracy. Different ideas and architectures have been applied. In the following part, previous research and papers have been overviewed.  
-	
-	In 2016 \cite{Augenstein2016StanceDW} started working on the challenging task without assuming neither target is clearly mentioned in the text nor training date is given for every target. Their dataset construct of tweets mostly containing politicians and popular issues. The paper mainly focuses on detecting a stance with respect to unseen targets. \cite{Augenstein2016StanceDW} used conditional LSTM encoding on Tweeter data. \cite{Augenstein2016StanceDW} inferred that using unconditional LSTM has the best performance for unseen targets. Their results are improved by using bidirectional encoding. Using LSTM-based models lead to better results than Majority class, SVM (\cite{svc}), and BoW (\cite{bow}) as baselines in this experiment.
-	
-	 \cite{UCLMR} has developed an end-to-end stance detection system including lexical and similarity-based features which is passed through a multi-layer perception model. UCLMR's\footnote{UCL Machine Reading} model claimed third place in FNC-1\footnote{First stage of a competition Fake News Challenge(FNC-1) is exploring how artificial intelligence technologies could be leveraged to combat fake news\footnote{fakenewschallenge.org}. Numerous researchers has interest in this field and many papers has published besides this challenge.}. The model architecture is illustrated in Figure \ref{fig:UCLMR-system}. Headline and body texts are tokenized by scikit-learn\footnote{\cite{sikit-learn}}. Furthermore, \cite{UCLMR} used both term frequency (TF) vector of headline and claim and cosine similarity between head and body, and $l$2-normalized TF-IDF vectors. Besides, stop words are excluded. \cite{UCLMR} achieved FNC-1 score of 75.20\% on the test data set.
-	\begin{figure}
-		\centering
-		\includegraphics[scale=0.4]{statistics/stance/simple-baseline-FNC.png}
-		\caption{Schematic diagram of UCLMR’s system.}
-		\label{fig:UCLMR-system}
-	\end{figure}
-
-
-	\cite{Hierarchical-Attention-Network} have mainly focused on linguistic information such as polarity and argument of each document to represent a document. As shown in figure \ref{fig:hierarchical_att} document, sentiment, dependency, and argument representations are used in model architecture. \cite{Hierarchical-Attention-Network} concluded that every linguistic information with attention mechanism improves stance detection, And using linguistics features altogether outperform using them individually. More details are provided below.
-	
-	\begin{itemize}
-		\item \textbf{Document Representation}: \cite{Hierarchical-Attention-Network} used a LSTM model to represent each document.
-		\item \textbf{Sentiment Representation}: As sentiment representation, an LSTM model is used to learn the representation of sentiment information. The sentimental word sequence of each document is extracted from sentiment lexicon. 
-		\item \textbf{Dependency Representation}: This feature is used to capture inter-word relationships. Firstly, relations from the dependency parser are extracted. Then, representation of dependency sequence is learnt by using an LSTM layer.
-		\item \textbf{Argument Representation}: The argument is considered as the author's stance. \cite{Hierarchical-Attention-Network} used a binary classification to detect the document's argument sentence. Then, it learned the sequence representation of word sequence in argument sentences by making use of LSTM layer.
-	\end{itemize}
-	
-	In addition, it utilized a hierarchical attention network in order to weigh the importance of linguistic information, and learn the mutual attention between the document and linguistic information. \cite{Hierarchical-Attention-Network} mentioned that the Hyper Attention layer in Figure \ref{fig:hierarchical_att}, had a considerable influence on model performance. 
-	
-	\begin{figure}
-		\centering
-		\includegraphics[scale=0.4]{statistics/stance/hierarchial-attention-network.png}
-		\caption{Overview of \cite{Hierarchical-Attention-Network} model.}
-		\label{fig:hierarchical_att}
-	\end{figure}
-	
-	\cite{memory_network} present a novel end-to-end memory network in 2018 to predict stance and extract snippet of the prediction. The proposed model mainly focuses on relevant paragraphs. This model incorporates recurrent, convolutional neural networks and similarity matrixes. \cite{memory_network} mentioned that detecting \textit{Disagree} is the hardest label to predict. To overcome the imbalance issue, \cite{memory_network} select the same number from each class in each iteration. 
-	\begin{figure}
-		\centering
-		\includegraphics[scale=0.25]{statistics/stance/memoty_network.png}
-		\caption{Architecture of Memory Network for stance detection.}
-		\label{fig:mem_network}
-	\end{figure}
-
-	\cite{stance_robust} mainly focused on the robustness of a stance detection classifier. Trained models  on a single data set in a special domain, won't be robust enough on other domains. So they suggested using a multi-domain dataset or use multi-dataset learning methods to improve model generalization. The model architecture is constructed of fine-tuned BERT\cite{bert} and a single dense classifier at the top. \cite{stance_robust} used 5 fixed seed values during training and reported averaged results of trained models. \cite{stance_robust} concluded that MDL(multi-dataset learning) has a significant impact on increasing model robustness.
-	
-\section{Dataset}
-\label{sec:dataset}
-The first Persian stance detection dataset (\cite{stance_persian})  is used in this project. \cite{stance_persian} dataset can be used in stance detection, summarization, and fake news detection tasks. This dataset contains 2124 news articles that cover information about 534 claims. Number of samples in each class is specified in table \ref{tbl:sdatapie}. Claims are retrieved from Shayeaat \footnote{shayeaat.ir} and Fakenews\footnote{fakenews.ir} websites. Each sample contains 3 different labels for the stance detection task, containing the article's headline toward the claim, the article's body toward the claim, and the article's headline toward its body. Samples are tagged manually. Four following classes are considered for stance classifying:
-\begin{itemize}
-	\item {\color{green!70!black}\textbf{Agree:}} The article clearly states that the claim is True without any ambiguity or amphibology. 
-	\item {\color{red!70!black}\textbf{Disagree:}} The article clearly refutes that the claim without any ambiguity or amphibology. 
-	\item {\color{yellow!70!black}\textbf{Discuss:}} The article contains information about the claim but doesn't have any evaluation of its truth. 
-	\item {\color{gray!}\textbf{Unrelated:}} There isn't any information about the claim in the article.
-\end{itemize}
-Dataset samples distribution in each class is illustrated in Figure \ref{fig:datacom}. According to Figure \ref{fig:datacom}, the ratio of \textit{Agree}. Besides, \textit{Disagree} labels are much lower than the others and there is a potential risk for models to be biased on \textit{Unrelated} and \textit{Discuss}. Also, the percentage of \textit{Unrelated} label is higher in headline to claim than article to claim. A headline can be considered as a summary of news body. So, unlike news text, news headline may not have enough information to evaluate a claim.  Moreover, ratio of \textit{Discuss} to \textit{Agree} and \textit{Disagree} is higher in Article to claim in comparison to headline to claim. Accordingly, it seems that news agencies choose more controversial headlines to appeal reader's attention.
-
-Furthermore, this dataset covers each claim veracity according to related news articles. In this dataset, the main focus has been on published fake news, this can be inferred from figure \ref{fig:fake}. Three following labels are also considered for classifying news veracity for each claim-headline and claim-body pairs.
-
-\begin{itemize} 
-	\item {\color{green!70!black}\textbf{True16:}} Reliable news agencies have asserted that this claim is a fact.
-	\item {\color{red!70!black}\textbf{False120:}} Unreliable news agencies have spread data about this claim and reliable news agencies have considered this claim as hearsay.
-\item {\color{gray}\textbf{Unknown5:}} There isn't enough integrity between reliable news agencies sources.
-\end{itemize}
-
-
-
-
-\begin{table}
-	\centering
-	\caption{Class distribution}
-	\begin{tabularx}{0.8\textwidth} { 
-			| >{\centering\arraybackslash}X 
-			| >{\centering\arraybackslash}X 
-			| >{\centering\arraybackslash}X 
-			| >{\centering\arraybackslash}X 
-			| >{\centering\arraybackslash}X | }
-		\hline
-		Label & Agree & Disagree & Unrelated & Discuss \\
-		\hline
-		Headline to claim & 628  & 210  & 932 & 824  \\
-		\hline
-		Article to claim & 189  & 374  & 797 & 1196  \\
-		\hline
-		
-	\end{tabularx} 
-	\label{tbl:sdatapie}
-\end{table}
-
-\begin{figure}%
-	\centering
-	\subfloat[\centering Artcile to Claim]{{\includegraphics[width=6cm]{statistics/stance/a2c.png} }}%
-	\qquad
-	\subfloat[\centering Headline to claim ]{{\includegraphics[width=6cm]{statistics/stance/h2c.png} }}%
-	\caption{Comparison between Article to claim and Headline to claim labels, samples distribution in \cite{stance_persian} dataset.}%
-	\label{fig:datacom}%
-\end{figure}
-\begin{figure}%
-	\centering
-	{\includegraphics[width=5.5cm]{statistics/stance/fake.png} }
-	\caption{Claim veracity label's distribution in \cite{stance_persian} dataset.}%
-	\label{fig:fake}%
-\end{figure}
-  
-\section{Experiments}
 The headline of news is a summary of its body content and most of the time, it carries valuable data. So, we focused on detecting the news headlines stance towards claim(H2C), as well as the news articles stance towards a claim(B2C). According to the lower amount of text in the news headline, most of the experiments are firstly applied to H2C. Then, better approaches are applied to A2C.  
-\subsection{Preprocessing}
+\section{Preprocessing}
 The first and mandatory preprocessing step is to tokenize words in the corpus in order to remove and detect special words. Four different following tokenizer performance on Persian language has been evaluated. 
 \begin{itemize}
-	\item \textbf{Hazm\footnote{sobhe.ir}:}
-	Hazm is a python library Persian language processing tool kit. It has variety of functions such as word and sentence tokenizer, word lemmatizer, POS tagger, Shallow, and Dependency parser.
+	\item \textbf{Hazm\footnote{\label{fn:hazm}sobhe.ir}:}
+	Hazm is a python library Persian language processing tool kit. It has variety of functions such as word and sentence tokenizer, word lemmatizer, POS tagger, Shallow, and Dependency parser. \textit{Hazm} tokenizer is \textit{NLTK} compatible\footref{fn:hazm}.
 	
 	\item \textbf{NLTK\footnote{nltk.org}:}
 	NLTK (Natural Language ToolKit)) is a python platform to work easier with human language data. This tool kit supports more than 50 datasets and supports numerous languages including Persian. 
@@ -133,19 +18,19 @@ The first and mandatory preprocessing step is to tokenize words in the corpus in
 It is vital in the tokenizing step to break the corpus into correct words. It may happen that tokenizers generate meaningless words, this is why tokenizers limit the number of accepted words. Also, sometimes tokenizers haven't seen words before, and omit them while tokenizing the corpus. According to stated reasons, it is important to choose a tokenizer carefully.
 
 
-After tokenization, a list of punctuation and Persian stop-words are considered as \textit{denied} and will remove from the corpus in this step. Firstly, the same stop-words was used which have been used by \cite{stance_persian}. After reviewing preprocessed corpus, it was hard to infer the stance from text pieces. So we chose stop-words carefully in a way not to lose refuting or supporting expressions. Kharazi\footnote{\label{fn:kharazi}github.com/kharazi/persian-stopwords} has classified Persian stop-words into verbal, nonverbal, and short. Verbs carry valuable information in news. Nonverbal stop-word class is a better choice to remove low-value words in this task. Besides some keywords in news fields are removed from Kharazi's\footref{fn:kharazi} gathered stop-words. 
+After tokenization, a list of punctuation and Persian stop-words are considered as \textit{denied} and will remove from the corpus in this step. Firstly, the same stop-words was used which have been used by \cite{stance_persian}. After reviewing preprocessed corpus, it was hard to infer the stance from text pieces. So we chose stop-words carefully in a way not to lose refuting or supporting expressions. Kharazi\footnote{\label{fn:kharazi}github.com/kharazi/persian-stopwords} has classified Persian stop-words into verbal, nonverbal, and short. Verbs carry valuable information in news. Nonverbal stop-word class is a better choice to remove low-value words in this task. Besides adding and removing some words in news fields are evaluated against Kharazi's\footref{fn:kharazi} gathered stop-words. 
 
 Also English number characters will remove from the corpus before tokenizing. After preprocessing tokens, all tokens will be concatenated with a space character and considered as prepossessed and clean corpus.
 
 
-\subsection{Word Representation}
+\section{Word Representation}
 To represent a corpus, tokens should be converts to vectors. Good vectors have to carry semantic of each word or n-grams, sequential words contents, and be as brief as possible. As a baseline three different Bag-of-word (\cite{bow}), TF-iDF (\cite{tfidf}), and Word-to-Vector (\cite{word2vec}) algorithms are evaluated against each other. More details are explained below.
 
-\subsubsection{BoW\protect\footnote{en.wikipedia.org/Bag-of-words\_model}}
+\subsection{BoW\protect\footnote{en.wikipedia.org/Bag-of-words\_model}}
 Bag-of-Words (\cite{bow}) model, is a way to represent texts. BoW keeps words frequency and
 dismisses word's orders. Dimension of text representation is equal to the number of specified words plus one for words that don't exist in BoW dictionary. Each cell in output text representation stands for a specific word and the value of that cell is equal to the repetition times of that word in the particular text. As an alternative, it is possible to choose n-gram instead of a single word as BoW dictionary. This may improve BoW model performance in order to keep longer expression semantic but on the other hand dimension of representation exceed vastly. One disadvantage of BoW is it doesn't specify any relation between words with similar semantic meanings. 
 
-\subsubsection{TF-IDF}
+\subsection{TF-IDF}
 
 Term Frequency–Inverse Document Frequency (\cite{tfidf}) is an algorithm to present the importance of each word in a corpus in a statistical way. According to the repetition of a specific word in each document and inverse effect of the number documents that the word appears in, a float number will be assigned to each word in that corpus.  
 \begin{itemize}
@@ -170,18 +55,18 @@ After calculating \textit{TF} and \textit{iDF}, TF-iDF value for each word calcu
 \end{equation}
 
 
-\subsubsection{W2V\protect\footnote{en.wikipedia.org/wiki/Word2vec}}
+\subsection{W2V\protect\footnote{en.wikipedia.org/wiki/Word2vec}}
 Word2vec (\cite{word2vec}) is a neural network-based model which learns each word semantic and even it can recommend words with similar meaning to a specific word. Word2Vec represents each word with a vector instead of a number. After the training phase, each word vector serves numbers that are generally similar to words with similar meaning, and words with less correspondence have lower vector similarities. This vector is called word-embedding. It is necessary to have a large corpus in order to train a powerful model which can predict each word vector precisely. Multiple alternative algorithms for Word2Vec exist. In this project, FastText\footnote{fasttext.cc} Word2Vec model is used with vector lengths equal to 300 which is trained on Persian Wikipedia website. Fasttext is an extension of Word2Vec model which treats each word as concatenated n-grams.  
 
 
-\subsection{Features}
+\section{Features}
 \label{sec:features}
-In machine learning algorithms, feature engineering can be considered as the most important step because the desired model trains patterns only corresponding to predictors. Extracting sufficient predictors as compact as possible to having the best predicting accuracy and time efficient	, requires numerous experiments. In the following part of this section, extracted features are explained in detail.
-\subsubsection{Similarity}
-Similarity score is offered by \cite{stance_persian}. This feature calculates how much a claim is similar to a headline or a news article, depends on the task. Three following sequence matching score is considered for this feature by utlizing \textit{difflib}\footnote{docs.python.org/3/library/difflib.html} python library.
+In machine learning algorithms, feature engineering can be considered the most important step because the desired model trains patterns only corresponding to predictors. Extracting sufficient predictors as compact as possible to having the best predicting accuracy and time-efficient	, requires numerous trials and errors. In the following part of this section, extracted features are explained in detail.
+\subsection{Similarity}
+The similarity score is offered by \cite{stance_persian}. This feature calculates how much a claim is similar to a headline or a news article, depends on the task. Three following sequence matching score is considered for this feature by utilizing \textit{difflib}\footnote{docs.python.org/3/library/difflib.html} python library.
 
 \begin{itemize}
-	\item Ratio: Similarity score in float range 0,1. This paramets calcualtes from equation \ref{eq_ratio}
+	\item Ratio: Similarity score in float range 0,1. This parameters calculates from equation \ref{eq_ratio}
 	\begin{equation}
 		\label{eq_ratio}
 		ratio = \frac{2.0 * M}{T}
@@ -191,22 +76,22 @@ Similarity score is offered by \cite{stance_persian}. This feature calculates ho
 		\item{$T$}Number of elements in both sequences.
 		\item{$M$}Number of matches.
 	\end{eqexpl}
-	\item Quick Ratio: This parameter estimate an upper bound on Ratio.
-	\item Real Quick Ratio: This parameter estimate an upper bound on Ratio.
+	\item Quick Ratio: This parameter estimates an upper bound on the Ratio.
+	\item Real Quick Ratio: This parameter estimates an upper bound on the Ratio.
 \end{itemize}
-\subsubsection{Root Distance}
-This feature is suggested by \cite{stance_persian}. Root Distance stands for distance between root of a headline and some collected hedge, refuting and reporting words. Firstly, set of words which considered as mentioned group are gathered and then for each word distance is calculated.
+\subsection{Root Distance}
+This feature is suggested by \cite{stance_persian}. Root Distance stands for the distance between the root of a headline and some collected hedge, refuting and reporting words. Firstly, a set of words considered as mentioned group are gathered, and then for each word distance is calculated.
 %\newline{\color{red}=================TODO========================}
-\subsubsection{ImportantWords}
-List of controversial and challenging word in news are gathered by \cite{stance_persian} and considered as \textit{important-words}. This feature is a zero based list with the length of important words, and each cell stands for one word in \textit{important-words}. List carries number of repetition of desire words in a specific news article.
-\subsubsection{Is Question}
-Is-Question identifies whether a claim or headline a news article ends with question marks or not. \cite{stance_persian} dataset contains a column dedicated to this feature.
-\subsubsection{Has Two Parts}
-Has-Two-Parts is if a claim is construct of two separately parts. \cite{stance_persian} dataset contains a column dedicated to this feature.
-\subsubsection{Polarity}  
-Polarity of a text can be utilized in variety of tasks. This feature presents how positive or negative a text is. Different algorithm are developed to predict polarity of a text. In this project \cite{persent} dataset is used to calculate each sample sentiment. \cite{persent} contains dictionary of words with their sentiment score between -1 and 1. The more negative meaning a word has, the less value it's polarity has. For each word presents in each sample at most first 30 nonzero polarity value saves in a zero initialed vector with 30 length. As \cite{persent} contains only 1500 word polarity values, it can't cover all words in corpus and it has far way to improve. 
+\subsection{ImportantWords}
+List of a controversial and challenging words in news  gathered by \cite{stance_persian} and considered as \textit{important-words}. This feature is a zero-based list with the length of important words, and each cell stands for one word in \textit{important-words}. The list carries the number of repetitions of desire words in a specific news article.
+\subsection{Is Question}
+Is-Question identifies whether a claim or headline of a news article ends with question marks or not. \cite{stance_persian} dataset contains a column dedicated to this feature.
+\subsection{Has Two Parts}
+Has-Two-Parts is if a claim is constructed of two separate parts. \cite{stance_persian} dataset contains a column dedicated to this feature.
+\subsection{Polarity}  
+The polarity of a text can be utilized in a variety of tasks. This feature presents how positive or negative a text is. Different algorithms are developed to predict the polarity of a text. In this project, \cite{persent} dataset is used to calculate each sample sentiment. \cite{persent} contains a dictionary of words with their sentiment score between -1 and 1. The more negative the word meaning, the lower its polarity point. For each word presents in each sample at most first 30 nonzero polarity value saves in a zero initialed vector with 30 lengths. As \cite{persent} contains only 1500 word polarity values, it can't cover all words in corpus and it has a far way to improve. 
 
-In this project an idea is applies to extend PerSent (\cite{persent}) polarity dataset is to use a language model. It is possible to predict similar words with a particular word and estimate their similarity score with a language model. Firstly, similar words that don't polarity score in PerSent with their similarity scores extract from a pre-trained language model. Then search each word in PerSent dataset and apply equation \ref{eq_polar} average through all similar words polarity score, to estimate the desired word polarity score.
+In this project, an idea is applied to extend PerSent (\cite{persent}) polarity dataset is to use a language model. It is possible to predict similar words with a particular word and estimate their similarity score with a language model. Firstly, similar words that don't polarity score in PerSent with their similarity scores extract from a pre-trained language model. Then search each word in the PerSent dataset (\cite{persent}) and apply equation \ref{eq_polar} average through all similar words polarity scores, to estimate the desired word polarity score.
 
 \begin{equation}
 	\label{eq_polar}
@@ -222,21 +107,30 @@ where:
 \end{eqexpl}
 
 \bigbreak
-One alternative is to use deep neural networks model to predict polarity whether word-level or sentence-level. But due to lack of Persian dataset in this context it is not possible. Available datasets for sentiment analysis are mainly gathered from costumer comments on special businesses. For instance \cite{polar_hotel} used 2 different dataset, first it translated English sentiment analysis corpus and second used comments on hotel. \cite{polar_servic} used dataset from SnappFood\footnote{snappfood.ir}, DigiKala\footnote{digikala.ir} comments. One main problem with these datasets are difference use of language between users comments and news. Users mostly use everyday language on the other hand news agencies use formal language.
-\subsection{Machine Learning}
-Machine learning algorithms aim to learn patterns on a corpus of data while training procedure, then predict class of new test data by those patterns (\cite{book_fake}). Machine learning algorithms have powerful performance even in complex problems. Machine learning algorithms in compare to deep learning models learn patterns according to its fed manually extracted predictors, and we don't have any other choice rather than relying on those number of extracted predictors (\cite{book_fake}). So extracting useful features  is a critical step in machine learning. The more meaningful and suitable predictors they see for a task, the better patterns they can find during training procedure. Performance of each predictor described in section \ref{sec:features}, is evaluated by following machine learning methods.   
+One alternative is to use a deep neural networks model to predict score polarity of a word whether word-level or sentence-level. But due to the lack of a Persian dataset in news context, it is not practical. Available datasets for sentiment analysis are mainly gathered from customer comments on special businesses. For instance \cite{polar_hotel} used 2 different datasets, first it translated English sentiment analysis corpus and second used comments on hotels. \cite{polar_servic} used dataset from SnappFood\footnote{snappfood.ir}, DigiKala\footnote{digikala.ir} comments. One main problem with these datasets is the different use of language between user comments and news. Users mostly use everyday language on the other hand news agencies use formal language.
 
-\subsubsection{Gaussian Naive Bayes}
-First machine learning algorithm used to classify stance is Gaussian Naive Bayes Classifier (\cite{GNbayes}). It is an alternative to machine learning Naive Bayes classifier that inspires from Bayes Theorem\footnote{en.wikipedia.org/wiki/Naive\_Bayes\_classifier}:
+\section{Machine Learning}
+Machine learning algorithms aim to learn patterns on a corpus of data while training procedure, then predict classes of news articles test data by those patterns (\cite{book_fake}). Machine learning algorithms have powerful performance even in complex problems. In comparison to deep learning models, Machine learning algorithms learn patterns according to their fed manually extracted predictors, and we don't have any other choice rather than relying on those number of extracted predictors (\cite{book_fake}). So extracting useful features  is a critical step in machine learning. The more meaningful and suitable predictors they see for a task, the better patterns they can find during the training procedure. Figure \ref{fig:mlschm} illustrates a basic schematic of each machine learning models. The description of each predictor described in detail at section \ref{sec:features}, is evaluated by following machine learning methods.   
+
+\begin{figure}% 
+	\centering
+	{\includegraphics[width=14.5cm]{statistics/schema/ml.png} }
+	\caption{Schematic of each machine learning model.}%
+	\label{fig:mlschm}%
+\end{figure}
+
+
+\subsection{Gaussian Naive Bayes}
+The first machine learning algorithm used to classify stance is Gaussian Naive Bayes Classifier (\cite{GNbayes}). It is an alternative to machine learning Naive Bayes classifier that is inspired by Bayes Theorem\footnote{en.wikipedia.org/wiki/Naive\_Bayes\_classifier}:
 
 \[ P\left(y | X\right) =   \frac{P(X|y).P(X)}{P(y)} \]
 where:
 \begin{eqexpl}[25mm]
-	\item{$X$} List of predictors that are independent to each other.
+	\item{$X$} List of predictors that are independent of each other.
 	\item{$y$} Label of a class.
 	\item{$P\left(X|y\right)$} Probability of class with label $y$ from given X predictors.
 \end{eqexpl}
- Naive Bayes Classifier algorithm estimates probability of each class. Gaussian Naive Bayes means that predictors are continuous and follow Gaussian distribution:
+ Naive Bayes Classifier algorithm estimates the probability of each class. Gaussian Naive Bayes means that predictors are continuous and follow Gaussian distribution:
  
  \[p\left(x=\upsilon | C_{k}\right) = \frac{1}{\sqrt{2\pi\sigma_{k}^{2}}}e^{-\frac{\left(\epsilon-\mu_{k}\right)^{2}}{2\mu^{2}_{k}}}\]
 \begin{eqexpl}[25mm]
@@ -245,32 +139,44 @@ where:
 	\item{$\sigma^{2}_{k}$} Bessel corrected variance x values associated with $C_{k}$
 \end{eqexpl}
 
-\subsubsection{SVC\protect\footnote{wikipedia.org/Support-vector\_machine}}
+\subsection{SVC\protect\footnote{wikipedia.org/Support-vector\_machine}}
 \label{SVM}
-SVC stands for SVM classifier. Support Vector Machines (\cite{svc})  are group of supervised machine learning models. One of their application is classification. SVM algorithms map each sample to a space that each class samples be as far as possible from other class samples. In the other word SVM id looking for a n-dimensional hyperplane which can separate classes as clearly as possible.
+SVC stands for SVM Classifier. Support Vector Machines (\cite{svc})  are a group of supervised machine learning models. One of their applications is the classification problem. SVM algorithms map each sample to a space such that samples of a particular class locate as far as possible from other classes samples. In other words, SVM is looking for an n-dimensional hyperplane which can separate classes as clearly as possible.
 
-SVC model from \textit{scikit-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html} python library is used in this project. Regularization parameter ($ c $) which is stands for strength of regularization is set to 10. As a kernel three different \textit{rbf}, \textit{sigmoid}, and \textit{poly} hyperplane are evaluated. Kernel specifies the type of separator that SVM algorithm use to distinguish different classes. Furthermore, \textit{class\_weight} parameter set to \textit{balanced} which mean set different weight for each class during training to compensate imbalanced data. 
+SVC model from \textit{scikit-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html} python library is used in this project. Regularization parameter ($ c $) which is stands for strength of regularization is tuned depends on task. As the kernel three different \textit{rbf}, \textit{sigmoid}, and \textit{poly} hyperplane are evaluated. Kernel specifies the type of separator that SVM algorithm uses to distinguish different classes. Furthermore, \textit{class\_weight} parameter set to \textit{balanced} which mean set different weight for each class during training to compensate imbalanced data. 
 
 
-\subsubsection{LinearSVC}
-LinearSVC is a ulternative algorithm for SVC in large datasets. LinearSVC linearly separates samples. Depends on dataset it may works better than nonlinear SVC. This model is same as SVC from previous part, only different is to set \textit{kernel} parameter equal to linear. 
+\subsection{LinearSVC}
+LinearSVC is an alternative algorithm for SVC in large datasets. LinearSVC linearly separates samples. Depends on the dataset, it may work better than nonlinear SVC. This model is the same as SVC from the previous part, the only difference is to set \textit{kernel} parameter equal to linear. 
  
-\subsubsection{Random Forest}
-Random Forest (\cite{randomforest}) is a machine learning algorithm to deal with complex classification problems. It construct of many decision trees. The point is that it is more robust than decision threes. Besides Random Forest classifier doesn't need parameter tuning. Each decision three has it's own prediction and final prediction of the model is calculated bt majority voting of each tree output. 
+\subsection{Random Forest}
+Random Forest (\cite{randomforest}) is a machine learning algorithm to deal with complex classification problems. It constructs of many decision trees. The point is that it is more robust than decision threes. Besides Random Forest classifier doesn't need parameter tuning. Each decision three has its own prediction and the final prediction of the model is calculated bt majority voting of each tree output. 
 
-In this project, implemented Random Forest algorithm from \textit{scikit-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html} python library is used. Two parameters of \textit{max\_depth} and \textit{min\_samples\_leaf} control size of each decision tree. They are respectively set to 10 and 1. \textit{min\_samples\_split} bounds least number of samples to apply on a tree, is set to 3. 
+In this project, implemented Random Forest algorithm from \textit{scikit-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html} python library is used. Three parameters of \textit{max\_features} (Maximum number of features allowed to use for each tree), \textit{estimator} (Number of decision trees), and \textit{criterion} (Algorithm to measure quality of splits in nodes) are tuned for the desired task.
 
-\subsubsection{Logistic Regression}
-Logistic Regression is a machine learning classification algorithm. It's functionality is mainly for Binary Classification and In multi-class Logistic regression classifies, one class vs rest. This algorithm uses 'Sigmoid function' as it's cost function and its prediction is based on probabilities. 
+\subsection{Logistic Regression}
+Logistic Regression is a machine learning classification algorithm. Its functionality is mainly for Binary Classification. In multi-class datasets, logistic regression classifies one class vs rest. This algorithm uses Sigmoid function as its cost function and its prediction is based on probabilities. 
 
-Implemented Logistic Regression algorithm from \textit{sckiti-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LogisticRegression.html} python library is used. \textit{penalty} parameter could be choosed from \textit{l1}, \textit{l2}, and \textit{elasticnet} for penalization and regularization.
+Implemented Logistic Regression algorithm from \textit{sckiti-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LogisticRegression.html} python library is used. \textit{penalty} parameter could be chosen from \textit{l1} (Equation \ref{eq:logil}), \textit{l2} (Equation \ref{eq:logill}), and \textit{elasticnet} (Equation \ref{eq:logisel}) for penalization and regularization.
 \begin{itemize}
+	
 	\item $l1$
-		\[ min_{\omega,c} \; \frac{1}{2}\omega^{T}\omega + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right) \]
+		\begin{equation}
+		\label{eq:logil}
+		 min_{\omega,c} \; \frac{1}{2}\omega^{T}\omega + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right)
+		\end{equation}
 	\item $l2$
-		\[ min_{\omega,c} \; \left|\left|\omega\right|\right|_{1} + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right) \]
+		\begin{equation}
+		\label{eq:logill}
+		 min_{\omega,c} \; \left|\left|\omega\right|\right|_{1} + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right) 
+		\end{equation}
+		
 	\item $elastic-net$
-		\[ min_{\omega,c} \; \frac{1-\rho}{2}\omega^{T}\omega +\rho\left|\left|\omega\right|\right|_{1} + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right) \]
+		\begin{equation}
+		\label{eq:logisel}
+		min_{\omega,c} \; \frac{1-\rho}{2}\omega^{T}\omega +\rho\left|\left|\omega\right|\right|_{1} + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right) 
+		\end{equation}
+	
 \end{itemize}
 where:
 \begin{eqexpl}[25mm]
@@ -278,12 +184,12 @@ where:
 	\item{$y_{i}$} Takes value between -1, 1.
 \end{eqexpl}
 \bigbreak
-Elastic-Net Penalization is used with $\; \rho \;$ parameter equals to 0.5, means $\;l1\;$ and $\;l2\;$ have same powers and \textit{solver} parameter which stand for optimizer algorithm is set to \textit{sega} which is an alternative for Stochastic Average Gradient (sag) optimizer. 
+Elastic-Net Penalization is used with $\; \rho \;$ parameter equals to 0.5, means $\;l1\;$ and $\;l2\;$ have the same powers and \textit{solver} parameter which stands for optimizer algorithm is set to \textit{sega} which is an alternative for Stochastic Average Gradient (sag) optimizer. 
 
-Another configuration for Logistic Regression is also evaluated. In this setup, optimizer is set to \textit{lbfgs} which performs more robust in larger datasets. Although, \textit{lbfgs} optimizer is slower than \textit{saga}.  Also, penalization is set to $\; l2 \;$\footnote{scikit-learn.org/stable/modules/linear\_model.html\#logistic-regression}.
+Another optimization algorithm for Logistic Regression such as \textit{sag}, \textit{lbfgs}, and \textit{liblinear} are also evaluated. In this setup, penalization is set to $\; l2$. \textit{lbfgs} optimizer performs more robust in larger datasets. Although, it is slower than \textit{saga}\footnote{scikit-learn.org/stable/modules/linear\_model.html\#logistic-regression}. 
 
-\subsection{Balancing}
-As mentioned in section \nameref{sec:dataset}, Figure \ref{fig:datacom}, number of samples in dataset classes was imbalanced. As a result, models bias on majority class and there may not enough sample in minority class for model to learn that, this leads to having high accuracy score (Equation \ref{eq:acc}) while having low f1 score (Equation \ref{eq:f1}).  
+\section{Balancing}
+As mentioned in section \nameref{sec:dataset}, Figure \ref{fig:datacom}, the number of samples in dataset classes was imbalanced. As a result, models bias on majority class and there may not enough sample in minority class for a model to learn that, this leads to having high accuracy score (Equation \ref{eq:acc}) while having low f1 score (Equation \ref{eq:f1}).  
 \begin{equation}
 \label{eq:acc}
 F1 = \frac{TP + TN }{TP + FN + TN + FP}
@@ -307,12 +213,12 @@ where:
 \end{eqexpl}
 
 \bigbreak
-There are several algorithm to deal with imbalanced datasets. In \cite{stance_persian} minority class forms only 7.4\% of data (Figure \ref{fig:datacom}). So it's not practical to rely on only one method and except to perform in the best way. Consecuently, three different methods used in this project in order to dealing with this phenomenon. Methods of balancing dataset which are used in this project is described in following sections.  
+There are several algorithms to deal with imbalanced datasets. In \cite{stance_persian} minority class forms only 7.4\% of data (Figure \ref{fig:datacom}). So it's not practical to rely on only one method and except to perform in the best way. Consequently, three different methods were used in this project in order to deal with this phenomenon. Methods of balancing a dataset which is used in this project are described in the following sections.  
 	
-\subsubsection{\textbf{Extending dataset:}}
-The simplest method is to gather data for classes except majority class. But unfortunately it is not always practicable. Another way of extending dataset is to use another existing dataset which has similar gathering logics and it is possible to map these two dataset classes. 
+\subsection{Extending dataset}
+The simplest method is to gather data for classes except for the majority class. But unfortunately, it is not always practicable. Another way of extending a dataset is to use another existing dataset which has similar gathering logic and it is possible to map these two dataset classes. 
 
-ParsFEVER (\cite{parsfever}) is a persian dataset set based on FEVER (\cite{fever}) dataset is gathered for fact extraction and verification task. \cite{parsfever} claims are generated from Wikipedia\footnote{wikipedia.org} articles manually, then evidences for each claim are extracted from Wikipedia separately by distinct annotators. This dataset contains three \textit{Support}, \textit{Refute}, and \textit{Not Enough Info} classes. 
+ParsFEVER (\cite{parsfever}) is a Persian dataset set based on FEVER (\cite{fever}) dataset is gathered for fact extraction and verification task. \cite{parsfever} claims are generated from Wikipedia\footnote{wikipedia.org} articles manually, then pieces of evidence for each claim are extracted from Wikipedia separately by distinct annotators. This dataset contains three \textit{Support}, \textit{Refute}, and \textit{Not Enough Info} classes. 
 \begin{itemize}
 	\item {\color{green!70!black}\textbf{Support:}} The article obviously proves the given claim. 
 	\item {\color{red!60!black}\textbf{Refute:}} The article obviously disproves the given claim.
@@ -331,52 +237,122 @@ But it is not possible to extend \textit{Discuss} or \textit{Unrelated} class by
 	\label{fig:datab1}%
 \end{figure}
 
-\subsubsection{\textbf{Oversampling and Undersampling:}}
- Another common way of dealing with imbalanced dataset is automatically augmenting samples to achieve balanced class distribution (Oversampling) or even reduce number of samples in majority class (Undersampling). Undersampling is applicable on large dataset. But in small dataset it's not wisely to ignore some samples. Oversampling methods suites for such datasets. According figure \ref{fig:datab1} Despite extending dataset with \cite{parsfever} dataset, balancing dataset is still needed. Though, oversamping shoud be performed on minority class only. It is important to split test and train sets before resampling, and oversampling should be only apply on train set. Resampling methods that evaluated are: 
+\subsection{Oversampling and Undersampling}
+ Another common way of dealing with an imbalanced dataset is automatically augmenting samples to achieve balanced class distribution (Oversampling) or even reduce the number of samples in the majority class (Undersampling). Undersampling is applicable on a large dataset. But in small datasets, it's not wise to ignore some samples. Oversampling methods suites for such datasets. According to figure \ref{fig:datacom}, oversampling should be performed classes except the majority class. It is important to split test and train sets before resampling, and oversampling should be only apply on the train set. Resampling methods that were evaluated are: 
 \begin{itemize}
 	\item \textbf{RandomOverSampler\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.RandomOverSampler.html}:} This method randomly peak samples from classes and resample them. Random Over Sampler is the most naive algorithm and its performance is same as increasing minority class loss weight. Another variant of this method is smoothed bootstrap oversampling. It is generally similar to Random Oversampler, but new samples don't exactly overlap original samples. They are adjacent to source samples. This variant can be implement by \textit{shrinking} parameter in \textit{RandomOverSampler} from \textit{imblearn} python library. 
 	
 	\item \textbf{SMOTE:} 
-	Synthetic Minority Over-sampling Technique (\cite{smothe}) is an oversampling method by generating new samples by interpolation. It's not important for smothe sampler that which point is choosed to be resampled. 
+	Synthetic Minority Over-sampling Technique (\cite{smothe}) is an oversampling method by generating new samples by interpolation. It's not important for smothe sampler that point is chosen to be resampled. 
 	
 	\item \textbf{SVMSMOT\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.SVMSMOTE.html}:} 
-	SVMSMOTE (\cite{svmsmothe}) is a variant of SMOTE oversampler which uses SVM (Section \ref{SVM}) algorithm to choose resampling samples. One strength of this model that it is effective to both vector data and sequence data (\cite{svmsmothe}).
+	SVMSMOTE (\cite{svmsmothe}) is a variant of SMOTE oversampling method which uses SVM (Section \ref{SVM}) algorithm to choose resampling samples. One strength of this model is that it is effective for both vector data and sequence data (\cite{svmsmothe}).
 	
 	\item \textbf{BorderlineSMOTE\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.BorderlineSMOTE.html}:} 
 	BorderlineSMOTE (\cite{borderlinesmothe}) is also another variant of SMOTE oversampler. Borderline samples are mainly chosen to get resample in this variant. \cite{borderlinesmothe} has achieved better accuracy than SMOTE.
 	\item \textbf{ADASYN\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.ADASYN.html}:} 
-	Adaptive Synthetic Sampling Approach for Imbalanced Learning (\cite{adasyn}) focuses on generating new samples adjacent to those samples wrongly classified by employing K-Nearest Neighbors classifier. These samples are considered as hard samples because it's not easy for models to predict them, as a result ADASYN increases robustness of desired dataset. This method performs better in compare to Decision Tree and SMOTE algorithms (\cite{adasyn}). In this project number of nearest neighbors to generate new sample is set to 9.
+	Adaptive Synthetic Sampling Approach for Imbalanced Learning (\cite{adasyn}) focuses on generating new samples adjacent to those samples wrongly classified by employing K-Nearest Neighbors classifier. These samples are considered as hard samples because it's not easy for models to predict them, as a result, ADASYN increases the robustness of the desired dataset. This method performs better in comparison to Decision Tree and SMOTE algorithms (\cite{adasyn}). In this project number of nearest neighbors to generate a new sample is set to 9.
 	
 \end{itemize}
 All mentioned oversampling methods are evaluated against each other in this project and utilized from oversampling package of \textit{imblearn} \footnote{imbalanced-learn.org/stable/references/over\_sampling.html} python library. 
 
-\subsubsection{\textbf{Tune mode parameters:}}
- The last but not least important balancing method is to choose a robust learning algorithm to imbalanced dataset, Choosing weight of each class according to ratio of each class samples and choosing optimizer and loss function that can overcome imbalanced dataset. After applying previous methods to balance dataset, this step can be skipped in this project. 
+\subsection{Tune mode parameters}
+ The last but not least important balancing method is to choose a robust learning algorithm for an imbalanced dataset, Choosing a weight of each class according to the ratio of samples of each class and choosing an optimizer and loss function that can overcome an imbalanced dataset. After applying previous methods to balance the dataset, this step can be skipped in this project. 
 
 
 
 
-\subsection{Deep Learning}
-At baseline, machine learning algorithm applied to evaluate features Affects 
+\section{Deep Learning}
+In deep learning approach, a combination of all predictors can be fed into the model and the model on its own will automatically learns which predictor is useful for the task. This property is the biggest advance of deep learning in comparison to machine learning (\cite{book_datafake}). In contrary, in machine learning it was a critical step to design input predictors that the model can performs the best. And hours of trying different combination of predictors is needed (\cite{book_fake}). \cite{stance_robust} assessed that, In contrast deep learning models, machine learning models that is trained on a single dataset, usually generalize poorly to other domains.
 
-\cite{stance_robust}ML models trained on a single dataset usually generalize poorly to other
-domains.
+\begin{figure}% 
+	\centering
+	{\includegraphics[width=14.5cm]{statistics/schema/dl.png} }
+	\caption{Schematic of each machine learning model.}%
+	\label{fig:dlschm}%
+\end{figure}
 
-baseline 
-\newline
-Bert
-\newline
-roberta
-\section{Results}
-Moreover, the black-box nature of
-machine learning algorithms means that nobody really knows why an AI lie
-detection system works as it does, nor what it is actually doing.(\cite{book_fake})
+\subsection{BERT}
+ParsBERT (\cite{ParsBERT}) pre-trained model is used at the top of the model. ParsBERT model is a monolingual transfromer language model based on Google's BERT model \cite{bert}. Pretrained BERT model is adopt from HooshvareLab\footnote{\href{https://huggingface.co/HooshvareLab}{huggingface.co}}. BERT is used to extract in context features from the corpus. Input of the model are \textit{input ids}, \textit{token type ids}, and \textit{attention mask}. Then, two dense layer and another dense layer as the classifier is added to the output of the BERT model. 
 
-\textbf{train procedure for each method}
+\subsection{ALBERT}
+In this experiment, ALBERT (\cite{albert})	 model is substitute with BERT model in figure \ref{fig:deepshema}.  Other configurations are same as BERT experiment.
 
-\textbf{compare test results}
+\section{Article to Claim}
+Deep learning models perform far better on language inference tasks so they are better choices for article-to-claim stance classification. To calculate stance of a claim toward the body of a news, three different model based on a pre-trained Persian language model based on BERT, ParsBERT, and  ALBERT are evaluated against each other. 
 
-\section{Conclusion}
-talk about best method
-\newline
-talk about other possible ways
+\section{Fake News Detection}
+To detect a news article veracity, headline-to-claim and article-to-claim stance detection models, are considered as a black box. Four news articles is considered to evaluate veracity of a claim. Firstly, stance of a claim toward each headline of desired news articles and the body of the news article predict by stance classifier models. All predicted stance vectors are concatenated and along with some other features are fed into a multi-layer perception network in order to predict the claim veracity.
+
+Credibility of news websites is one of the most important extracted feature. The credibility can be calculated through the following steps (The credibility score of head-claim and article-claim is calculated similarly except using their related stance ground truth):
+
+\begin{itemize}
+	\item \textbf{Initialization}: The credibility score of all news websites that are existing in the \cite{stance_persian} dataset is set to zero at first. For the test set or predicting new samples, if the website doesn't exist in the data set, credit score is set to 0.1.
+
+
+	\item \textbf{Quantification:}
+	For each sample in the dataset, credibility score changes according to Table \ref{tbl:cred}. $\rho$ value is calculated from equation \ref{eq:cred} if it is needed.
+	\begin{table}[H]
+		\centering
+		\caption{Value of credibility according to GroundTruth and Veracity labels. }
+		\setlength{\extrarowheight}{13pt}%
+		\begin{tabular}{|l|l|l|}
+			\hline
+			GroundTruth & Veracity & Value \\
+			\hline
+			Agree       & True     & $+1$    \\
+			\hline
+			Disagree    & False    & $+1$    \\
+			\hline
+			Agree       & False    & $-1$    \\
+			\hline
+			Disagree    & True     & $-1$    \\
+			\hline
+			Discuss     & True     & $+\rho$    \\
+			\hline
+			Discuss     & False    & $-\rho$   \\
+			\hline
+			Unrelated     & -   & No change   \\
+			\hline
+			-     & Discuss    & No change   \\
+			\hline
+		\end{tabular}
+		\label{tbl:cred}
+	\end{table}
+
+	\begin{equation}
+	\label{eq:cred}
+	\rho = \frac{P(x,Agree) - P(x,Disagree)}{P(x,Agree) + P(x,Disagree)}\\
+	\end{equation}
+
+where: 
+\begin{eqexpl}[25mm]
+\item{$P(x,Agree)$} Probability of Agree
+\item{$P(x,Disagree)$} Probability of Disagree 
+\end{eqexpl}
+	
+	\item \textbf{Score Calculation:} The credibility score for each news website is calculated from equation \ref{eq:honesty}.
+	\begin{equation}
+	\label{eq:honesty}
+	H(X) = \frac{\sum_{i=1}^{k_{X}} credibility\,of\,x_{i}}{k_{X}}
+	\end{equation} 
+	where:
+	\begin{eqexpl}[25mm]
+		\item{$X$} A news website
+		\item{$k_{x}$} The number of news article in the dataset from x
+		\item{$credibility\,of\,x_{i}$} Due to table \ref{tbl:cred}
+	\end{eqexpl}
+
+\end{itemize}
+
+
+Also another features are extracted to detect fake news, such as :
+\begin{itemize}
+	\item One-hot encoding of the news website domain
+	\item The ratio of samples that have been properly labeled as agree or disagree to the total sample of the news website (Correct ratio)
+	\item The ratio of samples that have been wrongly labeled as agree or disagree to the total sample of the news website (Wrong ratio)
+	\item The ratio of the total number of news website articles to the total number of articles in the data set.	
+\end{itemize}
+
+
+

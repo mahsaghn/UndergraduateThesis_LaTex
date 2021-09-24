@@ -1,6 +1,11 @@
 This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
+Case mismatch error between cite keys ParsBERT and parsbert
+---line 199 of file main.aux
+ : \citation{ParsBERT
+ :                   }
+I'm skipping whatever remains of this command
 The style file: acl_natbib.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -18,12 +23,11 @@ I was expecting a `,' or a `}'---line 89 of file main.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "takestancefake" isn't style-file defined
---line 247 of file main.bib
-Illegal end of database file---line 260 of file main.bib
- :  published = {arXiv}
- :                     
+--line 242 of file main.bib
+Repeated entry---line 264 of file main.bib
+ : @inproceedings{bert
+ :                    ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "randomforest"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Too many commas in name 1 of "Majid Zarharan, Samane Ahangar, Fatemeh Sadat Rezvaninejad, Mahdi Lotfi Bidhendi,Shaghayegh Sadat Jalali, Sauleh Eetemadi, Mohammad Taher Pilehvar, Behrouz Minaei-Bidgoli" for entry stance_persian
 while executing---line 1896 of file acl_natbib.bst
@@ -193,45 +197,45 @@ Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dea
 while executing---line 1967 of file acl_natbib.bst
 Warning--empty booktitle in svmsmothe
 Warning--empty booktitle in parsfever
-You've used 26 entries,
+You've used 30 entries,
             3571 wiz_defined-function locations,
-            831 strings with 10377 characters,
-and the built_in function-call counts, 17788 in all, are:
-= -- 1538
-> -- 822
-< -- 21
-+ -- 259
-- -- 231
-* -- 1067
-:= -- 2653
-add.period$ -- 103
-call.type$ -- 26
-change.case$ -- 222
-chr.to.int$ -- 26
-cite$ -- 34
-duplicate$ -- 1247
-empty$ -- 1308
-format.name$ -- 305
-if$ -- 3936
+            846 strings with 10989 characters,
+and the built_in function-call counts, 20772 in all, are:
+= -- 1781
+> -- 998
+< -- 23
++ -- 314
+- -- 282
+* -- 1270
+:= -- 3102
+add.period$ -- 119
+call.type$ -- 30
+change.case$ -- 261
+chr.to.int$ -- 30
+cite$ -- 38
+duplicate$ -- 1449
+empty$ -- 1508
+format.name$ -- 370
+if$ -- 4583
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 250
-newline$ -- 127
-num.names$ -- 105
-pop$ -- 610
+missing$ -- 293
+newline$ -- 147
+num.names$ -- 121
+pop$ -- 706
 preamble$ -- 1
-purify$ -- 181
+purify$ -- 214
 quote$ -- 0
-skip$ -- 924
+skip$ -- 1062
 stack$ -- 0
-substring$ -- 560
-swap$ -- 561
-text.length$ -- 9
+substring$ -- 639
+swap$ -- 657
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 231
+type$ -- 267
 warning$ -- 8
-while$ -- 98
+while$ -- 113
 width$ -- 0
-write$ -- 323
-(There were 83 error messages)
+write$ -- 374
+(There were 84 error messages)

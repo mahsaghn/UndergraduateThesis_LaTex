@@ -87,6 +87,8 @@
 \usepackage{enumitem}
 
 \usepackage{eqexpl}
+\usepackage{comment}
+
 \begin{document}
 
 \input{00-titlepages.tex}
@@ -103,26 +105,32 @@
 \listoftables
 \clearpage
 
-%\chapter {Background}
-%\input{04-background}
 
 % \chapter {Literature Review}
 % \input{04-literaturereview}
 
-%\chapter {Introduction}
-%\input{04-intro}
+\chapter {Introduction}
+\input{04-intro}
 
-%\chapter {Fact Verification and Extraction}
-%\label{chapter:two}
-%\input{05-factchecking}
+\chapter {Background}
+{\color{green}TODO}
+\input{04-background}
 
-\chapter{Stance Detection}
-\label{chapter:three}
+\chapter {Related Works}
+\label{literature}
+\input{05-relatedworks}
+
+\chapter{Dataset}
+\label{sec:dataset}
+\input{06-dataset}
+
+\chapter{Experiments}
+\label{sec:exp}
 \input{06-stance}
 
-\chapter {Fake News}
+\chapter {Results}
 \label{chapter:four}
-\input{07-fakenews}
+\input{07-results}
 
 \chapter{Conclusion}
 \input{08-conclusion}
@@ -138,17 +146,32 @@
  }
 
 \beginsupplement
-\chapter{Appendix One}
-\section{Appendix section 1}
-\begin{table}[]
-    \centering
-    \begin{tabular}{c|c}
-         &  \\
-         & 
-    \end{tabular}
-    \caption{Table in the Appendix}
-    \label{tab:my_label}
-\end{table}
+\begin{comment}
+	\chapter{Appendix One}
+	\section{Appendix section 1}
+	\begin{table}[]
+	\centering
+	\begin{tabular}{c|c}
+	&  \\
+	& 
+	\end{tabular}
+	\caption{Table in the Appendix}
+	\label{tab:my_label}
+	\end{table}	
+\end{comment}
+
+\newpage
+
+\vspace*{3cm}
+{
+\centering
+\includegraphics[width=4cm]{iust.jpeg}
+\\
+\bigbreak
+\centerline {\textbf{Iran University of Science and Technology}}
+\bigbreak
+\large\centerline {\textbf{Computer Engineering Department}}
+}
 
 \end{document}
 

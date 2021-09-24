@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{30}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Augenstein et~al.(2016)Augenstein, Rockt{\"a}schel, Vlachos, and
@@ -57,6 +57,13 @@ A.~Gramfort V. Michel B. Thirion O. Grisel M. Blondel P. Pret-tenhofer R. Weiss
   G.~Varoquaux and M.~P.~E. Duchesnay. 2011.
 \newblock Scikit-learn: Machine learning in python.
 
+\bibitem[{Farahani et~al.(2020)Farahani, Gharachorloo, Farahani, and
+  Manthouri}]{parsbert}
+Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, and M.~Manthouri.
+  2020.
+\newblock Parsbert: Transformer-based model for persian language understanding.
+\newblock \emph{ArXiv}, abs/2005.12515.
+
 \bibitem[{Giansiracusa(2021)}]{book_fake}
 Noah Giansiracusa. 2021.
 \newblock How algorithms create and prevent fake news.
@@ -83,6 +90,19 @@ George~H. John and Pat Langley. 1995.
 \newblock Estimating continuous distributions in bayesian classifiers.
 \newblock In \emph{Proceedings of the Eleventh Conference on Uncertainty in
   Artificial Intelligence}, page 338–345. Morgan Kaufmann Publishers Inc.
+
+\bibitem[{Lan et~al.(2020)Lan, Chen, Goodman, Gimpel, Sharma, and
+  Soricut}]{albert}
+Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and
+  Radu Soricut. 2020.
+\newblock Albert: A lite bert for self-supervised learning of language
+  representations.
+\newblock \emph{ArXiv}.
+
+\bibitem[{Liaw and Wiener(2002)}]{randomforest}
+Andy Liaw and Matthew Wiener. 2002.
+\newblock Classification and regression by randomforest.
+\newblock \emph{R News}, 2:18--22.
 
 \bibitem[{Majid~Zarharan(2019)}]{stance_persian}
 Fatemeh Sadat Rezvaninejad Mahdi Lotfi Bidhendi Shaghayegh Sadat Jalali Sauleh
@@ -126,6 +146,14 @@ Claude Sammut and Geoffrey~I. Webb, editors. 2010.
 Benjamin Schiller, Johannes Daxenberger, and Iryna Gurevych. 2020.
 \newblock Stance detection benchmark: How robust is your stance detection?
 \newblock \emph{ArXiv}, abs/2001.01565.
+
+\bibitem[{Singhal et~al.(2019)Singhal, Shah, Chakraborty, Kumaraguru, and
+  Satoh}]{spotfake}
+Shivangi Singhal, Rajiv~Ratn Shah, Tanmoy Chakraborty, Ponnurangam Kumaraguru,
+  and Shin'ichi Satoh. 2019.
+\newblock Spotfake: A multi-modal framework for fake news detection.
+\newblock In \emph{2019 IEEE Fifth International Conference on Multimedia Big
+  Data (BigMM)}, pages 39--47.
 
 \bibitem[{Sun et~al.(2018)Sun, Wang, Zhu, and
   Zhou}]{Hierarchical-Attention-Network}
