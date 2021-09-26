@@ -1,11 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-Case mismatch error between cite keys ParsBERT and parsbert
----line 199 of file main.aux
- : \citation{ParsBERT
- :                   }
-I'm skipping whatever remains of this command
 The style file: acl_natbib.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -191,51 +186,52 @@ while executing---line 1967 of file acl_natbib.bst
 Too many commas in name 1 of "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, Mohammad Manthouri" for entry polar_servic
 while executing---line 1967 of file acl_natbib.bst
 Warning--empty booktitle in stanceCI
+Warning--empty journal in book_disinformation
 Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
 while executing---line 1967 of file acl_natbib.bst
 Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
 while executing---line 1967 of file acl_natbib.bst
 Warning--empty booktitle in svmsmothe
 Warning--empty booktitle in parsfever
-You've used 30 entries,
+You've used 31 entries,
             3571 wiz_defined-function locations,
-            846 strings with 10989 characters,
-and the built_in function-call counts, 20772 in all, are:
-= -- 1781
-> -- 998
+            850 strings with 11154 characters,
+and the built_in function-call counts, 21410 in all, are:
+= -- 1829
+> -- 1040
 < -- 23
-+ -- 314
-- -- 282
-* -- 1270
-:= -- 3102
-add.period$ -- 119
-call.type$ -- 30
-change.case$ -- 261
-chr.to.int$ -- 30
-cite$ -- 38
-duplicate$ -- 1449
-empty$ -- 1508
-format.name$ -- 370
-if$ -- 4583
++ -- 327
+- -- 294
+* -- 1316
+:= -- 3203
+add.period$ -- 122
+call.type$ -- 31
+change.case$ -- 270
+chr.to.int$ -- 31
+cite$ -- 40
+duplicate$ -- 1492
+empty$ -- 1548
+format.name$ -- 385
+if$ -- 4716
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 293
-newline$ -- 147
-num.names$ -- 121
-pop$ -- 706
+missing$ -- 302
+newline$ -- 151
+num.names$ -- 125
+pop$ -- 731
 preamble$ -- 1
-purify$ -- 214
+purify$ -- 222
 quote$ -- 0
-skip$ -- 1062
+skip$ -- 1091
 stack$ -- 0
-substring$ -- 639
-swap$ -- 657
+substring$ -- 650
+swap$ -- 673
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 267
-warning$ -- 8
-while$ -- 113
+type$ -- 276
+warning$ -- 9
+while$ -- 116
 width$ -- 0
-write$ -- 374
-(There were 84 error messages)
+write$ -- 384
+(There were 83 error messages)

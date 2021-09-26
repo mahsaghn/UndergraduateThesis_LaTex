@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{31}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Augenstein et~al.(2016)Augenstein, Rockt{\"a}schel, Vlachos, and
@@ -146,6 +146,10 @@ Claude Sammut and Geoffrey~I. Webb, editors. 2010.
 Benjamin Schiller, Johannes Daxenberger, and Iryna Gurevych. 2020.
 \newblock Stance detection benchmark: How robust is your stance detection?
 \newblock \emph{ArXiv}, abs/2001.01565.
+
+\bibitem[{Shu et~al.(2020)Shu, Wang, Lee, and Liu}]{book_disinformation}
+Kai Shu, Suhang Wang, Dongwon Lee, and Huan Liu. 2020.
+\newblock Disinformation, misinformation, and fake news in social media.
 
 \bibitem[{Singhal et~al.(2019)Singhal, Shah, Chakraborty, Kumaraguru, and
   Satoh}]{spotfake}

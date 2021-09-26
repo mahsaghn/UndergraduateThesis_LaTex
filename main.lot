@@ -2,9 +2,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Class distribution\relax }}{26}{table.caption.8}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Stance class distribution\relax }}{26}{table.caption.8}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Fake news data set statistics\relax }}{27}{table.caption.10}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Value of credibility according to GroundTruth and Veracity labels. \relax }}{44}{table.caption.14}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Value of credibility according to GroundTruth and Veracity labels. \relax }}{44}{table.caption.16}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Comparison of accuracy and F1-score with different combinations of predictors for both SVM and Random Forest classifiers.\relax }}{52}{table.caption.19}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Comparison of accuracy and F1-score with different combinations of predictors for both SVM and Random Forest classifiers.\relax }}{52}{table.caption.21}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces comparison of headline-to-claim stance detection models.\relax }}{59}{table.caption.31}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Comparison of article-to-claim machine learning and deep learning models.\relax }}{59}{table.caption.32}%
 \addvspace {10\p@ }

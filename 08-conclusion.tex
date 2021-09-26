@@ -1,7 +1,10 @@
-Moreover, the black-box nature of
-machine learning algorithms means that nobody really knows why an AI lie
-detection system works as it does, nor what it is actually doing.(\cite{book_fake})
+Machine learning models are evaluated on Persian stance detection task as baseline. Multiple predictors are extracted and different combination of them are applied on machine learning models to find out the most effective predictor combination. Due imbalanced samples distribution in the \cite{stance_persian} dataset, extending the dataset by ParsBERT dataset (\cite{parsbert}) and oversampling methods are discussed and compared to each other.
 
-talk about best method
-\newline
-talk about other possible ways
+In the Persian stance detection task, using deep language models boosts performance noticeably. BERT and ParsBERT as it's alternative have high ability to make inference from a given content so they can represent current content sufficiently and test accuracy in the model based on ParsBERT language model is equal to 85.48\%. As the result,  BERT language models predict stance detection 10\% higher than machine learning algorithm on average. In contrast, requires time consuming feature engineering and parameter tuning and they can't achieve high accuracy on language inference tasks. For both machine learning and deep learning models performance decrease on article-to-claim task. Despite of this issue, machine learning algorithm have achieve even higher than 70\% accuracy score on headline-to-claim task. The black-box nature of machine learning algorithms means that nobody really knows why an AI lie detection system works as it does, nor what it is actually doing (\cite{book_fake}). 
+
+The best pretrained stance detection model on headline-to-claim and article-to-claim are separately utilized in fake news detection. We have achieve 99\% accuracy score on the \cite{stance_persian} dataset. Though, number of samples in the dataset gathered by \cite{stance_persian} contains 1624 samples. Increasing number of samples help model to improves model generalization.
+
+Adding attention layers to the classifier have improve results in current researches. Fox instance, \cite{book_disinformation} alleged that using attention layers in the model have make a great contribution on accuracy scores. Utilizing such models can also make increase on the ability of these models to go beyond the current state in such low-resource settings. Besides, increasing number of samples in the \cite{stance_persian} dataset toward achieving balanced dataset can help the model to distinguish each class precisely. 
+ 
+ 
+ 

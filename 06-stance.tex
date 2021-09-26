@@ -264,16 +264,16 @@ All mentioned oversampling methods are evaluated against each other in this proj
 
 \section{Deep Learning}
 In deep learning approach, a combination of all predictors can be fed into the model and the model on its own will automatically learns which predictor is useful for the task. This property is the biggest advance of deep learning in comparison to machine learning (\cite{book_datafake}). In contrary, in machine learning it was a critical step to design input predictors that the model can performs the best. And hours of trying different combination of predictors is needed (\cite{book_fake}). \cite{stance_robust} assessed that, In contrast deep learning models, machine learning models that is trained on a single dataset, usually generalize poorly to other domains.
-
+The schematic of deep learning model is shown in figure \ref{fig:dlschm}. Headline-to-claim and Article-to-claim models have same schematic. Only some parameters vary in each model. In the following sections, pretrained language model used for stance detection are described. 
 \begin{figure}% 
 	\centering
 	{\includegraphics[width=14.5cm]{statistics/schema/dl.png} }
-	\caption{Schematic of each machine learning model.}%
+	\caption{Schematic of each deep learning model.}%
 	\label{fig:dlschm}%
 \end{figure}
 
 \subsection{BERT}
-ParsBERT (\cite{ParsBERT}) pre-trained model is used at the top of the model. ParsBERT model is a monolingual transfromer language model based on Google's BERT model \cite{bert}. Pretrained BERT model is adopt from HooshvareLab\footnote{\href{https://huggingface.co/HooshvareLab}{huggingface.co}}. BERT is used to extract in context features from the corpus. Input of the model are \textit{input ids}, \textit{token type ids}, and \textit{attention mask}. Then, two dense layer and another dense layer as the classifier is added to the output of the BERT model. 
+ParsBERT (\cite{parsbert}) pre-trained model is used at the top of the model. ParsBERT model is a monolingual transfromer language model based on Google's BERT model \cite{bert}. Pretrained BERT model is adopt from HooshvareLab\footnote{\href{https://huggingface.co/HooshvareLab}{huggingface.co}}. BERT is used to extract in context features from the corpus. Input of the model are \textit{input ids}, \textit{token type ids}, and \textit{attention mask}. Then, two dense layer and another dense layer as the classifier is added to the output of the BERT model. 
 
 \subsection{ALBERT}
 In this experiment, ALBERT (\cite{albert})	 model is substitute with BERT model in figure \ref{fig:deepshema}.  Other configurations are same as BERT experiment.
@@ -282,7 +282,15 @@ In this experiment, ALBERT (\cite{albert})	 model is substitute with BERT model 
 Deep learning models perform far better on language inference tasks so they are better choices for article-to-claim stance classification. To calculate stance of a claim toward the body of a news, three different model based on a pre-trained Persian language model based on BERT, ParsBERT, and  ALBERT are evaluated against each other. 
 
 \section{Fake News Detection}
-To detect a news article veracity, headline-to-claim and article-to-claim stance detection models, are considered as a black box. Four news articles is considered to evaluate veracity of a claim. Firstly, stance of a claim toward each headline of desired news articles and the body of the news article predict by stance classifier models. All predicted stance vectors are concatenated and along with some other features are fed into a multi-layer perception network in order to predict the claim veracity.
+	\label{sec:fakenews}
+Shematic of fake news pipeline is shown in figure \ref{fig:fnschm}. To detect a news article veracity, headline-to-claim and article-to-claim stance detection models, are considered as a black box. Four news articles is considered to evaluate veracity of a claim. Firstly, stance of a claim toward each headline of desired news articles and the body of the news article predict by stance classifier models. All predicted stance vectors are concatenated and along with some other features are fed into a multi-layer perception network in order to predict the claim veracity.
+
+\begin{figure}% 
+	\centering
+	{\includegraphics[width=14.5cm]{statistics/schema/fn.png} }
+	\caption{Schematic of each fake news detection model.}%
+	\label{fig:fnschm}%
+\end{figure}
 
 Credibility of news websites is one of the most important extracted feature. The credibility can be calculated through the following steps (The credibility score of head-claim and article-claim is calculated similarly except using their related stance ground truth):
 
@@ -295,11 +303,11 @@ Credibility of news websites is one of the most important extracted feature. The
 	\begin{table}[H]
 		\centering
 		\caption{Value of credibility according to GroundTruth and Veracity labels. }
-		\setlength{\extrarowheight}{13pt}%
+		\setlength{\extrarowheight}{5pt}%
 		\begin{tabular}{|l|l|l|}
 			\hline
 			GroundTruth & Veracity & Value \\
-			\hline
+			\hline \hline
 			Agree       & True     & $+1$    \\
 			\hline
 			Disagree    & False    & $+1$    \\

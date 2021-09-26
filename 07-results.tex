@@ -60,7 +60,7 @@ According to previous comparisons and evaluation inferred from table \ref{tlb:pr
 \begin{table}[]
 	\centering
 	\caption{Comparison of accuracy and F1-score with different combinations of predictors for both SVM and Random Forest classifiers.}
-	\setlength{\extrarowheight}{13pt}%
+	\setlength{\extrarowheight}{5pt}%
 	\begin{tabular*}{350pt}{@{\extracolsep{\fill}}| l | l | l | l | l |}
 		\hline
 		\multicolumn{1}{|c|}{} & \multicolumn{2}{l|}{SVM} & 
@@ -68,7 +68,7 @@ According to previous comparisons and evaluation inferred from table \ref{tlb:pr
 		
 		\multicolumn{1}{|c|}{\multirow{-2}{*}{\begin{tabular}[c]{@{}c@{}}Predictors\\  Model\end{tabular}}}         & Acc.    & F1.    & Acc.    & F1.    \\ \cline{1-1}
 		
-		\hline
+		\hline \hline
 		
 		\multicolumn{1}{|c|}{TF-iDF only} & 51.83   & 51.90   & 52.79   & 54.00   \\ \cline{1-1}
 		\hline
@@ -93,6 +93,7 @@ According to previous comparisons and evaluation inferred from table \ref{tlb:pr
 \end{table}
 
 \section{Machine Learning}
+\label{sec:ml}
 In this section, each Gaussian Naive Bayes, SVM, Linear SVC, Random Forest, and Logistic Regression parameters are tuned on stance detection task with respect to chosen predictors in the previous section (\ref{sec:predictors}). In the next step, the performance of models is compared to each other.
 
 \subsection{SVM}
@@ -170,15 +171,16 @@ At the second step, dataset is extend by the ParsFever (\cite{parsfever}) datase
 \end{figure}
 
 \section{Deep Learning}
+\label{sec:dl}
 Pre-trained BERT model is used at the top of the model, then two Dense layers and finally a Dense including 4 neuron to classify stance is considered for end-to-end system. Each epochs lasts about 26 seconds in training procedure. Figure \ref{fig:deep} illustrates the model training procedure. In comparison to machine learning models, the deep learning model has boosted the accuracy of head to claim stance detection by 10 percent. 
 
-BERT-based model has learned for 20 epochs. Validation loss has stated to increase since epoch 11 and validation accuracy hasn't changed considerably then. Best validation accuracy has converged on 80.92\% on the headline-to-claim dataset. 
+BERT-based model has learned for 20 epochs. Validation loss has stated to increase since epoch 11 and validation accuracy hasn't changed considerably then. Best validation accuracy has converged on $80.92\%$ on the headline-to-claim dataset. 
 
-ParsBert-based model has learned for 20 epochs. Best validation accuracy has converged on 81.11\% on the headline-to-claim dataset. In comparison to machine learning algorithm, deep learning algorithm has enhanced about 10\% accuracy.
+ParsBert-based model has learned for 20 epochs. Best validation accuracy has converged on $81.11\%$ on the headline-to-claim dataset. In comparison to machine learning algorithm, deep learning algorithm has enhanced about $10\%$ accuracy. Besides, loss score has converged on a lower score than BERT-based model.
 
-Though, best recorded ALBERT language model on 20 epochs is at most 70.52\% on accuracy score. Figure \ref{fig:deep}, part (e) and (f) is illustrated training procedure.
+Though, best recorded ALBERT language model on 20 epochs is at most $70.52\%$ on accuracy score. Figure \ref{fig:deep}, part (e) and (f) is illustrated training procedure.
 
-Among these three alternative of BERT algorithm, PasrBERT based model has recorded best accuracy score with 81.11\% accuracy on stance prediction.  
+Among these three alternative of BERT algorithm, PasrBERT based model has recorded best accuracy score with $85.48\%$ accuracy on stance prediction.  
 \begin{figure}%
 	\centering
 	\subfloat[\centering]{{\includegraphics[width=6cm]{statistics/deep/bert_loss.png} }}%
@@ -198,6 +200,72 @@ Among these three alternative of BERT algorithm, PasrBERT based model has record
 	\label{fig:deep}%
 \end{figure}
 
+\begin{table*}[t]
+	\centering
+	\small
+	\caption{comparison of headline-to-claim stance detection models.}
+	\def\arraystretch{1.3}%
+	\setlength{\extrarowheight}{5pt}%
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline{Model} & {F1} & {Accuracy} & {F1} & {Accuracy}\\
+		\hline \hline
+		{SVM+ADASYN} & {69.63} & {69.15} & {69.38} & {70.32}\\
+		\hline
+		{RandomForest+ADASYN} & {71.24} & {69.14} & {70.17} & {73.02}\\
+		\hline
+		{BERT} & {81.65} & {80.69} & {81.16} & {80.92}\\
+		\hline
+		{ParsBERT} & {84.67} & {79.42} & {81.96} & {81.11}\\
+		\hline
+		{ALBERT} & {75.75} & {64.09} & {69.43} & {70.52}\\
+		\hline
+		{ParsBERT+ADASYN} & {84.96} & {85.64} & {85.29} & {\textbf{85.48}}\\
+		\hline
+	\end{tabular}
+	\label{tbl:allstance}
+\end{table*}
+
+
+\section{Article to Claim}
+
+Best stance detection models on both machine learning and deep learning models are evaluated on article-to-claim task. Table \ref{tbl:allstance} show those models performance on both headline-to-claim and article-to-claim task. 
+
+\begin{table*}[t]
+	\centering
+	\small
+	\caption{Comparison of article-to-claim machine learning and deep learning models.}
+	\def\arraystretch{1.3}%
+	\setlength{\extrarowheight}{5pt}%
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		{} & \multicolumn{2}{c|}{Headline to claim} &  \multicolumn{2}{c|}{Article to claim}\\
+		\hline 
+		{Model} & {Precision} & {Recall} & {F1} & {Accuracy}\\
+		\hline	\hline
+		{SVM+ADASYN} & {69.63} & {69.15} & {69.38} & {70.32}\\
+		\hline
+		{ParsBERT} & {69.63} & {69.15} & {69.38} & {70.32}\\
+		\hline
+		{ParsBERT+ADASYN} & {69.63} & {69.15} & {69.38} & {70.32}\\
+		\hline
+	\end{tabular}
+	\label{tbl:allstance}
+\end{table*}
 
 \section{Fake News}
-BERT-based model is concatenated with features which are described in section \ref{sec:fakenews} then feed to an three-layer MLP model as the classifier. ADASYN oversampling method is also used to deal with imbalanced classes. Figure \ref{fig:fakenews} illustrates training procedure before oversampling and after oversampling the dataset. After oversampling, the trained model accuracy is equal to 100\%.
+the best BERT-based model for headline-to-claim and article-to-claims are considered for this part. These model prediction base on 4 news articles are concatenated with features which are described in section \ref{sec:fakenews}. Then the overall vector is feed to an three-layer MLP model as the classifier. ADASYN oversampling method is also used to deal with imbalanced classes. Figure \ref{fig:fakenews} illustrates training procedure before oversampling and after oversampling the dataset. After oversampling, the trained model accuracy has converged to 99\%, while before oversampling model stops at $90.41\%$. According to figure \ref{fig:fakenews}, after adding oversampled samples, at first it is harder for model to decease the loss score on the train set and loss score convergent takes longer time. Though after balancing the datast (Figure \ref{fig:fakenews}, part (a)), the value of loss score has converged 0.2 lower than the origin dataset (Figure \ref{fig:fakenews}, part (c)).
+
+\begin{figure}%
+	\centering
+	\subfloat[\centering]{{\includegraphics[width=6cm]{statistics/fakenews/dataset/loss.png} }}%
+	\qquad
+	\subfloat[\centering]{{\includegraphics[width=6cm]{statistics/fakenews/dataset/acc.png} }}
+	\qquad
+	\subfloat[\centering]{{\includegraphics[width=6cm]{statistics/fakenews/oversampled/loss.png} }}%
+	\qquad
+	\subfloat[\centering]{{\includegraphics[width=6cm]{statistics/fakenews/oversampled/acc.png}}}
+	\caption{Left figures illustrate loss score and right figures illustrate accuracy score of train and test data during training procedure for each iteration. 
+		(a, b) Training procdure on fake news detection model trained on the \cite{stance_persian} dataset.
+		(c, d) Training procdure on fake news detection model trained on oversampled \cite{stance_persian} dataset by ADASYN (\cite{adasyn}) algorithm.}%
+	\label{fig:fakenews}%
+\end{figure}
