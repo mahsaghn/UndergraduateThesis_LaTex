@@ -1,15 +1,183 @@
+A brief description of adopted algorithms which are used in this project are available in this chapter. Algorithms are classified as \textit{\hyperref[lr:tokenization]{Tokenization}}, \textit{\hyperref[lr:wordrep]{Words Representaion}}, 
+\textit{\hyperref[lr:ml]{Machine Learning}},  
+\textit{\hyperref[lr:oversampling]{Oversampling}},  
+\textit{\hyperref[lr:lm]{Language Models}}, and  
+\textit{\hyperref[lr:evalmetrics]{Evaluation Metrics}}. 
+\section{Tokenization}
+\label{lr:tokenization}
+It is vital in the tokenizing step to break the corpus into correct words. Tokenizers limit the number of words to reduce computational costs, so it may happen that tokenizers generate meaningless words if the number of accepted words hasn't been set sufficiently. Also, sometimes tokenizers haven't seen words before, and omit them while tokenizing the corpus. According to stated reasons, it is important to choose a tokenizer carefully.
 
-\section{BERT}
-Pretrained language models have significant improve on many natural language model tasks such as natural language inference task (\cite{bert}). One of most impressive and powerful deep learning language model for text processing, is BERT which is stands for Bidirectional Encoder
+\subsection{NLTK}
+NLTK\footnote{nltk.org} (Natural Language ToolKit)) is a python platform to work easier with human language data. This tool kit supports more than 50 datasets and supports numerous languages including Persian. NLTK supports various tokenizer methods. Its basic algorithm tokenize words depends on white spaces.
+
+\subsection{Hazm}
+Hazm\footnote{\label{fn:hazm}sobhe.ir} is a python library Persian language processing tool kit. It has variety of functions such as word and sentence tokenizer, word lemmatizer, POS tagger, Shallow, and Dependency parser. \textit{Hazm} tokenizer is \textit{NLTK} compatible\footref{fn:hazm}.
+		
+\subsection{Stanza}
+Stanford NLP group has released Stanza tool\footnote{stanfordnlp.github.io/stanza}. Stanza is also another advantageous NLP tools package and can diagnose multi-word tokens. At first, it splits raw input text into sentences, then performs sentences segmentation. It is efficient for linguistic analysis and supports more than 70 human languages and releases new versions constantly.
+	
+\subsection{WordPiece}
+WordPiece tokenizer used by BERT (\cite{bert}) machine learning model. BERT is a transformer-based machine-learning model which is currently used in various natural language processing tasks. WordPiece algorithm starts learning tokenization with a list of available characters in the text. Then it expands its word list by merging the most repeated group of characters. This procedure continues until hitting the considered number of words limit. 
+
+\section{Word Representation}
+\label{lr:wordrep}
+To represent a corpus, each token should be converted to a number or vector. Good representation carries semantic of each word or n-grams, sequential words contents, and is as brief as possible. Three baseline Bag-of-word (\cite{bow}), TF-iDF (\cite{tfidf}), and Word-to-Vector (\cite{word2vec}) algorithms are used in this project. In this section, these algorithms are described briefly.
+\subsection{BoW}
+Bag-of-Words (\cite{bow}) model, is a way to represent texts. BoW keeps words frequency and dismisses word's orders and context. Dimension of text representation is equal to the number of specified words plus one for words that don't exist in BoW dictionary. Each cell in output vector representation stands for a specific word and the value of that cell is equal to the repetition times of that word in the particular text. As an alternative, it is possible to choose n-gram instead of a single word as BoW dictionary. This may improve BoW model performance in order to keep longer expression semantic but on the other hand dimension of representation exceed vastly. One disadvantage of BoW is it doesn't specify any relation between words with similar semantic meanings\footnote{en.wikipedia.org/Bag-of-words\_model}. 
+
+\subsection{TF-IDF}
+
+Term Frequency–Inverse Document Frequency (\cite{tfidf}) is an algorithm to present the importance of each word in a corpus in a statistical way. According to the repetition of a specific word in each document and inverse effect of the number documents that the word appears in, a float number will be assigned to each word in that corpus.  
+\begin{itemize}
+	\item \textbf{Trem frequency (TF):} This item represents how many times a word is used in each document. \textit{TF} should be calculated for each document separately. \textit{TF} term calculate from equation \ref{eq:tf}
+	\begin{equation}
+	\label{eq:tf}
+	\text{tf} \left(t,D\right) = \frac{f_{t,d}}{\Sigma_{t^{`} \in d } f_{t^{`}, d}}
+	\end{equation}
+	
+	\item \textbf{Inverse Document Frequency (iDF):} This term presents how much information a word has. The less repetition of a word through documents, the more information it has. This term is calculated from equation \ref{idf}. 
+	\begin{equation}
+	\label{idf}
+	\text{idf} \left( t,D\right) = \log \frac{N}{\left|\{d\in D, t \in d\}\right| }
+	\end{equation}
+\end{itemize}
+
+\noindent
+After calculating \textit{TF} and \textit{iDF}, TF-iDF value for each word calculates from equation \ref{tfidf}.
+\begin{equation}
+\label{tfidf}
+\text{tf-idf}\left(t,d,D\right) =  \text{tf} \left( t,D\right) . \text{idf} \left( t,D\right)
+\end{equation}
+
+
+\subsection{W2V}
+Word2vec (\cite{word2vec}) is a neural network-based model which learns each word semantic and even it can recommend words with similar meaning to a specific word. Word2Vec represents each word with a vector instead of a number. After the training phase, each word vector serves numbers that are generally similar to words with similar meaning, and words with less correspondence have lower vector similarities. This vector is called word-embedding. It is necessary to have a large corpus in order to train a powerful model which can predict each word vector precisely. Multiple alternative algorithms for Word2Vec exist. For example, Fasttext is an extension of Word2Vec model which treats each word as concatenated n-grams\footnote{en.wikipedia.org/wiki/Word2vec}.  
+
+
+
+\section{Machine Learning}
+\label{lr:ml}
+Machine learning algorithm performs surprisingly good in classifying tasks. In this section, a brief overview of \textit{Gaussian Naive Bayes}, \textit{SVC}, \textit{LinearSVC}, \textit{Random Forest}, and \textit{Logistic Regression} is available
+\subsection{Gaussian Naive Bayes}
+The first machine learning algorithm used to classify stance is Gaussian Naive Bayes Classifier (\cite{GNbayes}). It is an alternative to machine learning Naive Bayes classifier that is inspired by Bayes Theorem\footnote{en.wikipedia.org/wiki/Naive\_Bayes\_classifier}:
+
+\[ P\left(y | X\right) =   \frac{P(X|y).P(X)}{P(y)} \]
+where:
+\begin{eqexpl}[25mm]
+	\item{$X$} List of predictors that are independent of each other.
+	\item{$y$} Label of a class.
+	\item{$P\left(X|y\right)$} Probability of class with label $y$ from given X predictors.
+\end{eqexpl}
+Naive Bayes Classifier algorithm estimates the probability of each class. Gaussian Naive Bayes means that predictors are continuous and follow Gaussian distribution:
+
+\[p\left(x=\upsilon | C_{k}\right) = \frac{1}{\sqrt{2\pi\sigma_{k}^{2}}}e^{-\frac{\left(\epsilon-\mu_{k}\right)^{2}}{2\mu^{2}_{k}}}\]
+\begin{eqexpl}[25mm]
+	\item{$C_{k}$} Class k.
+	\item{$\mu_{k}$} Mean of $x$ values associated with $C_{k}$
+	\item{$\sigma^{2}_{k}$} Bessel corrected variance x values associated with $C_{k}$
+\end{eqexpl}
+
+\subsection{SVC}
+\label{SVM}
+SVC stands for SVM Classifier. Support Vector Machines (\cite{svc})  are a group of supervised machine learning models. One of their applications is the classification problem. SVM algorithms map each sample to a space such that samples of a particular class locate as far as possible from other classes samples. In other words, SVM is looking for an n-dimensional hyperplane which can separate classes as clearly as possible\footnote{wikipedia.org/Support-vector\_machine}.
+
+Regularization parameter stands for strength of regularization. Kernel of SVM specifies the type of separator that the SVM algorithm uses to distinguish different classes. It is a basic form of the mathematical function that SVM tunes during the training procedure. Kernels of SVC could vary from a simple polynomial such as \textit{linear} to more complex ones such as \textit{Radial basis function}, \textit{Sigmoid}, and \textit{Higher degree polynomial}. Furthermore, the wight of each class could be different from each other. \textit{Balanced} mode set different weight for each class during training to compensate imbalanced data. 
+
+
+\subsection{LinearSVC}
+LinearSVC is an alternative algorithm for SVC in large datasets. LinearSVC linearly separates samples. Depends on the dataset, it may work better than nonlinear SVC. This model is the same as SVC from the previous part, the only difference is its kernel is equal to linear hyperplane polynomial. 
+
+\subsection{Random Forest}
+Random Forest (\cite{randomforest}) is a machine learning algorithm to deal with complex classification problems. It constructs of many decision trees. The point is that it is more robust than decision threes. Besides Random Forest classifier doesn't need parameter tuning. Each decision three has its own prediction and the final prediction of the model is calculated bt majority voting of each tree output. 
+
+\subsection{Logistic Regression}
+Logistic Regression is a machine learning classification algorithm. Its functionality is mainly for Binary Classification. In multi-class datasets, logistic regression classifies one class vs rest. This algorithm uses Sigmoid function as its cost function and its prediction is based on probabilities. 
+
+Logistic Regression has a number of parameters can be tuned due to the specified task. Penalization and regularization parameter could be \textit{l1} (Equation \ref{eq:logil}), \textit{l2} (Equation \ref{eq:logill}), or \textit{elasticnet} (Equation \ref{eq:logisel}). If $\; \rho \;$ parameter equals to 0.5 in Elastic-Net Penalization, means $\;l1\;$ and $\;l2\;$ have the same powers. 
+\begin{itemize}
+	
+	\item $l1$
+	\begin{equation}
+	\label{eq:logil}
+	min_{\omega,c} \; \frac{1}{2}\omega^{T}\omega + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right)
+	\end{equation}
+	\item $l2$
+	\begin{equation}
+	\label{eq:logill}
+	min_{\omega,c} \; \left|\left|\omega\right|\right|_{1} + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right) 
+	\end{equation}
+	
+	\item $elastic-net$
+	\begin{equation}
+	\label{eq:logisel}
+	min_{\omega,c} \; \frac{1-\rho}{2}\omega^{T}\omega +\rho\left|\left|\omega\right|\right|_{1} + C \Sigma_{i=1}^{n} \log\left(\exp\left(-y_{i}\left(X^{T}_{i}\omega + c \right)\right) + 1 \right) 
+	\end{equation}
+	
+\end{itemize}
+where:
+\begin{eqexpl}[25mm]
+	\item{$\rho$} Controls $\; l1 \;$ strength (\textit{l1\_ration} parameter).
+	\item{$y_{i}$} Takes value between -1, 1.
+\end{eqexpl}
+\bigbreak
+Another parameter specifies optimizer algorithm could be Minimizing Finite Sums with the Stochastic Average Gradient (SAG), SAGA which is an alternative of SAG that supports $l1$ optimizer,  Newton’s method which utilize quadratic approximation, or Limited-memory Broyden–Fletcher–Goldfarb–Shanno which is analog to Newton's method and Hessian matrix is approximated by updating gradient evaluation and it is more robust in larger datasets. Although, Limited-memory Broyden–Fletcher–Goldfarb–Shanno is slower than \textit{SAGA}\footnote{scikit-learn.org/stable/modules/linear\_model.html\#logistic-regression}.
+
+\section{Oversampling}
+\label{lr:oversampling}
+A common way of dealing with an imbalanced dataset is automatically augmenting samples to achieve balanced class distribution (Oversampling) or even reduce the number of samples in the majority class (Undersampling). Undersampling is applicable on a large dataset. But in small datasets, it's not wise to ignore some samples. Oversampling methods suites for datasets that suffer from lack of data. It is important to notice that splitting test and train sets should be performed before resampling, and oversampling should be only applied on the train set. RandomOverSampler, SMOTE, SVMSMOTE, BorderlineSMOTE, and ADASYN algorithms are described in the following sections.
+
+\subsection{RandomOverSampler} 
+This method randomly peak samples from classes and resample them. Random Over Sampler is the most naive algorithm and its performance is same as increasing minority class loss weight. Another variant of this method is smoothed bootstrap oversampling. It is generally similar to Random Oversampler, but new samples don't exactly overlap original samples. They are adjacent to source samples. This variant can be implement by \textit{shrinking} parameter in \textit{RandomOverSampler} from \textit{imblearn} python library\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.RandomOverSampler.html}. 
+	
+\subsection{SMOTE}
+Synthetic Minority Over-sampling Technique (\cite{smothe}) is an oversampling method by generating new samples by interpolation. It's not important for smothe sampler that point is chosen to be resampled. 
+	
+\subsection{SVMSMOTE } 
+SVMSMOTE (\cite{svmsmothe}) is a variant of SMOTE oversampling method which uses SVM (Section \ref{SVM}) algorithm to choose resampling samples. One strength of this model is that it is effective for both vector data and sequence data (\cite{svmsmothe})\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.SVMSMOTE.html}.
+	
+\subsection{BorderlineSMOTE} 
+BorderlineSMOTE (\cite{borderlinesmothe}) is also another variant of SMOTE oversampler. Borderline samples are mainly chosen to get resample in this variant. \cite{borderlinesmothe} has achieved better accuracy than SMOTE.\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.BorderlineSMOTE.html}
+\subsection{ADASYN} 
+Adaptive Synthetic Sampling Approach for Imbalanced Learning (\cite{adasyn}) focuses on generating new samples adjacent to those samples wrongly classified by employing K-Nearest Neighbors classifier. These samples are considered as hard samples because it's not easy for models to predict them, as a result, ADASYN increases the robustness of the desired dataset. This method performs better in comparison to Decision Tree and SMOTE algorithms (\cite{adasyn}).
+
+\section{Language Representation Model}
+\label{lr:lm}
+Language representation models can represent a word embedding in context. Pretrained language models have significant improve on many natural language model tasks such as natural language inference task (\cite{bert}). BERT, ParsBERT, and ALBERT models are described in short in the following sections.
+\subsection{BERT}
+One of most impressive and powerful deep learning language model for text processing, is BERT which is stands for Bidirectional Encoder
 Representations from Transformers (\cite{bert}) and developed by Google. And has received state of the art result due its previous researches (\cite{bert}). \cite{spotfake} improved its performance by make usage of the BERT language model in fake news detection. BERT base version contains 12 transformer blocks, containing 110 million parameters. There are also another variant of BERT such as large including 24 transformer blocks and multilingual BERT. BERT models are trained of Wikipedia corpus. 
 
-One application of BERT is using first top layers of BERT model as contextual word embedding (\cite{book_datafake}). This model suggests a vector that representing a word which best fit in the current context.  BERT is a masked language model. It randomly masks some tokens and learn to predict masked tokens correctly. BERT utilizes bidirectional transformer, it means that BERT can inferred both left to right and right to left.
+One application of BERT is using first top layers of BERT model as contextual word embedding (\cite{book_datafake}). This model suggests a vector that representing a word which best fit in the current context.  BERT is a masked language model. It randomly masks some tokens and learn to predict masked tokens correctly. BERT utilizes bidirectional transformer, it means that BERT can inferred text both left to right and right to left.
 
-   
-{\color{green}TODO}
+\subsection{ParsBERT}
+ParsBERT (\cite{parsbert}) pre-trained model for Persian language that can be used at the top of the model. ParsBERT model is a monolingual transfromer language model based on Google's BERT model \cite{bert} which is lighert than multilingual BERT. Pretrained ParsBERT model is available on HooshvareLab\footnote{\href{https://huggingface.co/HooshvareLab}{huggingface.co}}. ParsBERT outperforms other language model variants on Persian.
 
-\section{ALBERT}
-{\color{green}TODO}
+\subsection{ALBERT}
+ALBERT (\cite{albert}) model is a lighter variant of BERT model. The large BERT model has 9 times more parameters than ALBERT. ALBERT is released by Google's team in 2019. It separates input and hidden layers embedding. The input layer is context-independent while the hidden layer is context-dependent. Same as BERT, ALBERT uses masked language model but instead of NSP (Next Sentence Prediction) ALBERT uses SOP (Sentence Order Prediction) which only looks for sentence coherence in contrast to SOP which looks for both coherence and the topic to identify the next sentence.
 
-\section{ParsBERT}
-{\color{green}TODO}
+ 
+
+\section{Evaluation Metrics}
+\label{lr:evalmetrics}
+The accuracy score is calculated from \ref{eq:acc}. It is good to evaluate the ratio of correctly predicted samples. Though accuracy score is not reliable to evaluate model performance specially when dealing with an imbalanced dataset. In addition to correctly predicted samples, False model prediction has an impact on the final F1 score (\ref{eq:f1}).   
+\begin{equation}
+\label{eq:acc}
+\text{Accuracy} = \frac{\text{TP} + \text{TN} }{\text{TP} + \text{FN} + \text{TN} + \text{FP}}
+\end{equation}
+where:
+\begin{eqexpl}[25mm]
+	\item{$\text{TP}$} True Positive
+	\item{$\text{TN}$} True Negative
+	\item{$\text{FP}$} False Positive 
+	\item{$\text{FN}$} False Negative
+\end{eqexpl}
+
+\begin{equation}
+\label{eq:f1}
+\text{F1} = \frac{2 \times \text{precision} \times \text{recall} }{\text{precission} + \text{recall}}
+\end{equation}
+where: 
+\begin{eqexpl}[25mm]
+	\item{$\text{precission}$} $\; \text{precision} = \frac{\text{TP}}{\text{TP} + \text{FP}} \;$
+	\item{$\text{recall}$} $\; \text{recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} \;$ 
+\end{eqexpl}

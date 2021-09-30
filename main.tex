@@ -41,7 +41,6 @@
 \usepackage{times} % Set the typeface to Times Roman
 \usepackage[scaled]{helvet} % ss
 \usepackage{courier} % tt
-\normalfont
 \usepackage[T1]{fontenc}
 
 
@@ -52,7 +51,7 @@
 \usepackage{enumitem}
 \usepackage{natbib}
 \usepackage{array,multirow}
-\usepackage{fixltx2e}
+
 \usepackage{booktabs}
 \usepackage{bbm}
 \usepackage{soul}
@@ -75,7 +74,6 @@
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{fixltx2e}
 %\usepackage{tkz-graph}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -88,7 +86,7 @@
 
 \usepackage{eqexpl}
 \usepackage{comment}
-
+\usepackage{amsmath}
 \begin{document}
 
 \input{00-titlepages.tex}
@@ -112,23 +110,19 @@
 \chapter {Introduction}
 \input{04-intro}
 
-\chapter {Background}
-{\color{green}TODO}
+\chapter {Literature Review}
 \input{04-background}
 
 \chapter {Related Works}
 \label{literature}
 \input{05-relatedworks}
 
-\chapter{Dataset}
-\label{sec:dataset}
-\input{06-dataset}
 
-\chapter{Experiments}
+\chapter{Methodology}
 \label{sec:exp}
 \input{06-stance}
 
-\chapter {Results}
+\chapter {Experiments}
 \label{chapter:four}
 \input{07-results}
 

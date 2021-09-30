@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.6.22)  25 SEP 2021 19:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.6.22)  30 SEP 2021 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -422,14 +422,6 @@ Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-LaTeX Font Info:    Trying to load font information for TU+ptm on input line 44
-.
-LaTeX Font Info:    No file TUptm.fd. on input line 44.
-
-
-LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 44.
-
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 11
@@ -460,17 +452,7 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@count@id=\count286
 \enitdp@description=\count287
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
-Applying: [2015/01/01] Old fixltx2e package on input line 46.
-
-
-Package fixltx2e Warning: fixltx2e is not required with releases after 2015
-(fixltx2e)                All fixes are now in the LaTeX kernel.
-(fixltx2e)                See the latexrelease package for details.
-
-Already applied: [0000/00/00] Old fixltx2e package on input line 53.
-) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen177
 \lightrulewidth=\dimen178
@@ -671,38 +653,35 @@ Package: xparse 2020-02-14 L3 Experimental document command parser
 (/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
 
-Excluding comment 'comment') (./main.aux
-
-LaTeX Warning: Label `tbl:allstance' multiply defined.
-
-)
+Excluding comment 'comment') (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 9
-2.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+0.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
 \c@lstlisting=\count307
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
@@ -711,7 +690,7 @@ Package caption Info: sidecap package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring OFF on input line 92.
+Package hyperref Info: Link coloring OFF on input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -724,9 +703,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count308
 )
-LaTeX Info: Redefining \ref on input line 92.
-LaTeX Info: Redefining \pageref on input line 92.
-LaTeX Info: Redefining \nameref on input line 92.
+LaTeX Info: Redefining \ref on input line 90.
+LaTeX Info: Redefining \pageref on input line 90.
+LaTeX Info: Redefining \nameref on input line 90.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -835,89 +814,72 @@ Chapter 2.
 (./04-background.tex [17
 
 
-]) [18]
+]
+Underfull \vbox (badness 1371) has occurred while \output is active []
+
+ [18]
+Missing character: There is no – in font ptmr8t!
+
+[19] [20] [21]
+Missing character: There is no ’ in font ptmr8t!
+Missing character: There is no – in font ptmr8t!
+Missing character: There is no – in font ptmr8t!
+Missing character: There is no – in font ptmr8t!
+Missing character: There is no – in font ptmr8t!
+Missing character: There is no – in font ptmr8t!
+Missing character: There is no – in font ptmr8t!
+ [22] [23] [24] [25]) [26]
 Chapter 3.
 (./05-relatedworks.tex
 File: statistics/stance/simple-baseline-FNC.png Graphic file (type bmp)
 <statistics/stance/simple-baseline-FNC.png>
 Missing character: There is no ’ in font ptmr8t!
 Missing character: There is no ’ in font ptmr8t!
- [19
+ [27
 
 
-] [20]
+] [28]
 File: statistics/stance/hierarchial-attention-network.png Graphic file (type bm
 p)
 <statistics/stance/hierarchial-attention-network.png>
 File: statistics/stance/memoty_network.png Graphic file (type bmp)
 <statistics/stance/memoty_network.png>
-) [21] [22] [23] [24
+) [29] [30] [31] [32
 
 
 ]
 Chapter 4.
-(./06-dataset.tex [25]
+(./06-stance.tex [33] [34] [35] [36]
+File: statistics/schema/ml.png Graphic file (type bmp)
+<statistics/schema/ml.png>
+ [37]
+File: statistics/stance/a2c_b1.png Graphic file (type bmp)
+<statistics/stance/a2c_b1.png>
+File: statistics/stance/h2c_b1.png Graphic file (type bmp)
+<statistics/stance/h2c_b1.png>
+ [38]
+File: statistics/schema/dl.png Graphic file (type bmp)
+<statistics/schema/dl.png>
+ [39]
+File: statistics/schema/fn.png Graphic file (type bmp)
+<statistics/schema/fn.png>
+ [40] [41]) [42]
+Chapter 5.
+(./07-results.tex (./06-dataset.tex [43
+
+
+]
 File: statistics/stance/a2c.png Graphic file (type bmp)
 <statistics/stance/a2c.png>
 File: statistics/stance/h2c.png Graphic file (type bmp)
 <statistics/stance/h2c.png>
 File: statistics/stance/fake.png Graphic file (type bmp)
 <statistics/stance/fake.png>
-) [26] [27] [28
+)
+Underfull \vbox (badness 1019) has occurred while \output is active []
 
-
-]
-Chapter 5.
-(./06-stance.tex [29]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 29.
-
-[30]
-Missing character: There is no – in font ptmr8t!
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 58.
-
-[31] [32] [33]
-Underfull \vbox (badness 1210) has occurred while \output is active []
-
- [34]
-File: statistics/schema/ml.png Graphic file (type bmp)
-<statistics/schema/ml.png>
-
-[35]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 142.
-
-
-Underfull \vbox (badness 1540) has occurred while \output is active []
-
- [36]
-[37] [38]
-File: statistics/stance/a2c_b1.png Graphic file (type bmp)
-<statistics/stance/a2c_b1.png>
-File: statistics/stance/h2c_b1.png Graphic file (type bmp)
-<statistics/stance/h2c_b1.png>
- [39] [40]
-File: statistics/schema/dl.png Graphic file (type bmp)
-<statistics/schema/dl.png>
- [41]
-
-LaTeX Warning: Reference `fig:deepshema' on page 42 undefined on input line 279
-.
-
-[42]
-File: statistics/schema/fn.png Graphic file (type bmp)
-<statistics/schema/fn.png>
- [43] [44]) [45] [46
-
-
-]
-Chapter 6.
-(./07-results.tex [47]
+ [44]
+[45]
 File: statistics/tokenizer/1.png Graphic file (type bmp)
 <statistics/tokenizer/1.png>
 File: statistics/tokenizer/2.png Graphic file (type bmp)
@@ -926,54 +888,36 @@ File: statistics/tokenizer/3.png Graphic file (type bmp)
 <statistics/tokenizer/3.png>
 File: statistics/tokenizer/duration.png Graphic file (type bmp)
 <statistics/tokenizer/duration.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
+ [46] [47]
 File: statistics/AccuracyScore.png Graphic file (type bmp)
 <statistics/AccuracyScore.png>
 File: statistics/WordRep.png Graphic file (type bmp)
 <statistics/WordRep.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [49]
-[50]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 60.
-
-
-Underfull \vbox (badness 1122) has occurred while \output is active []
-
- [51]
+ [48] [49] [50]
 File: statistics/svm.png Graphic file (type bmp)
 <statistics/svm.png>
 File: statistics/linearsvm.png Graphic file (type bmp)
 <statistics/linearsvm.png>
-
-[52]
+ [51] [52]
 File: statistics/randomforest.png Graphic file (type bmp)
 <statistics/randomforest.png>
- [53]
 File: statistics/logistic_elastic1.png Graphic file (type bmp)
 <statistics/logistic_elastic1.png>
 File: statistics/logistic_elastic2.png Graphic file (type bmp)
 <statistics/logistic_elastic2.png>
+ [53]
 File: statistics/logistic1.png Graphic file (type bmp)
 <statistics/logistic1.png>
- [54] [55]
 File: statistics/machinlearning.png Graphic file (type bmp)
 <statistics/machinlearning.png>
-
-Overfull \hbox (5.41617pt too wide) in paragraph at lines 163--164
-\T1/ptm/m/n/10.95 Firstly, ADASYN, SMOTE, SVMSMOTE, Bor-der-Li-neS-mote, and Ra
-n-do-mOver-Sam-pler over-sam-pling meth-
- []
-
+ [54] [55]
 File: statistics/balancing.png Graphic file (type bmp)
 <statistics/balancing.png>
-[56] [57] [58]
+ [56]
+
+LaTeX Warning: Reference `fig:dlshema' on page 57 undefined on input line 204.
+
+[57]
 File: statistics/deep/bert_loss.png Graphic file (type bmp)
 <statistics/deep/bert_loss.png>
 File: statistics/deep/bert_acc.png Graphic file (type bmp)
@@ -986,7 +930,11 @@ File: statistics/deep/albert_loss.png Graphic file (type bmp)
 <statistics/deep/albert_loss.png>
 File: statistics/deep/albert_acc.png Graphic file (type bmp)
 <statistics/deep/albert_acc.png>
- [59] [60]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [58]
+[59]
 File: statistics/fakenews/dataset/loss.png Graphic file (type bmp)
 <statistics/fakenews/dataset/loss.png>
 File: statistics/fakenews/dataset/acc.png Graphic file (type bmp)
@@ -995,11 +943,11 @@ File: statistics/fakenews/oversampled/loss.png Graphic file (type bmp)
 <statistics/fakenews/oversampled/loss.png>
 File: statistics/fakenews/oversampled/acc.png Graphic file (type bmp)
 <statistics/fakenews/oversampled/acc.png>
-) [61] [62
+) [60] [61] [62
 
 
 ]
-Chapter 7.
+Chapter 6.
 (./08-conclusion.tex
 Underfull \vbox (badness 3849) has occurred while \output is active []
 
@@ -1012,34 +960,28 @@ Missing character: There is no – in font ptmr8t!
  [66] [67]) [68] Excluding 'comment' comment.
 File: iust.jpeg Graphic file (type bmp)
 <iust.jpeg>
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
  [69]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
 
 (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 177.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 171.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 492865780C8F5A614BAF11059E302673;3273.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+(rerunfilecheck)             Checksum: 46FEB1EED730708CBFAD4C41280E8174;4068.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
  ) 
 Here is how much of TeX's memory you used:
- 17744 strings out of 479819
- 269579 string characters out of 5895846
- 576498 words of memory out of 5000000
- 34456 multiletter control sequences out of 15000+600000
- 578525 words of font info for 97 fonts, out of 8000000 for 9000
+ 17727 strings out of 479819
+ 269307 string characters out of 5895846
+ 577548 words of memory out of 5000000
+ 34446 multiletter control sequences out of 15000+600000
+ 575119 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 48i,16n,52p,1045b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,16n,55p,1045b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (69 pages).
