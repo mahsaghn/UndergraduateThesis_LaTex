@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.6.22)  1 OCT 2021 14:04
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.6.22)  1 OCT 2021 16:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -952,10 +952,7 @@ File: statistics/deep/albert_loss.png Graphic file (type bmp)
 File: statistics/deep/albert_acc.png Graphic file (type bmp)
 <statistics/deep/albert_acc.png>
 
-Underfull \vbox (badness 1596) has occurred while \output is active []
-
- [59]
-[60]
+[59] [60]
 File: statistics/fakenews/dataset/loss.png Graphic file (type bmp)
 <statistics/fakenews/dataset/loss.png>
 File: statistics/fakenews/dataset/acc.png Graphic file (type bmp)
@@ -989,7 +986,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 174.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E6EC18CC811CA6B39552842D1363726D;3999.
+(rerunfilecheck)             Checksum: A95C3DA9093D5E44B37D936D54695812;4027.
 
 
 LaTeX Warning: There were undefined references.
@@ -999,10 +996,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
 Here is how much of TeX's memory you used:
  17732 strings out of 479819
  269369 string characters out of 5895846
- 577738 words of memory out of 5000000
+ 578931 words of memory out of 5000000
  34451 multiletter control sequences out of 15000+600000
  575119 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 48i,16n,55p,1051b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,16n,55p,1071b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (70 pages).

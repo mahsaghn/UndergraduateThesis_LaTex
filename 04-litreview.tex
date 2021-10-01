@@ -77,7 +77,7 @@ Naive Bayes Classifier algorithm estimates the probability of each class. Gaussi
 	\item{$\sigma^{2}_{k}$} Bessel corrected variance x values associated with $C_{k}$
 \end{eqexpl}
 
-\subsection{SVC}
+\subsection{Support Vector Machines}
 \label{SVM}
 SVC stands for SVM Classifier. Support Vector Machines (\cite{svc})  are a group of supervised machine learning models. One of their applications is the classification problem. SVM algorithms map each sample to a space such that samples of a particular class locate as far as possible from other classes samples. In other words, SVM is looking for an n-dimensional hyperplane which can separate classes as clearly as possible\footnote{wikipedia.org/Support-vector\_machine}.
 
@@ -132,7 +132,7 @@ This method randomly peak samples from classes and resample them. Random Over Sa
 \subsection{SMOTE}
 Synthetic Minority Over-sampling Technique (\cite{smothe}) is an oversampling method by generating new samples by interpolation. It's not important for smothe sampler that point is chosen to be resampled. 
 	
-\subsection{SVMSMOTE } 
+\subsection{SVM-SMOTE } 
 SVMSMOTE (\cite{svmsmothe}) is a variant of SMOTE oversampling method which uses SVM (Section \ref{SVM}) algorithm to choose resampling samples. One strength of this model is that it is effective for both vector data and sequence data (\cite{svmsmothe})\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.SVMSMOTE.html}.
 	
 \subsection{BorderlineSMOTE} 

@@ -11,14 +11,14 @@
 \BOOKMARK [2][-]{subsection.2.2.3}{W2V}{section.2.2}% 11
 \BOOKMARK [1][-]{section.2.3}{Machine\040Learning}{chapter.2}% 12
 \BOOKMARK [2][-]{subsection.2.3.1}{Gaussian\040Naive\040Bayes}{section.2.3}% 13
-\BOOKMARK [2][-]{subsection.2.3.2}{SVC}{section.2.3}% 14
+\BOOKMARK [2][-]{subsection.2.3.2}{Support\040Vector\040Machines}{section.2.3}% 14
 \BOOKMARK [2][-]{subsection.2.3.3}{LinearSVC}{section.2.3}% 15
 \BOOKMARK [2][-]{subsection.2.3.4}{Random\040Forest}{section.2.3}% 16
 \BOOKMARK [2][-]{subsection.2.3.5}{Logistic\040Regression}{section.2.3}% 17
 \BOOKMARK [1][-]{section.2.4}{Oversampling}{chapter.2}% 18
 \BOOKMARK [2][-]{subsection.2.4.1}{RandomOverSampler}{section.2.4}% 19
 \BOOKMARK [2][-]{subsection.2.4.2}{SMOTE}{section.2.4}% 20
-\BOOKMARK [2][-]{subsection.2.4.3}{SVMSMOTE\040}{section.2.4}% 21
+\BOOKMARK [2][-]{subsection.2.4.3}{SVM-SMOTE\040}{section.2.4}% 21
 \BOOKMARK [2][-]{subsection.2.4.4}{BorderlineSMOTE}{section.2.4}% 22
 \BOOKMARK [2][-]{subsection.2.4.5}{ADASYN}{section.2.4}% 23
 \BOOKMARK [1][-]{section.2.5}{Language\040Representation\040Model}{chapter.2}% 24
@@ -39,7 +39,7 @@
 \BOOKMARK [1][-]{section.4.3}{Balancing}{chapter.4}% 39
 \BOOKMARK [2][-]{subsection.4.3.1}{Extending\040dataset}{section.4.3}% 40
 \BOOKMARK [2][-]{subsection.4.3.2}{Oversampling\040and\040Undersampling}{section.4.3}% 41
-\BOOKMARK [2][-]{subsection.4.3.3}{Tune\040mode\040parameters}{section.4.3}% 42
+\BOOKMARK [2][-]{subsection.4.3.3}{Tune\040model\040parameters}{section.4.3}% 42
 \BOOKMARK [1][-]{section.4.4}{Machine\040Learning}{chapter.4}% 43
 \BOOKMARK [1][-]{section.4.5}{Deep\040Learning}{chapter.4}% 44
 \BOOKMARK [1][-]{section.4.6}{Article\040to\040Claim}{chapter.4}% 45
