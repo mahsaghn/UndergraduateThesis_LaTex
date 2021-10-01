@@ -5,25 +5,25 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Overview of \cite {Hierarchical-Attention-Network} model.\relax }}{30}{figure.caption.6}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Architecture of Memory Network for stance detection.\relax }}{30}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Schematic of each machine learning model.\relax }}{37}{figure.caption.8}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Comparison between Article to claim and Headline to claim labels, samples distribution in \cite {stance_persian} dataset, after extending by \cite {parsfever} .\relax }}{38}{figure.caption.9}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Schematic of each deep learning model.\relax }}{39}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Schematic of each fake news detection model.\relax }}{40}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Schematic of each machine learning model.\relax }}{38}{figure.caption.8}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Schematic of each deep learning model.\relax }}{39}{figure.caption.9}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Schematic of each fake news detection model.\relax }}{39}{figure.caption.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparison between Article to claim and Headline to claim labels, samples distribution in \cite {stance_persian} dataset.\relax }}{45}{figure.caption.14}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Claim veracity label's distribution in \cite {stance_persian} dataset.\relax }}{46}{figure.caption.16}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparison performance of \textit {Hazm}, \textit {Stanford}, \textit {NLTK} and \textit {BERT} tokenizers.\relax }}{47}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparison duration of tokenizing algorithm on \cite {stance_persian} dataset.\relax }}{47}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparison accuracy of SVM model with different configuration of stop words.\relax }}{48}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparison SVM model with Bow, TF-iDF and Word2Vec word representaion algorithms.\relax }}{49}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Tuning SVM model parameters with TF-iDF representaion algorithms\relax }}{52}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Tuning LinearSVC model parameters with TF-iDF representaion algorithms.\relax }}{52}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Random Forest machine learning model different configuration on stance detection task. Type of line presents type of boundary applied on each model. Solid line, dash line and doted line stands for no boundary, sqrt of total feature and log2 of total feature respectively.\relax }}{54}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Effect of $\rho $ parameter of \textit {elasticnet} penalty on stance detection task.\relax }}{55}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Effect of regression parameter of \textit {elasticnet} penalty on stance detection task.\relax }}{55}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces \relax }}{56}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Comparison SVM model with Bow, TF-iDF and Word2Vec word representation algorithms.\relax }}{57}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Comparison SVM model with Bow, TF-iDF and Word2Vec word representation algorithms.\relax }}{58}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Deep learning procedure on the headline-to-claim stance detection task. Left figures illustrate loss score and right figures illustrate accuracy score of train and test data during training procedure. (a, b) Pre-trained language model based on Google's BERT (\cite {parsbert}) on Persian corpus (c, d) Pre-trained monolingual language model based on ParsBERT (\cite {parsbert}) on Persian corpus. (e, f) Pre-trained language model based on ALBERT (\cite {albert}) on Persian corpus\relax }}{59}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Left figures illustrate loss score and right figures illustrate accuracy score of train and test data during training procedure for each iteration. (a, b) Training procdure on fake news detection model trained on the \cite {stance_persian} dataset. (c, d) Training procdure on fake news detection model trained on oversampled \cite {stance_persian} dataset by ADASYN (\cite {adasyn}) algorithm.\relax }}{61}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparison between Article to claim and Headline to claim labels, samples distribution in \cite {stance_persian} dataset.\relax }}{45}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Claim veracity label's distribution in \cite {stance_persian} dataset.\relax }}{46}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparison performance of \textit {Hazm}, \textit {Stanford}, \textit {NLTK} and \textit {BERT} tokenizers.\relax }}{47}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparison duration of tokenizing algorithm on \cite {stance_persian} dataset.\relax }}{47}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparison accuracy of SVM model with different configuration of stop words.\relax }}{49}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparison SVM model with Bow, TF-iDF and Word2Vec word representaion algorithms.\relax }}{50}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Tuning SVM model parameters with TF-iDF representaion algorithms\relax }}{52}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Tuning LinearSVC model parameters with TF-iDF representaion algorithms.\relax }}{53}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Random Forest machine learning model different configuration on stance detection task. Type of line presents type of boundary applied on each model. Solid line, dash line and doted line stands for no boundary, sqrt of total feature and log2 of total feature respectively.\relax }}{54}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Effect of $\rho $ parameter of \textit {elasticnet} penalty on stance detection task.\relax }}{55}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Effect of regression parameter of \textit {elasticnet} penalty on stance detection task.\relax }}{55}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces \relax }}{56}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Comparison SVM model with Bow, TF-iDF and Word2Vec word representation algorithms.\relax }}{57}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Comparison between Article to claim and Headline to claim labels, samples distribution in \cite {stance_persian} dataset, after extending by \cite {parsfever} .\relax }}{57}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Comparison SVM model with Bow, TF-iDF and Word2Vec word representation algorithms.\relax }}{58}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Deep learning procedure on the headline-to-claim stance detection task. Left figures illustrate loss score and right figures illustrate accuracy score of train and test data during training procedure. (a, b) Pre-trained language model based on Google's BERT (\cite {parsbert}) on Persian corpus (c, d) Pre-trained monolingual language model based on ParsBERT (\cite {parsbert}) on Persian corpus. (e, f) Pre-trained language model based on ALBERT (\cite {albert}) on Persian corpus\relax }}{60}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Left figures illustrate loss score and right figures illustrate accuracy score of train and test data during training procedure for each iteration. (a, b) Training procdure on fake news detection model trained on the \cite {stance_persian} dataset. (c, d) Training procdure on fake news detection model trained on oversampled \cite {stance_persian} dataset by ADASYN (\cite {adasyn}) algorithm.\relax }}{62}{figure.caption.33}%
 \addvspace {10\p@ }

@@ -48,6 +48,10 @@ Too many commas in name 1 of "Deepak P, Tanmoy Chakraborty, Cheng Long, Santhosh
 while executing---line 1896 of file acl_natbib.bst
 Too many commas in name 1 of "Deepak P, Tanmoy Chakraborty, Cheng Long, Santhosh Kumar G" for entry book_datafake
 while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
+while executing---line 1896 of file acl_natbib.bst
+Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
+while executing---line 1896 of file acl_natbib.bst
 Name 1 in "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." has a comma at the end for entry sikit-learn
 while executing---line 1896 of file acl_natbib.bst
 Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
@@ -95,10 +99,6 @@ while executing---line 1896 of file acl_natbib.bst
 Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
 while executing---line 1896 of file acl_natbib.bst
 Too many commas in name 1 of "F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret- tenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, and M. P. E. Duchesnay." for entry sikit-learn
-while executing---line 1896 of file acl_natbib.bst
-Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
-while executing---line 1896 of file acl_natbib.bst
-Too many commas in name 1 of "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean" for entry word2vec
 while executing---line 1896 of file acl_natbib.bst
 Too many commas in name 1 of "Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, Mohammad Manthouri" for entry polar_servic
 while executing---line 1896 of file acl_natbib.bst

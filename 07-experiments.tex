@@ -1,18 +1,17 @@
-{\color{green} TODO}
+In this section, experiment setups and the results of each experiment in each step are discussed. Besides, different ideas and algorithms which are described in section \ref{sec:exp} are evaluated. At first, machine-learning-based experiments are presented. As machine learning feature engineering, requires multiple experiments to find best working predictors, there are many trials and errors for a variety of algorithms and ideas. Then, Deep learning models. are compared to machine learning models. Finally the FakeNews model is evaluated depends on best stance detection models.
+
 The headline of news is a summary of its body content and most of the time, it carries valuable data. So, we focused on detecting the news headlines stance towards claim(H2C), as well as the news articles stance towards a claim(B2C). According to the lower amount of text in the news headline, most of the experiments are firstly applied to H2C. Then, better approaches are applied to A2C.  
 
 
-In this section, the results of the experiments of each step are discussed. Besides, different ideas and algorithms which are described in section \ref{sec:exp} are evaluated. At first, machine-learning-based experiments are presented. As machine learning feature engineering, requires multiple experiments to find best working predictors, there are many trials and errors for a variety of algorithms and ideas. Then, Deep learning models. are compared to machine learning models.
-
 \section{Dataset}
 \label{sec:dataset}
-\input{06-dataset}
+\input{dataset}
 
 
 \section{Tokenizetion}
-Tokenization of \textit{Hazm}, \textit{Stanford}, \textit{NLTK}, and \textit{BERT} are evaluated against each other manually. Every single difference is evaluated\footnote{All different cases during corpus tokenization by those 4 algorithms are gathered in \href{https://docs.google.com/document/d/1SlRBnoyLntLJ5yalWXZ1EqJ0wRj4DyiEMJdewkEkrTM/edit?usp=sharing}{here}}. Only three cases are presented as examples to compare each tokenizer's performance in figure \ref{fig:tekenres}. We need to remove particular words and patterns from the corpus so  it is important to find a tokenizer that distinguishes all words correctly. Besides, it shouldn't lose information while tokenizing and be as fast as possible. 
+Tokenization of \textit{Hazm}, \textit{Stanza}, \textit{NLTK}, and \textit{WordPiece} are evaluated against each other manually. Every single difference in each algorithm performance is evaluated\footnote{All different cases during corpus tokenization by those 4 algorithms are gathered in \href{https://docs.google.com/document/d/1SlRBnoyLntLJ5yalWXZ1EqJ0wRj4DyiEMJdewkEkrTM/edit?usp=sharing}{here}}. Only three cases are presented as examples to compare each tokenizer's performance in figure \ref{fig:tekenres}. As we need to remove particular words and patterns from the corpus,  it is important to find a tokenizer that distinguishes all words correctly. Besides, it shouldn't lose information while tokenizing and be as fast as possible. 
 
-In figure \ref{fig:tekenres}, unsuitable tokens are highlighted  blue. There isn't any flawless algorithm. As BERT is  subwords, there are some UNK tokens and wrongly words broken by BERT tokenizing. For example figure \ref{fig:tekenres}, part (b) blue highlighted word is broken into two pieces wrongly. Strength of \textit{Stanford} tokenizer, is that consider connected pronoun individually. But sometimes \text{Stanford} wrongly breaks an original word with a wrong assumption that the desired word has a connected pronoun. Figure \ref{fig:tekenres}, part (c) is a sample on wrong separating pronoun and at part (b), pronouns are separated correctly. It can be seen in figure \ref{fig:tekenres} \textit{Hazm} performance is highly similar to \textit{NLTK}. The only difference is that in contrast \textit{NLTK}, Hazm separates numbers and punctuation in the corpus (Figure \ref{fig:tekenres}, part (a)). 
+In figure \ref{fig:tekenres}, unsuitable tokens are highlighted in blue. There isn't any flawless algorithm. WordPies is subwords based so there are some UNK tokens and words are wrongly broken. For example figure \ref{fig:tekenres}, part (b) blue highlighted word is broken into two pieces wrongly. Considering connected pronoun individually is the strength of \textit{Stanza} tokenizer. But sometimes \text{Stanza} wrongly breaks an original word with a wrong assumption that the desired word has a connected pronoun. Figure \ref{fig:tekenres}, part (c) is a sample on wrong separating pronoun and at part (b), pronouns are separated correctly. It can be seen in figure \ref{fig:tekenres} \textit{Hazm} performance is highly similar to \textit{NLTK}. The only difference is that in contrast \textit{NLTK}, Hazm separates numbers and punctuation in the corpus (Figure \ref{fig:tekenres}, part (a)). 
 
 \begin{figure}%
 	\centering
@@ -34,11 +33,16 @@ Besides, the duration of tokenizing for each tokenizer is compared in figure \re
 	\label{fig:tokentime}%
 \end{figure}
 
-
 \section{Stop-Words}
-Three sets of stop words is evaluated it this section. \cite{stance_persian} contains 1255 words which include wide a range of parts of speech. In contrast, NonVerbal\footnote{Gathered by \href{github.com/kharazi/persian-stopwords}{Kharazi}} stop words set include 158 words and it doesn't support any verb. In the new version of stop-words, 18 stop words are removed from the Nonverval set. This set is called \textit{shortened} and 82 new words are added. Finally, the \textit{Extended} version contains 233 words. To evaluate the performance of each stop-words sets, all desired features with Tf-iDF as word representation after removing particular stop words are fed into an SVM (\cite{svc}) model. To having a fair comparison, non-targeting removing the stop-words is also compared. 
+After preprocessing tokens, stop-words will be removed from the tokens. Firstly, the same stop-words which have been used by \cite{stance_persian} was used in the projext. After reviewing preprocessed corpus, it was hard to infer the stance from text pieces. So we chose stop-words carefully in a way not to lose refuting or supporting expressions.
 
-It can be inferred from figure \ref{fig:stopwords} that the list of stop words which is used by \cite{stance_persian} is ignoring valuable data and it is even better not to remove stop words. Nonverbal stop-words achieve higher accuracy on stance detection. Through, whether removing or adding words from Nonverbal (\textit{shortened} version) didn't improve results. Altogether, Nonverbal list of stop-words, performs the best in this task.
+Kharazi\footnote{\label{fn:kharazi}github.com/kharazi/persian-stopwords} has classified Persian stop-words into verbal, nonverbal, and short. Verbs carry valuable information in news. Nonverbal stop-word class is a better choice to remove low-value words in this task. Besides, we added and removed some words from Nonverbal list to become suitable for news context. 
+
+
+Difference between performance of these four sets of stop-words in addition to skipping removing stop-words (To have a fair comparison) is illustrated in figure \ref{fig:stopwords}. \cite{stance_persian} contains 1255 words which include wide a range of parts of speech. In contrast, NonVerbal\footnote{Gathered by \href{github.com/kharazi/persian-stopwords}{Kharazi}} stop words set include 158 words and it doesn't support any verb. In the new version of stop-words, 18 stop words are removed from the Nonverval set. This set is called \textit{shortened} and 82 new words are added. Finally, the \textit{Extended} version contains 233 words. To evaluate the performance of each stop-words sets, all desired features with Tf-iDF as word representation after removing particular stop words are fed into an SVM (\cite{svc}) model.
+
+It can be inferred from figure \ref{fig:stopwords} that the list of stop-words which is used by \cite{stance_persian} is ignoring valuable data and it is even better not to remove stop-words from the corpus. Nonverbal stop-words achieve higher accuracy on stance detection. Through, whether removing or adding words from Nonverbal (\textit{shortened} version) didn't improve results. Altogether, Nonverbal list of stop-words, performs the best in this task. 
+Then all remaining tokens will be concatenated with a space character and considered as prepossessed and clean corpus.
 
 \begin{figure}%
 	\centering
@@ -48,9 +52,11 @@ It can be inferred from figure \ref{fig:stopwords} that the list of stop words w
 \end{figure}
 
 \section{Word Representation}
-{\color{green}TODO}
-In this project, FastText\footnote{fasttext.cc} Word2Vec model is used with vector lengths equal to 300 which is trained on Persian Wikipedia website.
-In this section, Bow (\cite{bow}), TF-iDF, and Word2Vec (\cite{word2vec}) performances are compared by SVM machine learning algorithm in the stance detection task. According to figure \ref{fig:wordrep} Tf-iDF performs the best in comparison to BoW and Word2Vec in order to represent words.
+As a baseline three different Bag-of-word (\cite{bow}), TF-iDF (\cite{tfidf}), and Word-to-Vector (\cite{word2vec}) algorithms are evaluated against each other. More details are explained in section \ref{lr:wordrep}.
+
+In this project, FastText\footnote{fasttext.cc} Word2Vec model is used with vector lengths equal to 300 which is trained on Persian Wikipedia website. For both TF-iDF and BoW n-gram range is set from 1 to 2. 
+
+BoW (\cite{bow}), TF-iDF, and Word2Vec (\cite{word2vec}) performances are compared by SVM machine learning algorithm in the stance detection task. According to figure \ref{fig:wordrep} Tf-iDF performs the best in comparison to BoW and Word2Vec in order to represent words.
 \begin{figure}%
 	\centering
 	{\includegraphics[width=12.5cm]{statistics/WordRep.png} }
@@ -60,14 +66,14 @@ In this section, Bow (\cite{bow}), TF-iDF, and Word2Vec (\cite{word2vec}) perfor
 
 \section{Predictors}
 \label{sec:predictors}
-Different combinations of calculated predictor are run to find out that which set of predictors performs better. Desired predictors are Similarity, RootDistance, IsQuestion, HasTwoParts and Polarity. In this Section, both SVM (\cite{svc}) and RandomForest (\cite{randomforest}) results are considered in evaluation to have a more accurate analysis.
+Different combinations of calculated predictor are run to find out that which set of predictors performs better. Desired predictors are Similarity, RootDistance, IsQuestion, HasTwoParts and Polarity. In this Section, both SVM (\cite{svc}) and RandomForest (\cite{randomforest}) results are considered in evaluation to have a more accurate analysis. Similarity score is calculated by utilizing \textit{difflib}\footnote{docs.python.org/3/library/difflib.html} python library.
+
 
 Firstly, both models are trained on the corpus representation by TF-iDF without any other predictor. Then, each predictor is added into TF-iDF vector to evaluate their effectiveness individually, and finally, all features together are fed to models. According to table \ref{tlb:predictors}, Similarity and ImportantWords have the highest positive effect respectively, on both accuracy (\ref{eq:acc}) and f1-score (\ref{eq:f1}). Similarity score has improved accuracy 15 to 17 percent and ImportantWords has improved SVM accuracy by almost 4 percent. Though, predictors such as IsQuestion, HasTwoParts, and Polarity don't have a significant effect on results, using them all together boost total accuracy and f1-score. 
 
 Due to figure \ref{tlb:predictors}, using RootDistance, IsQuestion, and HasTwoParts individually decreases accuracy, so models are also trained with two other variations. Though IsQuestion, HasTwoParts, and polarity don't have a positive effect individually, using them with Similarity, ImportantWrods, and polarity boost accuracy. On the other hand, removing RootDistance from All predictors mode whether have a negligible effect or improves accuracy. 
 
 According to previous comparisons and evaluation inferred from table \ref{tlb:predictors}, the best predictors to use for stance detection task is the combination of Similarity, ImportantWords, IsQuestion, HasTwoParts, and Polarity predictors in addition to TD-iDF as the corpus representer, altogether.
-
 
 \begin{table}
 	\centering
@@ -109,10 +115,7 @@ According to previous comparisons and evaluation inferred from table \ref{tlb:pr
 In this section, each Gaussian Naive Bayes, SVM, Linear SVC, Random Forest, and Logistic Regression parameters are tuned on stance detection task with respect to chosen predictors in the previous section (\ref{sec:predictors}). In the next step, the performance of models is compared to each other.
 
 \subsection{SVM}
-{\color{green}TODO}
-SVC model from \textit{scikit-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html} python library is used in this project. Regularization parameter ($ c $) which is stands for strength of regularization is tuned depends on task. As the kernel three different \textit{rbf}, \textit{sigmoid}, and \textit{poly} hyperplane are evaluated. Kernel specifies the type of separator that SVM algorithm uses to distinguish different classes. Furthermore, \textit{class\_weight} parameter set to \textit{balanced} which mean set different weight for each class during training to compensate imbalanced data. 
-
-Three SVM classifier tuned parameters  are Kernel, Regularization parameter (C) and degree of polynomial kernel. Evaluated kernels are RBF, Polynomial and Sigmoid. According to figure \ref{fig:svm}, Sigmoid works weak for this task. Each polynomial kernel behaves differently due value of the regularization parameter. Polynomial with degrees 2 and 3 performs better than 1 and 4. Linear polynomial may be so simple and SVM is not good enough to classify stance with polynomial with degree 4. RBF, Polynomial degree 3 behave similarly due to the regularization parameter changes. 
+In this project, We adopted SVC model implementation from \textit{scikit-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html} python library is used in this project. \textit{class\_weight} parameter set to \textit{balanced} to compensate imbalanced data. Three SVM classifier tuned parameters  are Kernel, Regularization parameter (C) and degree of polynomial kernel. Evaluated kernels are RBF, Polynomial and Sigmoid. According to figure \ref{fig:svm}, Sigmoid works weak for this task. Each polynomial kernel behaves differently due value of the regularization parameter. Polynomial with degrees 2 and 3 performs better than 1 and 4. Linear polynomial may be so simple and SVM is not good enough to classify stance with polynomial with degree 4. RBF, Polynomial degree 3 behave similarly due to the regularization parameter changes. 
 
 The best configuration for SVM classifier is using RBF as the kernel with regularization parameter equal to 2.5 confirming figure \ref{fig:svm}. Learning procedure and details of each model training exist in this project GitHub repository\footnote{Different SVM configuration training details \href{https://github.com/mahsaghn/stance\_detection/tree/main/selected\_outputs/machinelearning/svm}{[here]}.}.
 
@@ -132,10 +135,9 @@ Linear Support Vector Machine Classifier algorithm, loss function and Regulariza
 	\label{fig:linearsvm}%
 \end{figure}
 \subsection{Random Forest}
-{\color{green}TODO}
 In this project, implemented Random Forest algorithm from \textit{scikit-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html} python library is used. Three parameters of \textit{max\_features} (Maximum number of features allowed to use for each tree), \textit{estimator} (Number of decision trees), and \textit{criterion} (Algorithm to measure quality of splits in nodes) are tuned for the desired task.
 
-Random Forest criterion, maximum number of feature in each decision tree and number of tree are evaluated. Figure \ref{fig:randomforest} illustrates effect of number of tree in forest on accuracy among different configuration. Accuracy of models increase on average by adding more trees into the forest. Besides, \textit{gini} algorithm performs better than \textit{entropy} to measure quality of splits. Also, three different upper bound is considered for number of features when looking for a split. No boundary, \textit{sqrt} of total feature and \textit{log2} of total feature. According to figure \ref{fig:randomforest} don't applying any boundary leads to better accuracy in average. Furthermore, as the boundary get tighten average performance decreases. 
+Figure \ref{fig:randomforest} illustrates effect of number of tree in forest on accuracy among different configuration. Accuracy of models increase on average by adding more trees into the forest. Besides, \textit{gini} algorithm performs better than \textit{entropy} to measure quality of splits. Also, three different upper bound is considered for number of features when looking for a split. No boundary, \textit{sqrt} of total feature and \textit{log2} of total feature. According to figure \ref{fig:randomforest} don't applying any boundary leads to better accuracy in average. Furthermore, as the boundary get tighten average performance decreases. 
 
 Best configuration for Random Forest machine learning model in this task is using \textit{gini} algorithm to evaluate splitting quality, not applying any boundary on number of features and having 125 decision tree in the forest. 
 \begin{figure}% 
@@ -145,12 +147,7 @@ Best configuration for Random Forest machine learning model in this task is usin
 	\label{fig:randomforest}%
 \end{figure}
 \subsection{Logistic Regression}
-{\color{green}TODO}
-Implemented Logistic Regression algorithm from \textit{sckiti-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LogisticRegression.html} python library is used.
-Another optimization algorithm for Logistic Regression such as \textit{sag}, \textit{lbfgs}, and \textit{liblinear} are also evaluated. In this setup, penalization is set to $\; l2$. \textit{lbfgs} optimizer performs more robust in larger datasets. Although, it is slower than \textit{saga}\footnote{scikit-learn.org/stable/modules/linear\_model.html\#logistic-regression}. 
-
-
-Many experiments are designed to evaluate behavior of Logistic Regression models. 	 \textit{Elasticnet} (Equation \ref{eq:logisel}) penalty algorithm which is used in penalization procedure, used for \textit{saga} solver and \textit{l2} penalty algorithm is used for \textit{sag}, \textit{lbfgs}, and \textit{newton-cg} solvers. 
+We also adopted Logistic Regression algorithm from \textit{sckiti-learn}\footnote{scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LogisticRegression.html} python library. Many experiments are designed to evaluate behavior of Logistic Regression models. 	 \textit{Elasticnet} (Equation \ref{eq:logisel}) penalty algorithm which is used in penalization procedure, used for \textit{saga} solver and \textit{l2} penalty algorithm is used for \textit{sag}, \textit{lbfgs}, and \textit{newton-cg} solvers. 
 
 \textit{Elasticnet} has a $\rho$ parameter which determines portion of using $l1$ to $l2$ penalty in \textit{saga} solver. Figure \ref{fig:logistic1} illustrate effect of $\rho$ values from $0$ to $0.9$ on accuracy of stance detection. Besides, models with regression parameter from $0.5$ to $4.5$ are evaluated from determined $\rho$ range. It can be inferred from figure \ref{fig:logistic1} that $\rho$ parameter doesn't have significant effect on accuracy of the model. While, regression parameter between $1$ and $2.5$ clearly results in higher accuracy rather than external range. It can be also inferred from figure \ref{fig:logistic2} which illustrates effect of regression parameter on stance classification accuracy. Models with different value of $\rho$ behave similarly and best performances happens when regression parameter is between $1$ and $2.5$.  
 \begin{figure}% 
@@ -183,12 +180,23 @@ In previous sections parameters of each SVM, LinearSVC, Random Forest, and Logis
 	\label{fig:all}%
 \end{figure}
 \section{Dataset Balancing}
-{\color{green} TODO}
-According to figure \ref{fig:datacom}, oversampling should be performed classes except the majority class. Resampling methods that were evaluated are:
-In this project number of nearest neighbors to generate a new sample is set to 9\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.ADASYN.html}.
+As mentioned in section \nameref{sec:dataset}, Figure \ref{fig:datacom}, the number of samples in dataset classes was imbalanced. So oversampling should be performed classes except the majority class.
+In \cite{stance_persian} minority class forms only 7.4\% of data (Figure \ref{fig:datacom}).
+ All oversampling methods are evaluated against each other in this project and utilized from the oversampling package of \textit{imblearn} \footnote{imbalanced-learn.org/stable/references/over\_sampling.html} python library. 
+
+\begin{figure}%
+	\centering
+	\subfloat[\centering Artcile to Claim]{{\includegraphics[width=6cm]{statistics/stance/a2c_b1.png} }}%
+	\qquad
+	\subfloat[\centering Headline to claim ]{{\includegraphics[width=6cm]{statistics/stance/h2c_b1.png} }}%
+	\caption{Comparison between Article to claim and Headline to claim labels, samples distribution in \cite{stance_persian} dataset, after extending by \cite{parsfever} .}%
+	\label{fig:datab1}%
+\end{figure}
 
 
-Firstly, ADASYN, SMOTE, SVMSMOTE, BorderLineSmote, and RandomOverSampler oversampling methods are applied on the \cite{stance_persian} dataset. Each method is evaluated against five desired machine learning models. Red sereis in figure \ref{fig:balanc} stands for the accuracy of models, associated with the \cite{stance_persian} dataset. LinearSVC, LogisticRegresion, and GaussianNaibeBayes are not compatible with any oversampling method. Though, ADASYN oversampling method has increased these two model accuracy $5$ percent on average. 
+
+Firstly, ADASYN, SMOTE, SVMSMOTE, BorderLineSmote, and RandomOverSampler oversampling methods are applied on the \cite{stance_persian} dataset. In ADASYN algorithm, the number of nearest neighbors to generate a new sample is set to 9\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.ADASYN.html}. Each method is evaluated against five desired machine learning models. Red sereis in figure \ref{fig:balanc} stands for the accuracy of models, associated with the \cite{stance_persian} dataset. LinearSVC, LogisticRegresion, and GaussianNaibeBayes are not compatible with any oversampling method. Though, ADASYN oversampling method has increased these two model accuracy $5$ percent on average.
+
 
 At the second step, dataset is extend by the ParsFever (\cite{parsfever}) dataset. Though, number of samples are increased accuracy is obviously decreased, but the GaussianNB model. This may happens that data sources from each dataset are totally different and headlines in ParsFever are much longer than the \cite{stance_persian} dataset.
 \begin{figure}% 
@@ -199,13 +207,11 @@ At the second step, dataset is extend by the ParsFever (\cite{parsfever}) datase
 \end{figure}
 
 \section{Deep Learning}
-{\color{green} TODO}
-Input of the model are \textit{input ids}, \textit{token type ids}, and \textit{attention mask}. Then, two dense layer and another dense layer as the classifier is added to the output of the BERT model. 
-In this experiment, ALBERT (\cite{albert})	 model is substitute with BERT model in figure \ref{fig:dlshema}.  Other configurations are same as BERT experiment.
+In this experiment, BERT, ParsBERT, and ALBERT (\cite{albert}) model are substitute with Pretrained ML model in figure \ref{fig:dlschm}. Input of our deep learning model are \textit{input ids}, \textit{token type ids}, and \textit{attention mask}.
 
 
 \label{sec:dl}
-Pre-trained BERT model is used at the top of the model, then two Dense layers and finally a Dense including 4 neuron to classify stance is considered for end-to-end system. Each epochs lasts about 26 seconds in training procedure. Figure \ref{fig:deep} illustrates the model training procedure. In comparison to machine learning models, the deep learning model has boosted the accuracy of head to claim stance detection by 10 percent. 
+A Pre-trained BERT-based model is used at the top of the model, then two Dense layers and finally a Dense including 4 neuron to classify stance is considered for end-to-end system. Each epochs lasts about 26 seconds in training procedure. Figure \ref{fig:deep} illustrates the model training procedure. In comparison to machine learning models, the deep learning model has boosted the accuracy of head to claim stance detection by 10 percent. 
 
 BERT-based model has learned for 20 epochs. Validation loss has stated to increase since epoch 11 and validation accuracy hasn't changed considerably then. Best validation accuracy has converged on $80.92\%$ on the headline-to-claim dataset. 
 

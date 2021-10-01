@@ -12,53 +12,52 @@
 \contentsline {section}{\numberline {2.3}Machine Learning}{20}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Gaussian Naive Bayes}{20}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}SVC}{21}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}LinearSVC}{21}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Random Forest}{21}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.3}LinearSVC}{22}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Random Forest}{22}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Logistic Regression}{22}{subsection.2.3.5}%
 \contentsline {section}{\numberline {2.4}Oversampling}{23}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}RandomOverSampler}{23}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}SMOTE}{23}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}SVMSMOTE }{23}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.2}SMOTE}{24}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}SVMSMOTE }{24}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}BorderlineSMOTE}{24}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}ADASYN}{24}{subsection.2.4.5}%
 \contentsline {section}{\numberline {2.5}Language Representation Model}{24}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}BERT}{24}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.1}BERT}{25}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}ParsBERT}{25}{subsection.2.5.2}%
 \contentsline {subsection}{\numberline {2.5.3}ALBERT}{25}{subsection.2.5.3}%
-\contentsline {section}{\numberline {2.6}Evaluation Metrics}{25}{section.2.6}%
+\contentsline {section}{\numberline {2.6}Evaluation Metrics}{26}{section.2.6}%
 \contentsline {chapter}{\numberline {3}Related Works}{27}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Methodology}{33}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Preprocessing}{33}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Word Representation}{33}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Features}{34}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Similarity}{34}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Root Distance}{35}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}ImportantWords}{35}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Is Question}{35}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Has Two Parts}{35}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Polarity}{35}{subsection.4.3.6}%
-\contentsline {section}{\numberline {4.4}Machine Learning}{36}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Balancing}{37}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Extending dataset}{37}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Oversampling and Undersampling}{39}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Tune mode parameters}{39}{subsection.4.5.3}%
-\contentsline {section}{\numberline {4.6}Deep Learning}{39}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Article to Claim}{40}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Fake News Detection}{40}{section.4.8}%
+\contentsline {section}{\numberline {4.2}Features}{33}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Similarity}{34}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Root Distance}{34}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}ImportantWords}{34}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Is Question}{35}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Has Two Parts}{35}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Polarity}{35}{subsection.4.2.6}%
+\contentsline {section}{\numberline {4.3}Balancing}{36}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Extending dataset}{36}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Oversampling and Undersampling}{37}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Tune mode parameters}{37}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Machine Learning}{37}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Deep Learning}{38}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Article to Claim}{38}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Fake News Detection}{39}{section.4.7}%
 \contentsline {chapter}{\numberline {5}Experiments}{43}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Dataset}{43}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Tokenizetion}{46}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Stop-Words}{48}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Word Representation}{48}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Predictors}{49}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Machine Learning}{50}{section.5.6}%
+\contentsline {section}{\numberline {5.6}Machine Learning}{51}{section.5.6}%
 \contentsline {subsection}{\numberline {5.6.1}SVM}{51}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Linear SVC}{51}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.2}Linear SVC}{52}{subsection.5.6.2}%
 \contentsline {subsection}{\numberline {5.6.3}Random Forest}{53}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Logistic Regression}{53}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Comparison}{54}{subsection.5.6.5}%
+\contentsline {subsection}{\numberline {5.6.4}Logistic Regression}{54}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Comparison}{56}{subsection.5.6.5}%
 \contentsline {section}{\numberline {5.7}Dataset Balancing}{56}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Deep Learning}{57}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Article to Claim}{58}{section.5.9}%
-\contentsline {section}{\numberline {5.10}Fake News}{60}{section.5.10}%
+\contentsline {section}{\numberline {5.8}Deep Learning}{59}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Article to Claim}{61}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Fake News}{61}{section.5.10}%
 \contentsline {chapter}{\numberline {6}Conclusion}{63}{chapter.6}%
