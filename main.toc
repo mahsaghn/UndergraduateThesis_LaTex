@@ -47,6 +47,7 @@
 \contentsline {section}{\numberline {4.5}Deep Learning}{40}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Article to Claim}{41}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Fake News Detection}{41}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Conclusion}{43}{section.4.8}%
 \contentsline {chapter}{\numberline {5}Experiments}{45}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Dataset}{45}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Tokenizetion}{48}{section.5.2}%

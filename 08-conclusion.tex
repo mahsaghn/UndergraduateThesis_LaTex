@@ -4,7 +4,8 @@ In the Persian stance detection task, using deep language models boosts our mode
 
 The best pretrained stance detection model on \ac{H2C} and \ac{A2C} are separately utilized in fake news detection. We have achieved 99\% accuracy score on the \cite{stance_persian} dataset. Though, the number of samples in the dataset gathered by \cite{stance_persian} contains 1624 samples. Increasing number of samples helps the model to improves its generalization during the training procedure.
 
+It is important to evaluate the fake news detection model performance more precisely. The number of samples in \cite{stance_persian} is not enough to achieve a mode with the ability of generalization. Though high accuracy score on the dataset, it is not reliable enough due to the few numbers of samples in the test set.
+
 Adding attention layers to the classifier has improved stance classification results in current researches. For instance, \cite{book_disinformation} alleged that using attention layers in the model has made a great contribution to accuracy scores. Utilizing such models can also make an increase in the ability of these models to go beyond the current state in such low-resource settings. Besides, increasing the number of samples in the \cite{stance_persian} dataset toward achieving a balanced dataset can help the model to distinguish each class precisely. 
- 
- 
- 
+
+In our fake news detection model, we require A2C and H2C pre-trained models. Even it is not possible for these two models to get fine-tune in fake news detection task. It is worth to taking a look at model architecture and design an end-to-end model for fake news detection. As an alternative, it would be helpful if it is possible for A2C and H2C models to be fine-tuned on the current task at least.

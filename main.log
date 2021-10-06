@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.6.22)  6 OCT 2021 12:50
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.6.22)  6 OCT 2021 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,26 +1099,26 @@ Missing character: There is no – in font ptmr8t!
  [68] [69]) [70] Excluding 'comment' comment. [71]
 File: iust.jpeg Graphic file (type bmp)
 <iust.jpeg>
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
 
 [72]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 184.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EE8DE41094EE51C869FFBDF160E25A84;4307.
+(rerunfilecheck)             Checksum: 5F49B6CDD97ABE3C4906A6E89CE752BA;4364.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 184.
  ) 
 Here is how much of TeX's memory you used:
- 22403 strings out of 479819
- 393771 string characters out of 5895846
- 689264 words of memory out of 5000000
- 39086 multiletter control sequences out of 15000+600000
+ 22405 strings out of 479819
+ 393793 string characters out of 5895846
+ 689440 words of memory out of 5000000
+ 39088 multiletter control sequences out of 15000+600000
  575119 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  48i,16n,55p,1095b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
