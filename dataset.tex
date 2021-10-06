@@ -3,16 +3,16 @@ The first Persian stance detection dataset (\cite{stance_persian})  is used in t
 	\item {\color{green!70!black}\textbf{Agree:}} The article clearly states that the claim is True without any ambiguity or amphibology. 
 	\item {\color{red!70!black}\textbf{Disagree:}} The article clearly refutes that the claim without any ambiguity or amphibology. 
 	\item {\color{yellow!70!black}\textbf{Discuss:}} The article contains information about the claim but doesn't have any evaluation of its truth. 
-	\item {\color{gray!}\textbf{Unrelated:}} There isn't any information about the claim in the article.
+	\item {\color{gray!}\textbf{Unrelated:}} There is not any information about the claim in the article.
 \end{itemize}
-Dataset samples distribution in each class is illustrated in Figure \ref{fig:datacom}. According to Figure \ref{fig:datacom}, the ratio of \textit{Agree}. Besides, \textit{Disagree} labels are much lower than the others and there is a potential risk for models to be biased on \textit{Unrelated} and \textit{Discuss}. Also, the percentage of \textit{Unrelated} label is higher in headline to claim than article to claim. A headline can be considered as a summary of news body. So, unlike news text, news headline may not have enough information to evaluate a claim.  Moreover, ratio of \textit{Discuss} to \textit{Agree} and \textit{Disagree} is higher in Article to claim in comparison to headline to claim. Accordingly, it seems that news agencies choose more controversial headlines to appeal reader's attention.
+Dataset samples distribution in each class is illustrated in Figure \ref{fig:datacom}. According to Figure \ref{fig:datacom}, the ratio of \textit{Agree}. Besides, \textit{Disagree} labels are much lower than the others and there is a potential risk for models to be biased on \textit{Unrelated} and \textit{Discuss}. Also, the percentage of \textit{Unrelated} label is higher in \ac{H2C} than \ac{A2C}. A headline can be considered as a summary of news body. So, unlike news text, news headline may not have enough information to evaluate a claim.  Moreover, ratio of \textit{Discuss} to \textit{Agree} and \textit{Disagree} is higher in \ac{A2C} in comparison to \ac{H2C}. Accordingly, it seems that news agencies choose more controversial headlines to appeal reader's attention.
 
 Furthermore, this dataset covers each claim veracity according to related news articles. Veracity labels statistics (FakeNews Dataset) is illustrated in table \ref{tbl:fakedata}. In this dataset, the main focus has been on published fake news, this can be inferred from figure \ref{fig:fake}. Three following labels are also considered for classifying news veracity for each claim-headline and claim-body pairs.
 
 \begin{itemize} 
 	\item {\color{green!70!black}\textbf{True:}} Reliable news agencies have asserted that this claim is a fact.
 	\item {\color{red!70!black}\textbf{False:}} Unreliable news agencies have spread data about this claim and reliable news agencies have considered this claim as hearsay.
-\item {\color{gray}\textbf{Unknown:}} There isn't enough integrity between reliable news agencies sources.
+\item {\color{gray}\textbf{Unknown:}} There is not enough integrity between reliable news agencies sources.
 \end{itemize}
 
 
@@ -31,9 +31,9 @@ Furthermore, this dataset covers each claim veracity according to related news a
 		\hline
 		Label & Agree & Disagree & Unrelated & Discuss \\
 		\hline \hline
-		Headline to claim & 628  & 210  & 932 & 824  \\
+		\ac{H2C} & 628  & 210  & 932 & 824  \\
 		\hline
-		Article to claim & 189  & 374  & 797 & 1196  \\
+		\ac{A2C} & 189  & 374  & 797 & 1196  \\
 		\hline
 		
 	\end{tabularx} 
@@ -45,7 +45,7 @@ Furthermore, this dataset covers each claim veracity according to related news a
 	\subfloat[\centering Artcile to Claim]{{\includegraphics[width=6cm]{statistics/stance/a2c.png} }}%
 	\qquad
 	\subfloat[\centering Headline to claim ]{{\includegraphics[width=6cm]{statistics/stance/h2c.png} }}%
-	\caption{Comparison between article-to-claim and headline-to-claim labels, samples distribution in \cite{stance_persian} dataset.}%
+	\caption{Comparison between \ac{A2C} and \ac{H2C} labels, samples distribution in \cite{stance_persian} dataset.}%
 	\label{fig:datacom}%
 \end{figure}
 

@@ -5,31 +5,31 @@ A brief description of adopted algorithms which are used in this project are ava
 \textit{\hyperref[lr:evalmetrics]{Evaluation Metrics}}. 
 \section{Tokenization}
 \label{lr:tokenization}
-It is vital in the tokenizing step to break the corpus into correct words. Tokenizers limit the number of words to reduce computational costs, so it may happen that tokenizers generate meaningless words if the number of accepted words hasn't been set sufficiently. Also, sometimes tokenizers haven't seen words before, and omit them while tokenizing the corpus. According to stated reasons, it is important to choose a tokenizer carefully.
+It is vital in the tokenizing step to break the corpus into correct words. Tokenizers limit the number of words to reduce computational costs, so it may happen that tokenizers generate meaningless words if the number of accepted words has not been set sufficiently. Also, sometimes tokenizers have not seen words before, and omit them while tokenizing the corpus. According to stated reasons, it is important to choose a tokenizer carefully.
 
 \subsection{NLTK}
-NLTK\footnote{nltk.org} (Natural Language ToolKit)) is a python platform to work easier with human language data. This tool kit supports more than 50 datasets and supports numerous languages including Persian. NLTK supports various tokenizer methods. Its basic algorithm tokenize words depends on white spaces.
+NLTK\footnote{nltk.org} (Natural Language ToolKit)) is a python platform to work easier with human language data. This tool kit supports more than 50 datasets and supports numerous languages including Persian. \ac{NLTK} supports various tokenizer methods. Its basic algorithm tokenize words depends on white spaces.
 
 \subsection{Hazm}
-Hazm\footnote{\label{fn:hazm}sobhe.ir} is a python library Persian language processing tool kit. It has variety of functions such as word and sentence tokenizer, word lemmatizer, POS tagger, Shallow, and Dependency parser. \textit{Hazm} tokenizer is \textit{NLTK} compatible\footref{fn:hazm}.
+Hazm\footnote{\label{fn:hazm}sobhe.ir} is a python library Persian language processing tool kit. It has variety of functions such as word and sentence tokenizer, word lemmatizer, POS tagger, Shallow, and Dependency parser. \textit{Hazm} tokenizer is \textit{\ac{NLTK}} compatible\footref{fn:hazm}.
 		
 \subsection{Stanza}
 Stanford NLP group has released Stanza tool\footnote{stanfordnlp.github.io/stanza}. Stanza is also another advantageous NLP tools package and can diagnose multi-word tokens. At first, it splits raw input text into sentences, then performs sentences segmentation. It is efficient for linguistic analysis and supports more than 70 human languages and releases new versions constantly.
 	
 \subsection{WordPiece}
-WordPiece tokenizer used by BERT (\cite{bert}) machine learning model. BERT is a transformer-based machine-learning model which is currently used in various natural language processing tasks. WordPiece algorithm starts learning tokenization with a list of available characters in the text. Then it expands its word list by merging the most repeated group of characters. This procedure continues until hitting the considered number of words limit. 
+WordPiece tokenizer used by \ac{BERT} (\cite{bert}) machine learning model. \ac{BERT} is a transformer-based machine-learning model which is currently used in various natural language processing tasks. WordPiece algorithm starts learning tokenization with a list of available characters in the text. Then it expands its word list by merging the most repeated group of characters. This procedure continues until hitting the considered number of words limit. 
 
 \section{Word Representation}
 \label{lr:wordrep}
-To represent a corpus, each token should be converted to a number or vector. Good representation carries semantic of each word or n-grams, sequential words contents, and is as brief as possible. Three baseline Bag-of-word (\cite{bow}), TF-iDF (\cite{tfidf}), and Word-to-Vector (\cite{word2vec}) algorithms are used in this project. In this section, these algorithms are described briefly.
-\subsection{BoW}
-Bag-of-Words (\cite{bow}) model, is a way to represent texts. BoW keeps words frequency and dismisses word's orders and context. Dimension of text representation is equal to the number of specified words plus one for words that don't exist in BoW dictionary. Each cell in output vector representation stands for a specific word and the value of that cell is equal to the repetition times of that word in the particular text. As an alternative, it is possible to choose n-gram instead of a single word as BoW dictionary. This may improve BoW model performance in order to keep longer expression semantic but on the other hand dimension of representation exceed vastly. One disadvantage of BoW is it doesn't specify any relation between words with similar semantic meanings\footnote{en.wikipedia.org/Bag-of-words\_model}. 
+To represent a corpus, each token should be converted to a number or vector. Good representation carries semantic of each word or n-grams, sequential words contents, and is as brief as possible. Three baseline Bag-of-word (\cite{bow}), \ac{TFIDF} (\cite{tfidf}), and \ac{W2V} (\cite{word2vec}) algorithms are used in this project. In	 this section, these algorithms are described briefly.
+\subsection{Bag of Word}
+Bag-of-Words (\cite{bow}) model, is a way to represent texts. \ac{BoW} keeps words frequency and dismisses word's orders and context. Dimension of text representation is equal to the number of specified words plus one for words that don't exist in \ac{BoW} dictionary. Each cell in output vector representation stands for a specific word and the value of that cell is equal to the repetition times of that word in the particular text. As an alternative, it is possible to choose n-gram instead of a single word as \ac{BoW} dictionary. This may improve \ac{BoW} model performance in order to keep longer expression semantic but on the other hand dimension of representation exceed vastly. One disadvantage of \ac{BoW} is it doesn't specify any relation between words with similar semantic meanings\footnote{en.wikipedia.org/Bag-of-words\_model}. 
 
-\subsection{TF-IDF}
+\subsection{Term Frequency–Inverse Document Frequency}
 
-Term Frequency–Inverse Document Frequency (\cite{tfidf}) is an algorithm to present the importance of each word in a corpus in a statistical way. According to the repetition of a specific word in each document and inverse effect of the number documents that the word appears in, a float number will be assigned to each word in that corpus.  
+Term Frequency–Inverse Document Frequency (\cite{tfidf}) is an algorithm to present the importance of each word in a corpus in a statistical way (\ac{TFIDF}). According to the repetition of a specific word in each document and inverse effect of the number documents that the word appears in, a float number will be assigned to each word in that corpus.  
 \begin{itemize}
-	\item \textbf{Trem frequency (TF):} This item represents how many times a word is used in each document. \textit{TF} should be calculated for each document separately. \textit{TF} term calculate from equation \ref{eq:tf}
+	\item \textbf{Trem Frequency (TF):} This item represents how many times a word is used in each document. \textit{TF} should be calculated for each document separately. \textit{TF} term calculate from equation \ref{eq:tf}
 	\begin{equation}
 	\label{eq:tf}
 	\text{tf} \left(t,D\right) = \frac{f_{t,d}}{\Sigma_{t^{`} \in d } f_{t^{`}, d}}
@@ -43,15 +43,15 @@ Term Frequency–Inverse Document Frequency (\cite{tfidf}) is an algorithm to pr
 \end{itemize}
 
 \noindent
-After calculating \textit{TF} and \textit{iDF}, TF-iDF value for each word calculates from equation \ref{tfidf}.
+After calculating \textit{TF} and \textit{iDF}, \ac{TFIDF} value for each word calculates from equation \ref{tfidf}.
 \begin{equation}
 \label{tfidf}
 \text{tf-idf}\left(t,d,D\right) =  \text{tf} \left( t,D\right) . \text{idf} \left( t,D\right)
 \end{equation}
 
 
-\subsection{W2V}
-Word2vec (\cite{word2vec}) is a neural network-based model which learns each word semantic and even it can recommend words with similar meaning to a specific word. Word2Vec represents each word with a vector instead of a number. After the training phase, each word vector serves numbers that are generally similar to words with similar meaning, and words with less correspondence have lower vector similarities. This vector is called word-embedding. It is necessary to have a large corpus in order to train a powerful model which can predict each word vector precisely. Multiple alternative algorithms for Word2Vec exist. For example, Fasttext is an extension of Word2Vec model which treats each word as concatenated n-grams\footnote{en.wikipedia.org/wiki/Word2vec}.  
+\subsection{Word2Vec}
+Word2vec (\cite{word2vec}) is a neural network-based model which learns each word semantic and even it can recommend words with similar meaning to a specific word. \ac{W2V} represents each word with a vector instead of a number. After the training phase, each word vector serves numbers that are generally similar to words with similar meaning, and words with less correspondence have lower vector similarities. This vector is called word-embedding. It is necessary to have a large corpus in order to train a powerful model which can predict each word vector precisely. Multiple alternative algorithms for \ac{W2V} exist. For example, Fasttext is an extension of \ac{W2V} model which treats each word as concatenated n-grams\footnote{en.wikipedia.org/wiki/Word2vec}.  
 
 
 
@@ -79,9 +79,9 @@ Naive Bayes Classifier algorithm estimates the probability of each class. Gaussi
 
 \subsection{Support Vector Machines}
 \label{SVM}
-SVC stands for SVM Classifier. Support Vector Machines (\cite{svc})  are a group of supervised machine learning models. One of their applications is the classification problem. SVM algorithms map each sample to a space such that samples of a particular class locate as far as possible from other classes samples. In other words, SVM is looking for an n-dimensional hyperplane which can separate classes as clearly as possible\footnote{wikipedia.org/Support-vector\_machine}.
+SVC stands for \ac{SVM} Classifier. Support Vector Machines (\cite{svc})  are a group of supervised machine learning models. One of their applications is the classification problem. \ac{SVM} algorithms map each sample to a space such that samples of a particular class locate as far as possible from other classes samples. In other words, \ac{SVM} is looking for an n-dimensional hyperplane which can separate classes as clearly as possible\footnote{wikipedia.org/Support-vector\_machine}.
 
-Regularization parameter stands for strength of regularization. Kernel of SVM specifies the type of separator that the SVM algorithm uses to distinguish different classes. It is a basic form of the mathematical function that SVM tunes during the training procedure. Kernels of SVC could vary from a simple polynomial such as \textit{linear} to more complex ones such as \textit{Radial basis function}, \textit{Sigmoid}, and \textit{Higher degree polynomial}. Furthermore, the wight of each class could be different from each other. \textit{Balanced} mode set different weight for each class during training to compensate imbalanced data. 
+Regularization parameter stands for strength of regularization. Kernel of \ac{SVM} specifies the type of separator that the \ac{SVM} algorithm uses to distinguish different classes. It is a basic form of the mathematical function that \ac{SVM} tunes during the training procedure. Kernels of SVC could vary from a simple polynomial such as \textit{linear} to more complex ones such as \textit{Radial basis function}, \textit{Sigmoid}, and \textit{Higher degree polynomial}. Furthermore, the wight of each class could be different from each other. \textit{Balanced} mode set different weight for each class during training to compensate imbalanced data. 
 
 
 \subsection{LinearSVC}
@@ -120,14 +120,14 @@ where:
 	\item{$y_{i}$} Takes value between -1, 1.
 \end{eqexpl}
 \bigbreak
-Another parameter specifies optimizer algorithm could be Minimizing Finite Sums with the Stochastic Average Gradient (SAG), SAGA which is an alternative of SAG that supports $l1$ optimizer,  Newton’s method which utilize quadratic approximation, or Limited-memory Broyden–Fletcher–Goldfarb–Shanno which is analog to Newton's method and Hessian matrix is approximated by updating gradient evaluation and it is more robust in larger datasets. Although, Limited-memory Broyden–Fletcher–Goldfarb–Shanno is slower than \textit{SAGA}\footnote{scikit-learn.org/stable/modules/linear\_model.html\#logistic-regression}.
+Another parameter specifies optimizer algorithm could be Minimizing Finite Sums with the Stochastic Average Gradient (\ac{SAG}), \ac{SAGA} which is an alternative of \ac{SAG} that supports $l1$ optimizer,  Newton’s method which utilize quadratic approximation, or Limited-memory Broyden–Fletcher–Goldfarb–Shanno which is analog to Newton's method and Hessian matrix is approximated by updating gradient evaluation and it is more robust in larger datasets. Although, Limited-memory Broyden–Fletcher–Goldfarb–Shanno is slower than \textit{SAGA}\footnote{scikit-learn.org/stable/modules/linear\_model.html\#logistic-regression}.
 
 \section{Oversampling}
 \label{lr:oversampling}
-A common way of dealing with an imbalanced dataset is automatically augmenting samples to achieve balanced class distribution (Oversampling) or even reduce the number of samples in the majority class (Undersampling). Undersampling is applicable on a large dataset. But in small datasets, it's not wise to ignore some samples. Oversampling methods suites for datasets that suffer from lack of data. It is important to notice that splitting test and train sets should be performed before resampling, and oversampling should be only applied on the train set. RandomOverSampler, SMOTE, SVMSMOTE, BorderlineSMOTE, and ADASYN algorithms are described in the following sections.
+A common way of dealing with an imbalanced dataset is automatically augmenting samples to achieve balanced class distribution (Oversampling) or even reduce the number of samples in the majority class (Undersampling). Undersampling is applicable on a large dataset. But in small datasets, it's not wise to ignore some samples. Oversampling methods suites for datasets that suffer from lack of data. It is important to notice that splitting test and train sets should be performed before resampling, and oversampling should be only applied on the train set. RandomOverSampler, SMOTE, SVMSMOTE, BorderlineSMOTE, and \ac{ADASYN} algorithms are described in the following sections.
 
-\subsection{RandomOverSampler} 
-This method randomly peak samples from classes and resample them. Random Over Sampler is the most naive algorithm and its performance is same as increasing minority class loss weight. Another variant of this method is smoothed bootstrap oversampling. It is generally similar to Random Oversampler, but new samples don't exactly overlap original samples. They are adjacent to source samples. This variant can be implement by \textit{shrinking} parameter in \textit{RandomOverSampler} from \textit{imblearn} python library\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.RandomOverSampler.html}. 
+\subsection{Random Oversampler} 
+This method randomly peak samples from classes and re-sample them. Random Over Sampler is the most naive algorithm and its performance is same as increasing minority class loss weight. Another variant of this method is smoothed bootstrap oversampling. It is generally similar to Random Oversampler, but new samples don't exactly overlap original samples. They are adjacent to source samples. This variant can be implement by \textit{shrinking} parameter in \textit{RandomOverSampler} from \textit{imblearn} python library\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.RandomOverSampler.html}. 
 	
 \subsection{SMOTE}
 Synthetic Minority Over-sampling Technique (\cite{smothe}) is an oversampling method by generating new samples by interpolation. It's not important for smothe sampler that point is chosen to be resampled. 
@@ -137,23 +137,23 @@ SVMSMOTE (\cite{svmsmothe}) is a variant of SMOTE oversampling method which uses
 	
 \subsection{BorderlineSMOTE} 
 BorderlineSMOTE (\cite{borderlinesmothe}) is also another variant of SMOTE oversampler. Borderline samples are mainly chosen to get resample in this variant. \cite{borderlinesmothe} has achieved better accuracy than SMOTE.\footnote{imbalanced-learn.org/stable/references/generated/imblearn.over\_sampling.BorderlineSMOTE.html}
-\subsection{ADASYN} 
-Adaptive Synthetic Sampling Approach for Imbalanced Learning (\cite{adasyn}) focuses on generating new samples adjacent to those samples wrongly classified by employing K-Nearest Neighbors classifier. These samples are considered as hard samples because it's not easy for models to predict them, as a result, ADASYN increases the robustness of the desired dataset. This method performs better in comparison to Decision Tree and SMOTE algorithms (\cite{adasyn}).
+\subsection{Adaptive Synthetic Sampling} 
+Adaptive Synthetic Sampling Approach for Imbalanced Learning (\ac{ADASYN}) (\cite{adasyn}) focuses on generating new samples adjacent to those samples wrongly classified by employing K-Nearest Neighbors classifier. These samples are considered as hard samples because it's not easy for models to predict them, as a result, \ac{ADASYN} increases the robustness of the desired dataset. This method performs better in comparison to Decision Tree and SMOTE algorithms (\cite{adasyn}).
 
 \section{Language Representation Model}
 \label{lr:lm}
-Language representation models can represent a word embedding in context. Pretrained language models have significant improve on many natural language model tasks such as natural language inference task (\cite{bert}). BERT, ParsBERT, and ALBERT models are described in short in the following sections.
+Language representation models can represent a word embedding in context. Pretrained language models have significant improve on many natural language model tasks such as natural language inference task (\cite{bert}). \ac{BERT}, \ac{ParsBERT}, and \ac{ALBERT} models are described in short in the following sections.
 \subsection{BERT}
-One of most impressive and powerful deep learning language model for text processing, is BERT which is stands for Bidirectional Encoder
-Representations from Transformers (\cite{bert}) and developed by Google. And has received state of the art result due its previous researches (\cite{bert}). \cite{spotfake} improved its performance by make usage of the BERT language model in fake news detection. BERT base version contains 12 transformer blocks, containing 110 million parameters. There are also another variant of BERT such as large including 24 transformer blocks and multilingual BERT. BERT models are trained of Wikipedia corpus. 
+One of most impressive and powerful deep learning language model for text processing, is \ac{BERT} which is stands for Bidirectional Encoder
+Representations from Transformers (\cite{bert}) and developed by Google. And has received state of the art result due its previous researches (\cite{bert}). \cite{spotfake} improved its performance by make usage of the \ac{BERT} language model in fake news detection. \ac{BERT} base version contains 12 transformer blocks, containing 110 million parameters. There are also another variant of \ac{BERT} such as large including 24 transformer blocks and multilingual \ac{BERT}. \ac{BERT} models are trained of Wikipedia corpus. 
 
-One application of BERT is using first top layers of BERT model as contextual word embedding (\cite{book_datafake}). This model suggests a vector that representing a word which best fit in the current context.  BERT is a masked language model. It randomly masks some tokens and learn to predict masked tokens correctly. BERT utilizes bidirectional transformer, it means that BERT can inferred text both left to right and right to left.
+One application of \ac{BERT} is using first top layers of \ac{BERT} model as contextual word embedding (\cite{book_datafake}). This model suggests a vector that representing a word which best fit in the current context.  \ac{BERT} is a masked language model. It randomly masks some tokens and learn to predict masked tokens correctly. \ac{BERT} utilizes bidirectional transformer, it means that \ac{BERT} can inferred text both left to right and right to left.
 
 \subsection{ParsBERT}
-ParsBERT (\cite{parsbert}) pre-trained model for Persian language that can be used at the top of the model. ParsBERT model is a monolingual transfromer language model based on Google's BERT model \cite{bert} which is lighert than multilingual BERT. Pretrained ParsBERT model is available on HooshvareLab\footnote{\href{https://huggingface.co/HooshvareLab}{huggingface.co}}. ParsBERT outperforms other language model variants on Persian.
+ParsBERT (\cite{parsbert}) pre-trained model for Persian language that can be used at the top of the model. \ac{ParsBERT} model is a monolingual transfromer language model based on Google's \ac{BERT} model \cite{bert} which is lighert than multilingual \ac{BERT}. Pretrained \ac{ParsBERT} model is available on HooshvareLab\footnote{\href{https://huggingface.co/HooshvareLab}{huggingface.co}}. \ac{ParsBERT} outperforms other language model variants on Persian.
 
-\subsection{ALBERT}
-ALBERT (\cite{albert}) model is a lighter variant of BERT model. The large BERT model has 9 times more parameters than ALBERT. ALBERT is released by Google's team in 2019. It separates input and hidden layers embedding. The input layer is context-independent while the hidden layer is context-dependent. Same as BERT, ALBERT uses masked language model but instead of NSP (Next Sentence Prediction) ALBERT uses SOP (Sentence Order Prediction) which only looks for sentence coherence in contrast to SOP which looks for both coherence and the topic to identify the next sentence.
+\subsection{A Lite BERT}
+A Lite BERT (\cite{albert}) model is a lighter variant of \ac{BERT} model. The large \ac{BERT} model has 9 times more parameters than \ac{ALBERT}. \ac{ALBERT} is released by Google's team in 2019. It separates input and hidden layers embedding. The input layer is context-independent while the hidden layer is context-dependent. Same as \ac{BERT}, \ac{ALBERT} uses masked language model but instead of NSP (Next Sentence Prediction) \ac{ALBERT} uses SOP (Sentence Order Prediction) which only looks for sentence coherence in contrast to SOP which looks for both coherence and the topic to identify the next sentence.
 
  
 

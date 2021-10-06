@@ -2,11 +2,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Value of credibility according to GroundTruth and Veracity labels. \relax }}{40}{table.caption.11}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Value of credibility according to GroundTruth and Veracity labels. \relax }}{42}{table.caption.12}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Samples distribution in four classes of Persian stance dataset.\relax }}{45}{table.caption.12}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Fake news data set statistics\relax }}{45}{table.caption.14}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of accuracy score and F1-score with different combinations of predictors for both SVM and Random Forest classifiers.\relax }}{51}{table.caption.20}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Comparison of headline-to-claim stance detection models.\relax }}{61}{table.caption.31}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Comparison between article-to-claim machine learning and deep learning models.\relax }}{61}{table.caption.32}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Samples distribution in four classes of Persian stance dataset.\relax }}{47}{table.caption.13}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Fake news data set statistics\relax }}{47}{table.caption.15}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison of \ac {Acc} score and F1-score with different combinations of predictors for both \ac {SVM} and Random Forest classifiers.\relax }}{53}{table.caption.21}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Comparison of \ac {H2C} stance detection models.\relax }}{61}{table.caption.32}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Comparison between \ac {A2C} \ac {ML} and \ac {DL} models.\relax }}{63}{table.caption.33}%
 \addvspace {10\p@ }

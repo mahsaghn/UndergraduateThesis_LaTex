@@ -9,10 +9,11 @@
 \newcommand{\authorName}{Mahsa Ghaderan}
 \newcommand{\advisor}{Main Guardian}
 \newcommand{\advisorTitle}{Dr. Sauleh Eetemadi} % assistant, associate prof?
-\newcommand{\advisorDepartment}{Computer Science and Engineering}
+\newcommand{\advisorDepartment}{School of Computer Engineering}
 
 
-\newcommand{\readingCommitteeOne}{Dr. Behrouz Minaei-Bidgoli}			
+\newcommand{\readingCommitteeOne}{Dr. Sauleh Eetemadi}	
+\newcommand{\readingCommitteeTwo}{Dr. Behrouz Minaei-Bidgoli}		
 \newcommand{\graduationYear}{2021}
 
 
@@ -86,6 +87,9 @@
 \usepackage{eqexpl}
 \usepackage{comment}
 \usepackage{amsmath}
+\usepackage{paracol}
+\usepackage{acro} 
+\input{03-abbrevation}
 \begin{document}
 
 \input{00-titlepages.tex}
@@ -98,8 +102,12 @@
 \input{03-dedication}
 
 \tableofcontents{}
+\printacronyms[name=List of Abbreviations, heading=chapter*]
+\addcontentsline{toc}{section}{List of Abbreviations}
 \listoffigures
+\addcontentsline{toc}{section}{List of Figures}
 \listoftables
+\addcontentsline{toc}{section}{List of Tables}
 \clearpage
 
 
@@ -109,10 +117,10 @@
 \chapter {Introduction}
 \input{04-intro}
 
-\chapter {Literature Review}
+\chapter {Concepts and tools}
 \input{04-litreview}
 
-\chapter {Related Works}
+\chapter {Related Work}
 \label{literature}
 \input{05-relatedworks}
 
@@ -168,7 +176,7 @@
 \bigbreak
 \centerline {\textbf{Iran University of Science and Technology}}
 \bigbreak
-\large\centerline {\textbf{Computer Engineering Department}}
+\large\centerline {\textbf{School of Computer Engineering}}
 }
 
 \end{document}

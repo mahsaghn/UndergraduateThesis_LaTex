@@ -62,7 +62,7 @@ where:
 \end{eqexpl}
 
 \bigbreak
-One alternative is to use a deep neural networks model to predict score polarity of a word whether word-level or sentence-level. But due to the lack of a Persian dataset in news context, it is not practical. Available datasets for sentiment analysis are mainly gathered from customer comments on special businesses. For instance \cite{polar_hotel} used 2 different datasets, first it translated English sentiment analysis corpus and second used comments on hotels. \cite{polar_servic} used dataset from SnappFood\footnote{snappfood.ir}, DigiKala\footnote{digikala.ir} comments. One main problem with these datasets is the different use of language between user comments and news. Users mostly use everyday language on the other hand news agencies use formal language.
+One alternative is to use a deep neural networks model to predict score polarity of a word whether word-level or sentence-level. But due to the lack of a Persian dataset in news context, it is not practical. Available datasets for sentiment analysis are mainly gathered from customer comments on special businesses. For instance \cite{polar_hotel} used 2 different datasets, first it translated English sentiment analysis corpus and second used comments on hotels. Besides, datasets containing polarity of comments of SnappFood\footnote{snappfood.ir} and DigiKala\footnote{digikala.ir} websites are available. One main problem with these datasets is the different use of language between user comments and news. Users mostly use everyday language on the other hand news agencies use formal language.
 
 
 
@@ -77,15 +77,15 @@ ParsFEVER (\cite{parsfever}) is a Persian dataset set based on FEVER (\cite{feve
 \begin{itemize}
 	\item {\color{green!70!black}\textbf{Support:}} The article obviously proves the given claim. 
 	\item {\color{red!60!black}\textbf{Refute:}} The article obviously disproves the given claim.
-	\item {\color{gray}\textbf{Not Enough Info:}} There isn't enough information in the article about the claim. 
+	\item {\color{gray}\textbf{Not Enough Info:}} There is not enough information in the article about the claim. 
 \end{itemize}                
 
 According to Figure \ref{fig:datacom} two \textit{Agree} and \textit{Disagree} class in \cite{stance_persian} dataset suffers from lack of samples. In this project, \textit{Supports} and \textit{Refutes} samples from \cite{parsfever} dataset are mapped to \textit{Agree} and \textit{Disagree} class of \cite{stance_persian} dataset respectively. 
-But it is not possible to extend \textit{Discuss} or \textit{Unrelated} class by ParsFEVER, because they are both merged in \textit{Not Enough Info} class. As a result, two \textit{Agree} and \textit{Disagree} extended as much as possible with random selected samples from ParsFEVER dataset. Sample distribution is illustrated in figure \ref{fig:datab1}. Dataset is still imbalanced in one class for both Article to Claim and Headline to Claim.
+But it is not possible to extend \textit{Discuss} or \textit{Unrelated} class by ParsFEVER, because they are both merged in \textit{Not Enough Info} class. As a result, two \textit{Agree} and \textit{Disagree} extended as much as possible with random selected samples from ParsFEVER dataset. Sample distribution is illustrated in figure \ref{fig:datab1}. Dataset is still imbalanced in one class for both Article-to-Claim (\ac{A2C}) and Headline-to-Claim (\ac{H2C}).
 
 
 \subsection{Oversampling and Undersampling}
- Desired oversampling methods to deal with imbalanced dataset are RandomOverSampler, SMOTE, SVMSMOTE, BorderlineSMOTE, and ADASYN which are described in section \ref{lr:oversampling}. 
+ Desired oversampling methods to deal with imbalanced dataset are RandomOverSampler, SMOTE, SVMSMOTE, BorderlineSMOTE, and \ac{ADASYN} which are described in section \ref{lr:oversampling}. 
 
 \subsection{Tune model parameters}
  The last but not least important balancing method is to choose a robust learning algorithm for an imbalanced dataset, Choosing a weight of each class according to the ratio of samples of each class and choosing an optimizer and loss function that can overcome an imbalanced dataset.
@@ -103,9 +103,9 @@ Figure \ref{fig:mlschm} illustrates a basic schematic of each machine learning m
 
 \section{Deep Learning}
 \label{mth:dl}
-In the deep learning approach, a combination of all predictors can be fed into the model and the model on its own will automatically learn which predictor is useful for the task. This property is the biggest advance of deep learning in comparison to machine learning (\cite{book_datafake}). On the contrary, in machine learning, it was a critical step to design input predictors that the model can perform the best. And hours of trying different combination of predictors is needed (\cite{book_fake}). \cite{stance_robust} assessed that, In contrast, deep learning models, machine learning models that are trained on a single dataset, usually generalize poorly to other domains.
+In the deep learning (\ac{DL}) approach, a combination of all predictors can be fed into the model and the model on its own will automatically learn which predictor is useful for the task. This property is the biggest advance of \ac{DL} in comparison to machine learning (\cite{book_datafake}). On the contrary, in machine learning (\ac{ML}), it was a critical step to design input predictors that the model can perform the best. And hours of trying different combination of predictors is needed (\cite{book_fake}). \cite{stance_robust} assessed that, In contrast, \ac{DL} models, \ac{ML}  models that are trained on a single dataset, usually generalize poorly to other domains.
 
-The schematic of the deep learning model is shown in figure \ref{fig:dlschm}. Headline-to-claim and Article-to-claim models have the same schematic. Only the input shape of parameters varies in each model. In comparison to Figure \ref{fig:mlschm} Feature Extraction is omitted from the machine learning model. Besides, the Deeplearning module constructs of pre-trained language model and a few Dense layers at its top. We evaluated BERT, ParsBERT, and ALBERT language models against each other in this project (More description in section \ref{lr:lm}).
+The schematic of the \ac{DL} model is shown in figure \ref{fig:dlschm}. \ac{H2C} and \ac{A2C} models have the same schematic. Only the input shape of parameters varies in each model. In comparison to Figure \ref{fig:mlschm} Feature Extraction is omitted from the \ac{ML} model. Besides, The deep learning module constructs of pre-trained language model and a few Dense layers at its top. We evaluated \ac{BERT}, \ac{ParsBERT}, and \ac{ALBERT} language models against each other in this project (More description in section \ref{lr:lm}).
 \begin{figure}% 
 	\centering
 	{\includegraphics[width=14.5cm]{statistics/schema/dl.png} }
@@ -116,12 +116,12 @@ The schematic of the deep learning model is shown in figure \ref{fig:dlschm}. He
 
 \section{Article to Claim}
 \label{mth:a2c}
-Deep learning models perform far better on language inference tasks so they are better choices for article-to-claim stance classification. To calculate the stance of a claim toward the body of a news article, three different models based on a pre-trained Persian language model based on BERT, ParsBERT, and  ALBERT (More description in section \ref{lr:lm}) are evaluated against each other. 
+Deep learning models perform far better on language inference tasks so they are better choices for \ac{A2C} stance classification. To calculate the stance of a claim toward the body of a news article, three different models based on a pre-trained Persian language model based on \ac{BERT}, \ac{ParsBERT}, and  \ac{ALBERT} (More description in section \ref{lr:lm}) are evaluated against each other. 
 
 \section{Fake News Detection}
 \label{mth:fn}
 	\label{sec:fakenews}
-Schematic of fake news pipeline is shown in figure \ref{fig:fnschm}. To detect a news article's veracity, headline-to-claim and article-to-claim stance detection models, are considered as a black box. Four news articles are considered to evaluate the veracity of a claim. Firstly, the stance of a claim toward each headline of desired news articles and the body of the news article predict by stance classifier models. All predicted stance vectors are concatenated and along with some other features are fed into a multi-layer perception network in order to predict the veracity of the claim.
+Schematic of fake news pipeline is shown in figure \ref{fig:fnschm}. To detect a news article's veracity, \ac{H2C} and \ac{A2C} stance detection models, are considered as a black box. Four news articles are considered to evaluate the veracity of a claim. Firstly, the stance of a claim toward each headline of desired news articles and the body of the news article predict by stance classifier models. All predicted stance vectors are concatenated and along with some other features are fed into a multi-layer perception network in order to predict the veracity of the claim.
 
 \begin{figure}% 
 	\centering
@@ -130,7 +130,7 @@ Schematic of fake news pipeline is shown in figure \ref{fig:fnschm}. To detect a
 	\label{fig:fnschm}%
 \end{figure}
 
-The credibility of news websites is one of the most important extracted features. The credibility can be calculated through the following steps (The credibility score of head-claim and article-claim is calculated similarly except using their related stance ground truth):
+The credibility of news websites is one of the most important extracted features. The credibility can be calculated through the following steps (The credibility score of \ac{H2C} and \ac{A2C} is calculated similarly except using their related stance ground truth):
 
 \begin{itemize}
 	\item \textbf{Initialization}: The credibility score of all news websites that are existing in the \cite{stance_persian} dataset is set to zero at first. For the test set or predicting new samples, if the website doesn't exist in the data set, the credibility score is set to 0.1.

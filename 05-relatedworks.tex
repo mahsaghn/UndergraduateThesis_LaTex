@@ -1,12 +1,12 @@
 Many researchers have done to improve stance detection accuracy. Different ideas and architectures have been applied. In the following part, previous research and papers have been overviewed.  
 
-In 2016 \cite{Augenstein2016StanceDW} started working on the challenging task without assuming neither target is clearly mentioned in the text nor training date is given for every target. Their dataset construct of tweets mostly containing politicians and popular issues. The paper mainly focuses on detecting a stance with respect to unseen targets. \cite{Augenstein2016StanceDW} used conditional LSTM encoding on Tweeter data. \cite{Augenstein2016StanceDW} inferred that using unconditional LSTM has the best performance for unseen targets. Their results are improved by using bidirectional encoding. Using LSTM-based models lead to better results than Majority class, SVM (\cite{svc}), and BoW (\cite{bow}) as baselines in this experiment.
+In 2016 \cite{Augenstein2016StanceDW} started working on the challenging task without assuming neither target is clearly mentioned in the text nor training date is given for every target. Their dataset construct of tweets mostly containing politicians and popular issues. The paper mainly focuses on detecting a stance with respect to unseen targets. \cite{Augenstein2016StanceDW} used conditional LSTM encoding on Tweeter data. \cite{Augenstein2016StanceDW} inferred that using unconditional LSTM has the best performance for unseen targets. Their results are improved by using bidirectional encoding. Using LSTM-based models lead to better results than Majority class, \ac{SVM} (\cite{svc}), and \ac{BoW} (\cite{bow}) as baselines in this experiment.
 
-\cite{UCLMR} has developed an end-to-end stance detection system including lexical and similarity-based features which is passed through a multi-layer perception model. UCLMR's\footnote{UCL Machine Reading} model claimed third place in FNC-1\footnote{First stage of a competition Fake News Challenge(FNC-1) is exploring how artificial intelligence technologies could be leveraged to combat fake news\footnote{fakenewschallenge.org}. Numerous researchers has interest in this field and many papers has published besides this challenge.}. The model architecture is illustrated in Figure \ref{fig:UCLMR-system}. Headline and body texts are tokenized by scikit-learn\footnote{\cite{sikit-learn}}. Furthermore, \cite{UCLMR} used both term frequency (TF) vector of headline and claim and cosine similarity between head and body, and $l$2-normalized TF-IDF vectors. Besides, stop words are excluded. \cite{UCLMR} achieved FNC-1 score of 75.20\% on the test data set.
+\cite{UCLMR} has developed an end-to-end stance detection system including lexical and similarity-based features which is passed through a multi-layer perception model. UCLMR's\footnote{UCL Machine Reading} model claimed third place in \ac{FNC}\footnote{First stage of a competition Fake News Challenge(\ac{FNC}) is exploring how artificial intelligence technologies could be leveraged to combat fake news\footnote{fakenewschallenge.org}. Numerous researchers has interest in this field and many papers has published besides this challenge.}. The model architecture is illustrated in Figure \ref{fig:UCLMR-system}. Headline and body texts are tokenized by scikit-learn\footnote{\cite{sikit-learn}}. Furthermore, \cite{UCLMR} used both term frequency (TF) vector of headline and claim and cosine similarity between head and body, and $l$2-normalized TF-IDF vectors. Besides, stop words are excluded. \cite{UCLMR} achieved \ac{FNC} score of 75.20\% on the test data set.
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.4]{statistics/stance/simple-baseline-FNC.png}
-	\caption{Schematic diagram of UCLMR’s system.}
+	\caption{Schematic diagram of \cite{UCLMR} model.}
 	\label{fig:UCLMR-system}
 \end{figure}
 
@@ -20,7 +20,7 @@ In 2016 \cite{Augenstein2016StanceDW} started working on the challenging task wi
 	\item \textbf{Argument Representation}: The argument is considered as the author's stance. \cite{Hierarchical-Attention-Network} used a binary classification to detect the document's argument sentence. Then, it learned the sequence representation of word sequence in argument sentences by making use of LSTM layer.
 \end{itemize}
 
-In addition, it utilized a hierarchical attention network in order to weigh the importance of linguistic information, and learn the mutual attention between the document and linguistic information. \cite{Hierarchical-Attention-Network} mentioned that the Hyper Attention layer in Figure \ref{fig:hierarchical_att}, had a considerable influence on model performance. 
+In addition, it utilized a hierarchical attention network in order to weigh the importance of linguistic information, and learn the mutual attention between the document and linguistic information. \cite{Hierarchical-Attention-Network} mentioned that the Hyper-Attention layer in Figure \ref{fig:hierarchical_att}, had a considerable influence on model performance. 
 
 \begin{figure}
 	\centering
@@ -33,8 +33,8 @@ In addition, it utilized a hierarchical attention network in order to weigh the 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.25]{statistics/stance/memoty_network.png}
-	\caption{Architecture of Memory Network for the stance classification task.}
+	\caption{Architecture of \cite{memory_network} for the stance classification task.}
 	\label{fig:mem_network}
 \end{figure}
 
-\cite{stance_robust} mainly focused on the robustness of a stance detection classifier. Trained models  on a single data set in a special domain, won't be robust enough on other domains. So they suggested using a multi-domain dataset or use multi-dataset learning methods to improve model generalization. The model architecture is constructed of fine-tuned BERT\cite{bert} and a single dense classifier at the top. \cite{stance_robust} used 5 fixed seed values during training and reported averaged results of trained models. \cite{stance_robust} concluded that MDL(multi-dataset learning) has a significant impact on increasing model robustness.
+\cite{stance_robust} mainly focused on the robustness of a stance detection classifier. Trained models  on a single data set in a special domain, won't be robust enough on other domains. So they suggested using a multi-domain dataset or use multi-dataset learning methods to improve model generalization. The model architecture is constructed of fine-tuned \ac{BERT}\cite{bert} and a single dense classifier at the top. \cite{stance_robust} used 5 fixed seed values during training and reported averaged results of trained models. \cite{stance_robust} concluded that \ac{MDL}(multi-dataset learning) has a significant impact on increasing model robustness.
